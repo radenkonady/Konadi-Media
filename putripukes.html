@@ -9,27 +9,44 @@
     <style>
         body { font-family: Arial, sans-serif; background-color: #0b111e; color: #cbd5e1; margin: 0; padding: 0; }
         
-        /* HEADER TANPA LOGO Kiri, BERSIH */
-     header { 
+        /* HEADER DENGAN ORNAMEN KERAWANG GAYO KANAN ATAS & BAWAH */
+        header { 
             position: relative;
             background-color: #071116; 
             border-bottom: 1px solid #1f293d; 
             padding: 20px 140px 20px 30px; 
             overflow: hidden;
         }
-        header::before,
-        header::after {
+
+        /* Ornamen Sudut Kanan Atas */
+        header::before {
             content: "";
             position: absolute;
             top: 0;
             right: 0;
-            width: 130px;
-            height: 100%;
-            background-image: url('logokonadimedia.PNG');
-            background-size: contain;
+            width: 120px;
+            height: 50%;
+            background-image: url('kerawang.png');
+            background-size: 240px auto;
             background-repeat: no-repeat;
-            background-position: right center;
-            opacity: 0.8;
+            background-position: right top;
+            opacity: 0.85;
+            pointer-events: none;
+        }
+
+        /* Ornamen Sudut Kanan Bawah */
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 50%;
+            background-image: url('kerawang.png');
+            background-size: 240px auto;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            opacity: 0.85;
             pointer-events: none;
         }
 
