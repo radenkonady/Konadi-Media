@@ -24,12 +24,12 @@
             color: #ffffff;
         }
 
-        /* HEADER & ORNAMEN KERAWANG GAYO */
+        /* HEADER & ORNAMEN KERAWANG GAYO (DIPERBAIKI AGAR BISA GESER KIRI) */
         header {
             position: relative;
             background-color: #071116;
             border-bottom: 1px solid #1f293d;
-            padding: 15px 40px 15px 160px;
+            padding: 15px 20px 15px 145px; /* Padding kiri disesuaikan agar pas di samping ornamen */
             overflow: hidden;
         }
 
@@ -38,11 +38,11 @@
             content: "";
             position: absolute;
             top: 0;
-            width: 140px;
+            width: 130px;
             height: 100%;
             background-image: url("kerawang.png");
             background-repeat: no-repeat;
-            background-size: 400px auto;
+            background-size: 350px auto;
             pointer-events: none;
             z-index: 1;
         }
@@ -61,11 +61,10 @@
             position: relative;
             z-index: 2;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start; /* Membuat konten bergeser ke kiri */
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 3px;
+            max-width: 100%;
+            margin: 0;
         }
 
         .logo-area {
@@ -75,7 +74,7 @@
         }
 
         .logo-img {
-            height: 55px;
+            height: 50px;
             width: auto;
             object-fit: contain;
         }
@@ -384,14 +383,14 @@
                     </li>
                     <li><hr style="border: 0; border-top: 1px solid #22304d; margin: 0;"></li>
                     <li>
-                        <a href="#" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; line-height: 1.4;">
+                        <a href="#" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; line-string: 1.4;">
                             💃 Mengenal Tari Saman, Warisan Budaya Tak Benda Dunia
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <!-- Kotak Sidebar Sosmed / Follow Us (Diperbarui dengan Logo & Link Aktif) -->
+            <!-- Kotak Sidebar Sosmed / Follow Us -->
             <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; text-align: center;">
                 <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 18px;">Ikuti Konadi Media</h3>
                 <p style="color: #94a3b8; font-size: 13px; margin-bottom: 15px;">Dapatkan update cerita dan budaya Gayo terbaru.</p>
