@@ -8,7 +8,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: Arial, sans-serif; background-color: #0b111e; color: #cbd5e1; margin: 0; padding: 0; }
-        header { background: #111a2e; padding: 20px; text-align: center; border-bottom: 2px solid #c9a86a; }
+        
+        /* HEADER TANPA LOGO Kiri, BERSIH */
+     header { 
+            position: relative;
+            background-color: #071116; 
+            border-bottom: 1px solid #1f293d; 
+            padding: 20px 140px 20px 30px; 
+            overflow: hidden;
+        }
+        header::before,
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 130px;
+            height: 100%;
+            background-image: url('logokonadimedia.PNG');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .logo-text h1 {
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: #fff;
+            margin: 0;
+        }
+        .logo-text p {
+            margin: 1px 0 0 0; 
+            font-size: 12px; 
+            color: #c9a86a;
+        }
+
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; gap: 30px; flex-wrap: wrap; }
         main { flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid #c9a86a; }
         aside { flex: 1; min-width: 250px; background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; }
@@ -21,19 +57,21 @@
 </head>
 <body>
 
-    <header style="max-width: 1200px; margin: 0 auto; padding: 20px 20px 10px 20px; text-align: left;">
-    <h2 style="margin: 0;"><a href="index.html" style="color: #ffffff; text-decoration: none;">KONADI MEDIA</a></h2>
-    <p style="margin: 5px 0 0 0; font-size: 13px; color: #c9a86a;">Merekam Jejak, Merawat Cerita.</p>
-</header>
+    <header>
+        <div class="logo-text">
+            <h1><a href="index.html" style="color: #ffffff; text-decoration: none;">KONADI MEDIA</a></h1>
+            <p>Merekam Jejak, Merawat Cerita.</p>
+        </div>
+    </header>
 
     <div class="container">
         <main>
             <a href="index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
             <span class="kategori">Budaya Gayo</span>
             <h1>Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo</h1>
-           <p style="font-size: 13px; color: #94a3b8; margin-top: 5px;">
-    10 September 2026 &nbsp;|&nbsp; Dipublikasikan oleh Konadi Media &nbsp;|&nbsp; <i class="fa-solid fa-eye" style="margin-right: 4px;"></i> <span id="view-count">145</span> Dilihat
-</p>
+            <p style="font-size: 13px; color: #94a3b8; margin-top: 5px;">
+                10 September 2026 &nbsp;|&nbsp; Dipublikasikan oleh Konadi Media &nbsp;|&nbsp; <i class="fa-solid fa-eye" style="margin-right: 4px;"></i> <span id="view-count">145</span> Dilihat
+            </p>
 
 <!-- Skrip Penghitung Otomatis -->
 <script>
@@ -51,83 +89,76 @@
             </div>
 
             <div style="margin-top: 25px;">
-              <div style="margin-top: 25px;">
-    <p>Konon pada zaman dahulu di Tanah Gayo, Aceh Tengah, hiduplah seorang putri bangsawan bernama Putri Pukes yang berasal dari Kampung Nosar. Ia baru saja melangsungkan pernikahan dengan seorang pemuda baik hati keturunan saudagar kaya asal Samar Kilang, sebuah daerah yang berjarak cukup jauh dari kampung halamannya.</p>
-    <p>Sesuai dengan adat istiadat Gayo yang berlaku saat itu, seorang perempuan yang telah menikah wajib mengikuti suami dan tinggal menetap di kampung halaman sang suami selamanya. Hal ini membuat hati Putri Pukes dirundung kesedihan yang mendalam. Ia merasa berat harus berpisah dan meninggalkan ayah serta ibunya tercinta.</p>
-    <p>Melihat kesedihan putrinya, kedua orang tua Putri Pukes memberikan restu serta pelukan hangat yang penuh keikhlasan. Sebelum berpisah, ibunya menitipkan sebuah pesan dan pantangan yang sangat penting: agar selama perjalanan nanti, Putri Pukes tidak sekali-kali menoleh ke belakang untuk melihat kampung halamannya.</p>
-    <p>Dengan perasaan hancur dan air mata yang terus meleleh, Putri Pukes memulai perjalanan panjang di bawah pengawalan para prajurit. Di tengah perjalanan, kerinduan yang begitu hebat membuat Putri Pukes tak kuasa menahan diri. Ia pun melanggar pesan sang ibu dengan menoleh ke belakang untuk memandang tanah kelahirannya untuk terakhir kalinya.</p>
-    <p>Seketika itu pula, alam murka. Langit berubah menjadi gelap gulita, angin bertiup kencang, dan hujan turun dengan sangat lebat. Rombongan pun segera berlindung ke dalam sebuah gua yang berada di kawasan Mendale, Aceh Tengah.</p>
-    <p>Ketika hujan reda dan para pengawal memanggilnya untuk melanjutkan perjalanan, Putri Pukes sudah tidak dapat bergerak lagi. Tubuhnya telah kaku dan berubah wujud menjadi batu. Konon, bagian bawah patung tersebut tampak membesar karena tetesan air mata penyesalan sang putri. Sementara itu, curahan air hujan yang sangat lebat pada hari itu diyakini oleh masyarakat sekitar sebagai cikal bakal terbentuknya perairan luas Danau Laut Tawar.</p>
-</div>
-   <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #c9a86a;">
-    <p style="font-weight: bold; margin-bottom: 10px; color: #fff;">Bagian Cerita Ini:</p>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-       <a href="https://www.facebook.com/sharer/sharer.php?u=https://radenkonady.github.io/Konadi-Media/putripukes.html" target="_blank" style="background: #1877f2; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;"><i class="fa-brands fa-facebook" style="margin-right: 6px;"></i> Facebook</a>
-<a href="https://api.whatsapp.com/send?text=Baca%20Legenda%20Putri%20Pukes%20di%20Konadi%20Media:%20https://radenkonady.github.io/Konadi-Media/putripukes.html" target="_blank" style="background: #25d366; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;"><i class="fa-brands fa-whatsapp" style="margin-right: 6px;"></i> WhatsApp</a>
-<a href="https://t.me/share/url?url=https://radenkonady.github.io/Konadi-Media/putripukes.html&text=Legenda%20Putri%20Pukes%20%26%20Asal-Usul%20Danau%20Laut%20Tawar" target="_blank" style="background: #0088cc; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;"><i class="fa-brands fa-telegram" style="margin-right: 6px;"></i> Telegram</a>
-    </div>
-</div>
+                <p>Konon pada zaman dahulu di Tanah Gayo, Aceh Tengah, hiduplah seorang putri bangsawan bernama Putri Pukes yang berasal dari Kampung Nosar. Ia baru saja melangsungkan pernikahan dengan seorang pemuda baik hati keturunan saudagar kaya asal Samar Kilang, sebuah daerah yang berjarak cukup jauh dari kampung halamannya.</p>
+                <p>Sesuai dengan adat istiadat Gayo yang berlaku saat itu, seorang perempuan yang telah menikah wajib mengikuti suami dan tinggal menetap di kampung halaman sang suami selamanya. Hal ini membuat hati Putri Pukes dirundung kesedihan yang mendalam. Ia merasa berat harus berpisah dan meninggalkan ayah serta ibunya tercinta.</p>
+                <p>Melihat kesedihan putrinya, kedua orang tua Putri Pukes memberikan restu serta pelukan hangat yang penuh keikhlasan. Sebelum berpisah, ibunya menitipkan sebuah pesan dan pantangan yang sangat penting: agar selama perjalanan nanti, Putri Pukes tidak sekali-kali menoleh ke belakang untuk melihat kampung halamannya.</p>
+                <p>Dengan perasaan hancur dan air mata yang terus meleleh, Putri Pukes memulai perjalanan panjang di bawah pengawalan para prajurit. Di tengah perjalanan, kerinduan yang begitu hebat membuat Putri Pukes tak kuasa menahan diri. Ia pun melanggar pesan sang ibu dengan menoleh ke belakang untuk memandang tanah kelahirannya untuk terakhir kalinya.</p>
+                <p>Seketika itu pula, alam murka. Langit berubah menjadi gelap gulita, angin bertiup kencang, dan hujan turun dengan sangat lebat. Rombongan pun segera berlindung ke dalam sebuah gua yang berada di kawasan Mendale, Aceh Tengah.</p>
+                <p>Ketika hujan reda dan para pengawal memanggilnya untuk melanjutkan perjalanan, Putri Pukes sudah tidak dapat bergerak lagi. Tubuhnya telah kaku dan berubah wujud menjadi batu. Konon, bagian bawah patung tersebut tampak membesar karena tetesan air mata penyesalan sang putri. Sementara itu, curahan air hujan yang sangat lebat pada hari itu diyakini oleh masyarakat sekitar sebagai cikal bakal terbentuknya perairan luas Danau Laut Tawar.</p>
+            </div>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #c9a86a;">
+                <p style="font-weight: bold; margin-bottom: 10px; color: #fff;">Bagikan Cerita Ini:</p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://radenkonady.github.io/Konadi-Media/putripukes.html" target="_blank" style="background: #1877f2; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;"><i class="fa-brands fa-facebook" style="margin-right: 6px;"></i> Facebook</a>
+                    <a href="https://api.whatsapp.com/send?text=Baca%20Legenda%20Putri%20Pukes%20di%20Konadi%20Media:%20https://radenkonady.github.io/Konadi-Media/putripukes.html" target="_blank" style="background: #25d366; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;"><i class="fa-brands fa-whatsapp" style="margin-right: 6px;"></i> WhatsApp</a>
+                    <a href="https://t.me/share/url?url=https://radenkonady.github.io/Konadi-Media/putripukes.html&text=Legenda%20Putri%20Pukes%20%26%20Asal-Usul%20Danau%20Laut%20Tawar" target="_blank" style="background: #0088cc; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;"><i class="fa-brands fa-telegram" style="margin-right: 6px;"></i> Telegram</a>
+                </div>
+            </div>
         </main>
 
-       <aside style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px;">
-    
-    <!-- Kotak Sidebar 1: Cerita Gayo Lainnya -->
-    <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
-        <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 16px;">Cerita Gayo Lainnya</h3>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li>
-                <a href="danauluttawar.html" style="color: #cbd5e1; text-decoration: none; font-size: 14px; display: block;">
-                    🌊 Asal Usul Danau Lut Tawar
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Kotak Sidebar 2: Widget Video YouTube Pilihan -->
-    <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; display: flex; flex-direction: column; gap: 15px;">
-        <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 5px; font-size: 16px;">Video Pilihan</h3>
-        
-       <!-- Video 1: Ceramah Tengku Husaini Sasa -->
-<div class="video-widget">
-    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Husaini Sasa</p>
-    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-        <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-        </iframe>
-    </div>
-</div>
-
-        <!-- Video 2: Ceramah Tengku Irwansyah -->
-        <div class="video-widget">
-            <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Irwansyah</p>
-            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
-                        title="YouTube video player" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen 
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-                </iframe>
+        <aside style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px;">
+            <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
+                <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 16px;">Cerita Gayo Lainnya</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                    <li>
+                        <a href="danauluttawar.html" style="color: #cbd5e1; text-decoration: none; font-size: 14px; display: block;">
+                            🌊 Asal Usul Danau Lut Tawar
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
 
-        <!-- Video 3: Samadiah & Doa Tengku Syakirin -->
-        <div class="video-widget">
-            <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Samadiah & Doa - Tengku Syakirin</p>
-            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
-                        title="YouTube video player" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen 
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-                </iframe>
+            <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; display: flex; flex-direction: column; gap: 15px;">
+                <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 5px; font-size: 16px;">Video Pilihan</h3>
+                
+                <div class="video-widget">
+                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Husaini Sasa</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="video-widget">
+                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Irwansyah</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
+                                title="YouTube logo player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="video-widget">
+                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Samadiah & Doa - Tengku Syakirin</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                        </iframe>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-</aside>
+        </aside>
     </div>
 
 </body>
