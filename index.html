@@ -305,8 +305,6 @@
 
     <!-- HERO SECTION / BERANDA -->
     <!-- Layout Utama Dua Kolom -->
-<div style="display: flex; gap: 30px; max-width: 1200px; margin: 40px auto; padding: 0 20px; flex-wrap: wrap;">
-    
     <!-- KOLOM KIRI: ARTIKEL UTAMA -->
    <!-- HERO SLIDER INTERAKTIF -->
         <div class="hero-slider" style="position: relative; width: 100%; height: 380px; overflow: hidden; border-radius: 12px; margin-bottom: 30px; background: #0b111e;">
@@ -347,7 +345,8 @@
                 setInterval(showSlide, 4000);
             }
         </script>
-
+    <div style="display: flex; gap: 30px; max-width: 1200px; margin: 40px auto; padding: 0 20px; flex-wrap: wrap;">
+    <main style="flex: 2; min-width: 300px;">
         <!-- Kategori & Judul Artikel Asli -->
         <span class="kategori" style="background: #c9a86a; color: #0b111e; padding: 4px 12px; border-radius: 4px; font-weight: bold;">Cerita Rakyat</span>
        <h1>Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo</h1>
@@ -381,11 +380,35 @@
 </div>
         </div>
     </main>
+</main>
 
-    <!-- KOLOM KANAN: SIDEBAR (CERITA LAIN & INFO) -->
-    <aside style="flex: 1; min-width: 250px; display: flex; flexDirection: column; gap: 20px;">
+    <!-- KOLOM KANAN: Sidebar 3 Video YouTube -->
+    <aside style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px;">
         
-       <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
+        <!-- Video 1 -->
+        <div style="background: #121824; padding: 20px; border-radius: 12px; border: 1px solid #1f293d;">
+            <h3 style="color: #fff; font-size: 16px; margin-bottom: 12px; border-bottom: 2px solid #d9a441; padding-bottom: 6px;">Video Pilihan 1</h3>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                <iframe src="https://www.youtube.com/embed/KODE_YOUTUBE_1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div style="background: #121824; padding: 20px; border-radius: 12px; border: 1px solid #1f293d;">
+            <h3 style="color: #fff; font-size: 16px; margin-bottom: 12px; border-bottom: 2px solid #d9a441; padding-bottom: 6px;">Video Pilihan 2</h3>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                <iframe src="https://www.youtube.com/embed/KODE_YOUTUBE_2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div style="background: #121824; padding: 20px; border-radius: 12px; border: 1px solid #1f293d;">
+            <h3 style="color: #fff; font-size: 16px; margin-bottom: 12px; border-bottom: 2px solid #d9a441; padding-bottom: 6px;">Video Pilihan 3</h3>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                <iframe src="https://www.youtube.com/embed/KODE_YOUTUBE_3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+            </div>
+        </div>
+          <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
     <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 18px;">Cerita Gayo Lainnya</h3>
     <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
         <li>
@@ -406,7 +429,11 @@
                     </a>
                 </li>
             </ul>
-        </div>
+    </aside>
+</div>
+
+<!-- Kotak Sidebar Sosmed / Follow Us -->
+<div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; text-align: center;">
 
         <!-- Kotak Sidebar Sosmed / Follow Us -->
         <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; text-align: center;">
