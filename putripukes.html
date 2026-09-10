@@ -31,7 +31,20 @@
             <a href="index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
             <span class="kategori">Budaya Gayo</span>
             <h1>Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo</h1>
-            <p style="font-size: 13px; color: #94a3b8; margin-top: 5px;">Dipublikasikan oleh Konadi Media | Tanah Gayo</p>
+           <p style="font-size: 13px; color: #94a3b8; margin-top: 5px;">
+    10 September 2026 &nbsp;|&nbsp; Dipublikasikan oleh Konadi Media &nbsp;|&nbsp; <i class="fa-solid fa-eye" style="margin-right: 4px;"></i> <span id="view-count">145</span> Dilihat
+</p>
+
+<!-- Skrip Penghitung Otomatis -->
+<script>
+    let views = localStorage.getItem('putri_pukes_views');
+    if (!views) {
+        views = 145;
+    }
+    views = parseInt(views) + 1;
+    localStorage.setItem('putri_pukes_views', views);
+    document.getElementById('view-count').innerText = views;
+</script>
 
             <div style="margin-top: 20px;">
                 <img src="putripukes.jpg" alt="Putri Pukes" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px;">
