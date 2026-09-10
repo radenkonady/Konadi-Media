@@ -302,38 +302,83 @@
     </nav>
 
     <!-- HERO SECTION / BERANDA -->
-    <<article class="artikel-card" style="background: #111a2e; padding: 30px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #c9a86a;">
-    <span class="kategori" style="background: #c9a86a; color: #0b111e; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px;">CERITA RAKYAT</span>
-    <h2 style="color: #ffffff; margin-top: 15px; font-size: 28px;">Putri Pukes, Sang Ratu dari Negeri Gayo</h2>
+    <!-- Layout Utama Dua Kolom -->
+<div style="display: flex; gap: 30px; max-width: 1200px; margin: 40px auto; padding: 0 20px; flex-wrap: wrap;">
     
-    <!-- Bagian Foto Ilustrasi -->
-    <div style="margin-top: 20px; text-align: center;">
-        <img src="putripukes.jpg" alt="Putri Pukes" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; border: 1px solid #c9a86a;">
-    </div>
+    <!-- KOLOM KIRI: ARTIKEL UTAMA -->
+    <main style="flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid #c9a86a;">
+        <span class="kategori" style="background: #c9a86a; color: #0b111e; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px;">CERITA RAKYAT</span>
+        <h1 style="color: #ffffff; margin-top: 15px; font-size: 32px; line-height: 1.3;">Putri Pukes, Sang Ratu dari Negeri Gayo</h1>
+        
+        <!-- Foto Utama Artikel -->
+        <div style="margin-top: 20px;">
+            <img src="putripukes.jpg" alt="Putri Pukes" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; border: 1px solid #334155;">
+        </div>
 
-    <!-- Ringkasan Paragraf Awal -->
-    <p style="color: #cbd5e1; line-height: 1.6; margin-top: 20px;">
-        Konon, di tanah Gayo yang sejuk dan kaya akan tradisi, hiduplah seorang putri raja yang dikenal bukan hanya karena parasnya yang menawan, tetapi juga karena kebijaksanaan dan kelembutan hatinya. Ia adalah Putri Pukes, sosok perempuan yang di kemudian hari menjadi simbol keteguhan serta kekuatan batin perempuan Gayo dari generasi ke generasi.
-    </p>
-
-    <!-- Bagian Cerita Lengkap yang Tersembunyi (Akan Muncul Saat Diklik) -->
-    <details style="margin-top: 15px;">
-        <summary style="color: #c9a86a; font-weight: bold; cursor: pointer; outline: none; padding: 10px 0; font-size: 16px;">
-            Baca Selengkapnya →
-        </summary>
-        <div style="color: #cbd5e1; line-height: 1.6; margin-top: 15px; border-top: 1px dashed #334155; padding-top: 15px;">
-            <p style="margin-bottom: 15px;">
+        <!-- Isi Artikel -->
+        <div style="color: #cbd5e1; line-height: 1.8; margin-top: 20px; font-size: 16px;">
+            <p style="margin-bottom: 20px;">
+                Konon, di tanah Gayo yang sejuk dan kaya akan tradisi, hiduplah seorang putri raja yang dikenal bukan hanya karena parasnya yang menawan, tetapi juga karena kebijaksanaan dan kelembutan hatinya. Ia adalah Putri Pukes, sosok perempuan yang di kemudian hari menjadi simbol keteguhan serta kekuatan batin perempuan Gayo dari generasi ke generasi.
+            </p>
+            <p style="margin-bottom: 20px;">
                 Kisah bermula ketika Putri Pukes hendak dinikahkan dengan seorang pangeran dari kerajaan tetangga. Dengan restu kedua orang tuanya, ia berangkat meninggalkan istana menuju tempat suaminya berada. Di tengah perjalanan yang panjang dan berliku melalui lembah dan bukit barisan, sang ibu berpesan agar Putri Pukes tidak menoleh ke belakang selama perjalanan.
             </p>
-            <p style="margin-bottom: 15px;">
-                Namun, karena rasa rindu yang amat sangat kepada orang tua dan istana tercinta serta suara tangis ibunya yang terdengar sayup-sayup dari kejauhan, Putri Pukes perlahan menolehkan kepalanya ke belakang untuk melihat kampung halamannya untuk terakhir kali.
-            </p>
-            <p>
-                Seketika itu pula, sebuah keajaiban sekaligus kutukan terjadi. Konon, karena melanggar pesan orang tua, cuaca mendadak berubah buruk dengan petir menyambar, dan tubuh Putri Pukes perlahan-lahan berubah menjadi batu. Hingga kini, batu yang menyerupai bentuk manusia tersebut diyakini oleh masyarakat setempat berada di sekitar Danau Lut Tawar, menjadi sebuah legenda abadi tentang pentingnya mematuhi nasihat orang tua di tanah Gayo.
+            <p style="margin-bottom: 20px;">
+                Namun, karena rasa rindu yang amat sangat kepada orang tua dan istana tercinta serta suara tangis ibunya yang terdengar sayup-sayup dari kejauhan, Putri Pukes perlahan menolehkan kepalanya ke belakang untuk melihat kampung halamannya untuk terakhir kali. Seketika itu pula, cuaca mendadak berubah buruk dan tubuh Putri Pukes perlahan-lahan berubah menjadi batu di sekitar Danau Lut Tawar.
             </p>
         </div>
-    </details>
-</article>
+
+        <!-- Tombol Bagikan / Sosmed di Bawah Artikel -->
+        <div style="margin-top: 30px; border-top: 1px solid #334155; padding-top: 20px;">
+            <p style="color: #ffffff; font-weight: bold; margin-bottom: 12px;">Bagikan Cerita Ini:</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="#" style="background: #1877f2; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">Facebook</a>
+                <a href="#" style="background: #25d366; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">WhatsApp</a>
+                <a href="#" style="background: #0088cc; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">Telegram</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- KOLOM KANAN: SIDEBAR (CERITA LAIN & INFO) -->
+    <aside style="flex: 1; min-width: 250px; display: flex; flexDirection: column; gap: 20px;">
+        
+        <!-- Kotak Sidebar Cerita Lain -->
+        <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
+            <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 18px;">Cerita Gayo Lainnya</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                <li>
+                    <a href="#" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; line-height: 1.4; transition: color 0.2s;">
+                        ✨ Asal Usul Danau Lut Tawar dan Legenda Masyarakat Gayo
+                    </a>
+                </li>
+                <hr style="border: 0; border-top: 1px solid #22304d; margin: 0;">
+                <li>
+                    <a href="#" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; line-height: 1.4;">
+                        ☕ Sejarah Kopi Gayo yang Mendunia dan Filosofinya
+                    </a>
+                </li>
+                <hr style="border: 0; border-top: 1px solid #22304d; margin: 0;">
+                <li>
+                    <a href="#" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; line-height: 1.4;">
+                        💃 Mengenal Tari Saman, Warisan Budaya Tak Benda Dunia
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Kotak Sidebar Sosmed / Follow Us -->
+        <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; text-align: center;">
+            <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 18px;">Ikuti Konadi Media</h3>
+            <p style="color: #94a3b8; font-size: 13px; margin-bottom: 15px;">Dapatkan update cerita dan budaya Gayo terbaru.</p>
+            <div style="display: flex; justify-content: center; gap: 12px;">
+                <a href="#" style="color: #c9a86a; background: #1a2744; padding: 10px 14px; border-radius: 50%; text-decoration: none; font-weight: bold;">IG</a>
+                <a href="#" style="color: #c9a86a; background: #1a2744; padding: 10px 14px; border-radius: 50%; text-decoration: none; font-weight: bold;">FB</a>
+                <a href="#" style="color: #c9a86a; background: #1a2744; padding: 10px 14px; border-radius: 50%; text-decoration: none; font-weight: bold;">TT</a>
+            </div>
+        </div>
+
+    </aside>
+</div>
 
     <!-- BERITA SECTION -->
     <div class="section-container" id="berita">
