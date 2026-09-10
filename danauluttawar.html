@@ -57,18 +57,66 @@
         </main>
 
         <!-- KOLOM KANAN: SIDEBAR -->
-        <aside style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px;">
-            <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
-                <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 18px;">Cerita Gayo Lainnya</h3>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                    <li>
-                        <a href="index.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; line-height: 1.4;">
-                            👑 Putri Pukes, Sang Ratu dari Negeri Gayo
-                        </a>
-                    </li>
-                </ul>
+       <!-- KOLOM KANAN: SIDEBAR -->
+<aside style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px;">
+    
+    <!-- Kotak Sidebar 1: Cerita Gayo Lainnya (Yang sudah ada) -->
+    <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
+        <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 16px;">Cerita Gayo Lainnya</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li>
+                <a href="index.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block;">
+                    👑 Putri Pukes, Sang Ratu dari Negeri Gayo
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Kotak Sidebar 2: Widget Video YouTube Pilihan -->
+    <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; display: flex; flex-direction: column; gap: 15px;">
+        <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 5px; font-size: 16px;">Video Pilihan</h3>
+        
+        <!-- Video 1 -->
+        <div class="video-widget">
+            <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Video 1</p>
+            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                <iframe src="https://www.youtube.com/embed/https://youtu.be/d7asE1bgWLc?si=CnozLRy-PdziZobQ" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                </iframe>
             </div>
-        </aside>
+        </div>
+
+        <!-- Video 2: Ceramah Tengku Irwansyah -->
+        <div class="video-widget">
+            <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Irwansyah</p>
+            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Video 3: Samadiah & Doa Tengku Syakirin -->
+        <div class="video-widget">
+            <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Samadiah & Doa - Tengku Syakirin</p>
+            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+</aside>
     </div>
 
     <!-- FOOTER -->
