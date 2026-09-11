@@ -15,9 +15,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+       html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
 
         body {
             background-color: #071116;
@@ -240,13 +241,12 @@
         </div>
     </header>
 
-    <!-- NAVBAR -->
-    <nav>
-        <a href="#beranda" class="active">Beranda</a>
-        <a href="#berita">Berita Gayo</a>
-        <a href="#tentang">Tentang</a>
-        <a href="#kontak">Kontak</a>
-    </nav>
+  <nav style="position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 25px; padding: 15px 0; background: #111a2e; border-bottom: 1px solid #c9a86a;">
+    <a href="#beranda" class="active" style="color: #c9a86a; text-decoration: none; font-weight: bold;">Beranda</a>
+    <a href="#berita" style="color: #c9a86a; text-decoration: none; font-weight: bold;">Berita Gayo</a>
+    <a href="#tentang" style="color: #c9a86a; text-decoration: none; font-weight: bold;">Tentang</a>
+    <a href="#kontak" style="color: #c9a86a; text-decoration: none; font-weight: bold;">Kontak</a>
+</nav>
 
     <!-- HERO SLIDER INTERAKTIF -->
     <div style="max-width: 1150px; margin: 40px auto; padding: 0 20px;">
@@ -291,7 +291,7 @@
     </script>
 
     <!-- LAYOUT UTAMA DUA KOLOM -->
-    <div style="display: flex; gap: 30px; max-width: 1150px; margin: 40px auto; padding: 0 20px; flex-wrap: wrap;" id="beranda">
+    <div style="display: flex; gap: 30px; max-width: 1150px; margin: 80px auto 40px auto; padding: 0 20px; flex-wrap: wrap;" id="beranda">
         
         <!-- KOLOM KIRI: ARTIKEL UTAMA -->
         <main style="flex: 2; min-width: 300px;">
