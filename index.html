@@ -224,20 +224,26 @@
         footer p {
             margin-bottom: 8px;
         }
-      @media screen and (max-width: 768px) {
-    /* Mengecilkan ukuran logo teks utama di HP */
+   @media screen and (max-width: 768px) {
+    /* 1. Mengatur ukuran gambar logo "KND." di HP */
+    .logo-img {
+        max-height: 25px !important; /* Kakak bisa ubah angka 35px ini (misal 25px jadi lebih kecil, 40px jadi lebih besar) */
+        width: auto !important;
+    }
+
+    /* 2. Mengecilkan ukuran logo teks utama di HP */
     .logo-text h1, .brand-title {
-        font-size: 22px !important;
+        font-size: 15px !important; /* Kakak bisa ganti jadi 16px atau 20px sesuai selera */
     }
 
-    /* Mengecilkan slogan di bawah logo di HP */
+    /* 3. Mengecilkan slogan di bawah logo di HP */
     .logo-text p, .logo-subtitle {
-        font-size: 11px !important;
+        font-size: 10px !important;
     }
 
-    /* Mengecilkan semua menu navigasi (termasuk Beranda) di HP */
+    /* 4. Menu navigasi di HP */
     nav a, .nav-links a, header nav a {
-        font-size: 12px !important; /* Kakak bisa ubah angka 14px ini kalau kurang kecil/besar */
+        font-size: 14px !important;
         margin: 0 6px !important;
     }
 }
