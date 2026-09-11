@@ -231,7 +231,7 @@ font-size: 24px !important;
         footer p {
             margin-bottom: 8px;
         }
- @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .logo-text h1 {
         font-size: 18px !important;
     }
@@ -239,21 +239,14 @@ font-size: 24px !important;
         font-size: 12px !important;
     }
     
-    /* Tambahkan baris ini agar menu navigasi ikut mengecil di HP */
-    nav a {
-        font-size: 13px !important;
+    /* Pengaturan menu navigasi khusus HP agar pas dan sebaris */
+    nav {
+        gap: 12px !important;
+        padding: 12px 5px !important;
     }
-}
-
-    /* 3. Mengecilkan slogan di bawah logo di HP */
-    .logo-text p, .logo-subtitle {
-        font-size: 10px !important;
-    }
-
-    /* 4. Menu navigasi di HP */
     nav a, .nav-links a, header nav a {
         font-size: 13px !important;
-        margin: 0 4px !important;
+        margin: 0 !important;
     }
 }
     </style>
@@ -277,11 +270,11 @@ font-size: 24px !important;
     </div>
 </header>
 
-<nav style="position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 30px; padding: 20px 0; background: #111a2e; border-bottom: 1px solid #c9a86a;">
-    <a href="#beranda" class="active" style="color: #c9a86a; text-decoration: none; font-weight: normal; font-size: 16px !important;">Beranda</a>
-    <a href="#berita" style="color: #cbd5e1; text-decoration: none; font-weight: normal; font-size: 16px !important;">Berita Gayo</a>
-    <a href="#tentang" style="color: #cbd5e1; text-decoration: none; font-weight: normal; font-size: 16px !important;">Tentang</a>
-    <a href="#kontak" style="color: #cbd5e1; text-decoration: none; font-weight: normal; font-size: 16px !important;">Kontak</a>
+<nav class="main-nav" style="position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 20px; padding: 15px 10px; background: #111a2e; border-bottom: 1px solid #c9a86a;">
+    <a href="#beranda" class="active" style="color: #c9a86a; text-decoration: none; font-weight: normal;">Beranda</a>
+    <a href="#berita" style="color: #cbd5e1; text-decoration: none; font-weight: normal;">Berita Gayo</a>
+    <a href="#tentang" style="color: #cbd5e1; text-decoration: none; font-weight: normal;">Tentang</a>
+    <a href="#kontak" style="color: #cbd5e1; text-decoration: none; font-weight: normal;">Kontak</a>
 </nav>
 
     <!-- HERO SLIDER INTERAKTIF -->
