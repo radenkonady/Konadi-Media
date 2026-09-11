@@ -6,9 +6,22 @@
     <title>Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo - Konadi Media</title>
     <link rel="icon" type="image/png" href="logokonadimedia.PNG">
     <style>
-        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; gap: 30px; flex-wrap: wrap; }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; }
         main { flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid #c9a86a; }
-        aside { flex: 1; min-width: 250px; background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; }
+        
+        /* SIDEBAR STICKY DIHALAMAN ARTIKEL */
+        aside { 
+            flex: 1; 
+            min-width: 250px; 
+            background: #111a2e; 
+            padding: 20px; 
+            border-radius: 12px; 
+            border: 1px solid #c9a86a; 
+            position: sticky; 
+            top: 20px; 
+            height: fit-content; 
+        }
+
         h1 { color: #ffffff; font-size: 24px; line-height: 1.3; margin-top: 15px; }
         .kategori { background: #c9a86a; color: #0b111e; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; }
         p { line-height: 1.8; margin-bottom: 20px; text-align: justify; }
@@ -39,6 +52,10 @@
                 padding: 0 10px !important;
                 margin: 15px auto !important;
             }
+            /* Nonaktifkan sticky di HP agar tidak menumpuk layar kecil */
+            aside {
+                position: static !important;
+            }
         }
     </style>
 </head>
@@ -58,10 +75,10 @@
         <!-- KOLOM KIRI: ARTIKEL UTAMA -->
         <main>
             <span class="kategori">LEGENDA GAYO</span>
-           <h1 style="font-size: 20px; color: #ffffff; margin-top: 15px; line-height: 1.3;">Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo</h1>
-<p style="color: #94a3b8; font-size: 14px; margin-top: 5px; margin-bottom: 20px;">
-    Dipublikasikan oleh Konadi Media | 11 September 2026 | Dilihat <span id="view-count">0</span> kali
-</p>
+            <h1 style="font-size: 20px; color: #ffffff; margin-top: 15px; line-height: 1.3;">Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo</h1>
+            <p style="color: #94a3b8; font-size: 14px; margin-top: 5px; margin-bottom: 20px;">
+                Dipublikasikan oleh Konadi Media | 11 September 2026 | Dilihat <span id="view-count">0</span> kali
+            </p>
             
             <!-- Foto Utama Artikel -->
             <div style="margin-top: 20px;">
@@ -72,15 +89,15 @@
             <div style="color: #cbd5e1; margin-top: 20px; font-size: 16px;">
                 <p>Konon pada zaman dahulu di Tanah Gayo, Aceh Tengah, hiduplah seorang putri bangsawan bernama Putri Pukes yang berasal dari Kampung Nosar. Ia baru saja melangsungkan pernikahan dengan seorang pemuda baik hati keturunan saudagar kaya asal Samar Kilang, sebuah daerah yang berjarak cukup jauh dari kampung halamannya.</p>
 
-<p>Sesuai dengan adat istiadat Gayo yang berlaku saat itu, seorang perempuan yang telah menikah wajib mengikuti suami dan tinggal menetap di kampung halaman sang suami selamanya. Hal ini membuat hati Putri Pukes dirundung kesedihan yang mendalam. Ia merasa berat harus berpisah dan meninggalkan ayah serta ibunya tercinta.</p>
+                <p>Sesuai dengan adat istiadat Gayo yang berlaku saat itu, seorang perempuan yang telah menikah wajib mengikuti suami dan tinggal menetap di kampung halaman sang suami selamanya. Hal ini membuat hati Putri Pukes dirundung kesedihan yang mendalam. Ia merasa berat harus berpisah dan meninggalkan ayah serta ibunya tercinta.</p>
 
-<p>Melihat kesedihan putrinya, kedua orang tua Putri Pukes memberikan restu serta pelukan hangat yang penuh keikhlasan. Sebelum berpisah, ibunya menitipkan sebuah pesan dan pantangan yang sangat penting: agar selama perjalanan nanti, Putri Pukes tidak sekali-kali menoleh ke belakang untuk melihat kampung halamannya.</p>
+                <p>Melihat kesedihan putrinya, kedua orang tua Putri Pukes memberikan restu serta pelukan hangat yang penuh keikhlasan. Sebelum berpisah, ibunya menitipkan sebuah pesan dan pantangan yang sangat penting: agar selama perjalanan nanti, Putri Pukes tidak sekali-kali menoleh ke belakang untuk melihat kampung halamannya.</p>
 
-<p>Dengan perasaan hancur dan air mata yang terus meleleh, Putri Pukes memulai perjalanan panjang di bawah pengawalan para prajurit. Di tengah perjalanan, kerinduan yang begitu hebat membuat Putri Pukes tak kuasa menahan diri. Ia pun melanggar pesan sang ibu dengan menoleh ke belakang untuk memandang tanah kelahirannya untuk terakhir kalinya.</p>
+                <p>Dengan perasaan hancur dan air mata yang terus meleleh, Putri Pukes memulai perjalanan panjang di bawah pengawalan para prajurit. Di tengah perjalanan, kerinduan yang begitu hebat membuat Putri Pukes tak kuasa menahan diri. Ia pun melanggar pesan sang ibu dengan menoleh ke belakang untuk memandang tanah kelahirannya untuk terakhir kalinya.</p>
 
-<p>Seketika itu pula, alam murka. Langit berubah menjadi gelap gulita, angin bertiup kencang, dan hujan turun dengan sangat lebat. Rombongan pun segera berlindung ke dalam sebuah gua yang berada di kawasan Mendale, Aceh Tengah.</p>
+                <p>Seketika itu pula, alam murka. Langit berubah menjadi gelap gulita, angin bertiup kencang, dan hujan turun dengan sangat lebat. Rombongan pun segera berlindung ke dalam sebuah gua yang berada di kawasan Mendale, Aceh Tengah.</p>
 
-<p>Ketika hujan reda dan para pengawal memanggilnya untuk melanjutkan perjalanan, Putri Pukes sudah tidak dapat bergerak lagi. Tubuhnya telah kaku dan berubah wujud menjadi batu. Konon, bagian bawah patung tersebut tampak membesar karena tetesan air mata penyesalan sang putri. Sementara itu, curahan air hujan yang sangat lebat pada hari itu diyakini oleh masyarakat sekitar sebagai cikal bakal terbentuknya perairan luas Danau Laut Tawar.</p>
+                <p>Ketika hujan reda dan para pengawal memanggilnya untuk melanjutkan perjalanan, Putri Pukes sudah tidak dapat bergerak lagi. Tubuhnya telah kaku dan berubah wujud menjadi batu. Konon, bagian bawah patung tersebut tampak membesar karena tetesan air mata penyesalan sang putri. Sementara itu, curahan air hujan yang sangat lebat pada hari itu diyakini oleh masyarakat sekitar sebagai cikal bakal terbentuknya perairan luas Danau Laut Tawar.</p>
             </div>
 
             <!-- Tombol Bagikan / Sosmed di Bawah Artikel -->
@@ -94,10 +111,10 @@
             </div>
         </main>
 
-        <!-- KOLOM KANAN: SIDEBAR -->
+        <!-- KOLOM KANAN: SIDEBAR STICKY -->
         <aside>
             <div style="display: flex; flex-direction: column; gap: 20px;">
-                <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
+                <div style="background: #111a2e; padding: 15px; border-radius: 8px; border: 1px solid #c9a86a;">
                     <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 16px;">Cerita Gayo Lainnya</h3>
                     <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
                         <li>
@@ -106,65 +123,66 @@
                             </a>
                         </li>
                     </ul>
-                 </div> <!-- Tutup kotak pertama -->
+                 </div>
 
-        <!-- Kotak Sidebar: Widget Video YouTube Pilihan -->
-        <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
-            <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 5px; font-size: 16px;">Video Pilihan</h3>
-                
-                <!-- Video 1 -->
-                <div class="video-widget">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Husaini Sasa</p>
-                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                        <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
-                                title="YouTube video player" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen 
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-                        </iframe>
+                <!-- Kotak Sidebar: Widget Video YouTube Pilihan -->
+                <div style="background: #111a2e; padding: 15px; border-radius: 8px; border: 1px solid #c9a86a; display: flex; flex-direction: column; gap: 15px;">
+                    <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 5px; font-size: 16px;">Video Pilihan</h3>
+                        
+                    <!-- Video 1 -->
+                    <div>
+                        <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Husaini Sasa</p>
+                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                            <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                            </iframe>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Video 2 -->
-                <div class="video-widget">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Irwansyah</p>
-                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                        <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
-                                title="YouTube video player" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen 
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-                        </iframe>
+                    <!-- Video 2 -->
+                    <div>
+                        <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Irwansyah</p>
+                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                            <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                            </iframe>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Video 3 -->
-                <div class="video-widget">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Samadiah & Doa - Tengku Syakirin</p>
-                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                        <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
-                                title="YouTube video player" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen 
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-                        </iframe>
+                    <!-- Video 3 -->
+                    <div>
+                        <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Samadiah & Doa - Tengku Syakirin</p>
+                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                            <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                            </iframe>
+                        </div>
                     </div>
-                </div>
-            </div>
                 </div>
             </div>
         </aside>
+
     </div>
 
     <!-- FOOTER -->
     <footer style="text-align: center; padding: 30px; color: #94a3b8; border-top: 1px solid #1a2744; margin-top: 50px;">
         <p>&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita.</p>
     </footer>
-<script>
-    let views = localStorage.getItem('putri_pukes_views') || 0;
-    views++;
-    localStorage.setItem('putri_pukes_views', views);
-    document.getElementById('view-count').innerText = Number(views).toLocaleString();
-</script>
+
+    <script>
+        let views = localStorage.getItem('putri_pukes_views') || 0;
+        views++;
+        localStorage.setItem('putri_pukes_views', views);
+        document.getElementById('view-count').innerText = Number(views).toLocaleString();
+    </script>
 </body>
 </html>
