@@ -5,34 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asal Usul Danau Lut Tawar - Konadi Media</title>
     <link rel="icon" type="image/png" href="logokonadimedia.PNG">
-  <style>
-    @media screen and (max-width: 768px) {
-        header {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            padding: 12px 15px !important;
+    <style>
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; }
+        main { flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid #c9a86a; }
+        
+        /* SIDEBAR STICKY DIHALAMAN ARTIKEL */
+        aside { 
+            flex: 1; 
+            min-width: 250px; 
+            background: #111a2e; 
+            padding: 20px; 
+            border-radius: 12px; 
+            border: 1px solid #c9a86a; 
+            position: sticky; 
+            top: 20px; 
+            height: fit-content; 
         }
-        header h2 {
-            font-size: 16px !important;
+
+        h1 { color: #ffffff; font-size: 24px; line-height: 1.3; margin-top: 15px; }
+        .kategori { background: #c9a86a; color: #0b111e; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        p { line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+        a.back { display: inline-block; margin-bottom: 20px; color: #c9a86a; text-decoration: none; font-weight: bold; }
+        a.back:hover { text-decoration: underline; }
+
+        @media screen and (max-width: 768px) {
+            header {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 12px 15px !important;
+            }
+            header h2 {
+                font-size: 16px !important;
+            }
+            nav a {
+                font-size: 13px !important;
+            }
+            h1 {
+                font-size: 22px !important;
+                margin-top: 10px !important;
+            }
+            main {
+                padding: 20px !important;
+            }
+            div[style*="max-width: 1200px"], .container {
+                padding: 0 10px !important;
+                margin: 15px auto !important;
+            }
+            aside {
+                position: static !important;
+            }
         }
-        nav a {
-            font-size: 13px !important;
-        }
-        h1 {
-            font-size: 22px !important;
-            margin-top: 10px !important;
-        }
-        /* Penyelaras kotak artikel utama agar sejajar dengan sidebar di HP */
-        main {
-            padding: 20px !important;
-        }
-        div[style*="max-width: 1200px"] {
-            padding: 0 10px !important;
-            margin: 15px auto !important;
-        }
-    }
-</style>
+    </style>
 </head>
 <body style="background: #0b111e; color: #ffffff; font-family: Arial, sans-serif; margin: 0; padding: 0;">
 
@@ -45,16 +69,15 @@
     </header>
 
     <!-- LAYOUT UTAMA DUA KOLOM -->
-    <div style="display: flex; gap: 30px; max-width: 1200px; margin: 40px auto; padding: 0 20px; flex-wrap: wrap;">
+    <div class="container">
         
         <!-- KOLOM KIRI: ARTIKEL UTAMA -->
-        <main style="flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid #c9a86a;">
-            <span style="background: #c9a86a; color: #0b111e; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px;">LEGENDA GAYO</span>
-            <h1 style="color: #ffffff; margin-top: 15px; font-size: 20px; line-height: 1.3;">Asal Usul Danau Lut Tawar dan Legenda Masyarakat Gayo</h1>
-           <div class="meta" style="font-size: 13px; color: #94a3b8; margin-bottom: 20px; border-bottom: 1px solid #334155; padding-bottom: 15px;">
-   <p style="color: #94a3b8; font-size: 14px; margin-top: 5px; margin-bottom: 20px;">
-    Dipublikasikan oleh Konadi Media | 11 September 2026 | Dilihat <span id="view-count">0</span> kali
-</p>
+        <main>
+            <span class="kategori">LEGENDA GAYO</span>
+            <h1 style="font-size: 20px; color: #ffffff; margin-top: 15px; line-height: 1.3;">Asal Usul Danau Lut Tawar dan Legenda Masyarakat Gayo</h1>
+            <p style="color: #94a3b8; font-size: 14px; margin-top: 5px; margin-bottom: 20px;">
+                Dipublikasikan oleh Konadi Media | 11 September 2026 | Dilihat <span id="view-count">0</span> kali
+            </p>
             
             <!-- Foto Utama Artikel -->
             <div style="margin-top: 20px;">
@@ -62,19 +85,14 @@
             </div>
 
             <!-- Isi Artikel -->
-            <div style="color: #cbd5e1; line-height: 1.8; margin-top: 20px; font-size: 16px; text-align: justify;">
-                <p style="margin-bottom: 20px;">
-                    Danau Lut Tawar bukan sekadar bentangan air luas yang menjadi kebanggaan masyarakat dataran tinggi Gayo, Kabupaten Aceh Tengah. Di balik keindahan panorama alamnya yang dikelilingi perbukitan hijau, tersimpan sebuah kisah legenda turun-temurun mengenai asal-usul terbentuknya danau ini.
-                </p>
-                <p style="margin-bottom: 20px;">
-                    Konon pada zaman dahulu kala, wilayah yang kini menjadi danau tersebut adalah sebuah lembah subur tempat berdirinya sebuah kerajaan dipimpin oleh seorang raja. Kerajaan tersebut hidup makmur dengan hasil bumi yang melimpah berkat kearifan lokal dalam menjaga alam.
-                </p>
-                <p style="margin-bottom: 20px;">
-                    Namun, sebuah musibah besar terjadi akibat kelalaian dan pelanggaran terhadap sumpah adat leluhur. Hujan lebat tiada henti disertai gempa mengguncang lembah tersebut hingga akhirnya dataran rendah itu perlahan-lahan tenggelam dan berubah menjadi lautan air tawar yang luas, yang kini kita kenal sebagai Danau Lut Tawar.
-                </p>
-                <p>
-                    Hingga hari ini, Danau Lut Tawar tetap menjadi jantung kehidupan masyarakat Gayo—memberikan sumber penghidupan, inspirasi seni, hingga penjaga identitas kultural yang terus dirawat dari masa ke masa.
-                </p>
+            <div style="color: #cbd5e1; margin-top: 20px; font-size: 16px;">
+                <p>Danau Lut Tawar bukan sekadar bentangan air luas yang menjadi kebanggaan masyarakat dataran tinggi Gayo, Kabupaten Aceh Tengah. Di balik keindahan panorama alamnya yang dikelilingi perbukitan hijau, tersimpan sebuah kisah legenda turun-temurun mengenai asal-usul terbentuknya danau ini.</p>
+
+                <p>Konon pada zaman dahulu kala, wilayah yang kini menjadi danau tersebut adalah sebuah lembah subur tempat berdirinya sebuah kerajaan dipimpin oleh seorang raja. Kerajaan tersebut hidup makmur dengan hasil bumi yang melimpah berkat kearifan lokal dalam menjaga alam.</p>
+
+                <p>Namun, sebuah musibah besar terjadi akibat kelalaian dan pelanggaran terhadap sumpah adat leluhur. Hujan lebat tiada henti disertai gempa mengguncang lembah tersebut hingga akhirnya dataran rendah itu perlahan-lahan tenggelam dan berubah menjadi lautan air tawar yang luas, yang kini kita kenal sebagai Danau Lut Tawar.</p>
+
+                <p>Hingga hari ini, Danau Lut Tawar tetap menjadi jantung kehidupan masyarakat Gayo—memberikan sumber penghidupan, inspirasi seni, hingga penjaga identitas kultural yang terus dirawat dari masa ke masa.</p>
             </div>
 
             <!-- Tombol Bagikan / Sosmed di Bawah Artikel -->
@@ -88,73 +106,76 @@
             </div>
         </main>
 
-        <!-- KOLOM KANAN: SIDEBAR -->
-        <aside style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px;">
-            
-            <!-- Kotak Sidebar 1: Cerita Gayo Lainnya -->
-            <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
-                <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 16px;">Cerita Gayo Lainnya</h3>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                    <li>
-                      <a href="putripukes.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block;">
-    Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo
-</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Kotak Sidebar 2: Widget Video YouTube Pilihan -->
-            <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; display: flex; flex-direction: column; gap: 15px;">
-                <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 5px; font-size: 16px;">Video Pilihan</h3>
+        <!-- KOLOM KANAN: SIDEBAR STICKY -->
+        <aside>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
                 
-                <!-- Video 1 -->
-                <div class="video-widget">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Husaini Sasa</p>
-                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                        <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
-                                title="YouTube video player" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen 
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-                        </iframe>
+                <!-- Kotak Sidebar: Widget Video YouTube Pilihan -->
+                <div style="background: #111a2e; padding: 15px; border-radius: 8px; border: 1px solid #c9a86a; display: flex; flex-direction: column; gap: 15px;">
+                    <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 5px; font-size: 16px;">Video Pilihan</h3>
+                        
+                    <!-- Video 1 -->
+                    <div>
+                        <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Husaini Sasa</p>
+                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                            <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div>
+                        <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Irwansyah</p>
+                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                            <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div>
+                        <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Samadiah & Doa - Tengku Syakirin</p>
+                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                            <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Video 2 -->
-                <div class="video-widget">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Ceramah Tengku Irwansyah</p>
-                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                        <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
-                                title="YouTube video player" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen 
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-                        </iframe>
-                    </div>
-                </div>
+                <!-- Kotak Sidebar: Cerita Gayo Lainnya (Di Bawah Video 3) -->
+                <div style="background: #111a2e; padding: 15px; border-radius: 8px; border: 1px solid #c9a86a;">
+                    <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 16px;">Cerita Gayo Lainnya</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                        <li>
+                            <a href="putripukes.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block;">
+                                Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo
+                            </a>
+                        </li>
+                    </ul>
+                 </div>
 
-                <!-- Video 3 -->
-                <div class="video-widget">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 5px;">Samadiah & Doa - Tengku Syakirin</p>
-                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                        <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
-                                title="YouTube video player" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen 
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-                        </iframe>
-                    </div>
-                </div>
             </div>
-
         </aside>
+
     </div>
 
     <!-- FOOTER -->
     <footer style="text-align: center; padding: 30px; color: #94a3b8; border-top: 1px solid #1a2744; margin-top: 50px;">
         <p>&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita.</p>
     </footer>
-    
+
     <script>
         let views = localStorage.getItem('konadi_views') || 0;
         views++;
