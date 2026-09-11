@@ -106,14 +106,20 @@ header::after {
             z-index: 999;
         }
 
-        nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: normal;
-            transition: color 0.3s;
-        }
+       nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: normal;
+    transition: color 0.3s;
+}
 
+/* Ukuran khusus saat dibuka di laptop/komputer */
+@media (min-width: 768px) {
+    nav a {
+font-size: 24px !important;
+    }
+}
         nav a:hover, nav a.active {
             color: #d9a441;
         }
@@ -266,11 +272,11 @@ header::after {
     </div>
 </header>
 
-  <nav style="position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 25px; padding: 15px 0; background: #111a2e; border-bottom: 1px solid #c9a86a;">
-    <a href="#beranda" class="active" style="color: #c9a86a; text-decoration: none; font-weight: normal;">Beranda</a>
-    <a href="#berita" style="color: #c9a86a; text-decoration: none; font-weight: normal;">Berita Gayo</a>
-    <a href="#tentang" style="color: #c9a86a; text-decoration: none; font-weight: normal;">Tentang</a>
-    <a href="#kontak" style="color: #c9a86a; text-decoration: none; font-weight: normal;">Kontak</a>
+<nav style="position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 30px; padding: 20px 0; background: #111a2e; border-bottom: 1px solid #c9a86a;">
+    <a href="#beranda" class="active" style="color: #c9a86a; text-decoration: none; font-weight: normal; font-size: 16px !important;">Beranda</a>
+    <a href="#berita" style="color: #cbd5e1; text-decoration: none; font-weight: normal; font-size: 16px !important;">Berita Gayo</a>
+    <a href="#tentang" style="color: #cbd5e1; text-decoration: none; font-weight: normal; font-size: 16px !important;">Tentang</a>
+    <a href="#kontak" style="color: #cbd5e1; text-decoration: none; font-weight: normal; font-size: 16px !important;">Kontak</a>
 </nav>
 
     <!-- HERO SLIDER INTERAKTIF -->
