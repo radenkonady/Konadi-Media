@@ -34,24 +34,29 @@
             overflow: hidden;
         }
 
-        header::before,
-        header::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 100px;
-            height: 100%;
-            background-image: url("kerawang.png");
-            background-repeat: no-repeat;
-            background-size: 180px auto;
-            pointer-events: none;
-            z-index: 1;
-        }
+       header::before,
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 110px; /* Lebar area bingkai ornamen di pojok */
+    height: 100%;
+    background-image: url("kerawang.png");
+    background-repeat: no-repeat;
+    background-size: 140px auto; /* Ukuran gambar ornamen yang pas dan megah di sudut */
+    pointer-events: none;
+    z-index: 1;
+}
 
-        header::before {
-            left: 0;
-            background-position: top left;
-        }
+header::before {
+    left: 0;
+    background-position: top left;
+}
+
+header::after {
+    right: 0;
+    background-position: top right;
+}
 
         header::after {
             right: 0;
