@@ -39,29 +39,25 @@ header::after {
     content: "";
     position: absolute;
     top: 0;
-    width: 70px; /* Lebar area ornamen di pojok */
-    height: 70px; /* Batasi tingginya hanya untuk sudut atas saja */
+    width: 90px;
+    height: 100%;
     background-image: url("kerawang.png");
     background-repeat: no-repeat;
-    background-size: 110px auto; /* Ukuran gambar ornamen */
-    background-position: top left; /* Mengambil sudut atas gambar */
+    background-size: contain;
     pointer-events: none;
     z-index: 1;
 }
 
 header::before {
     left: 0;
+    background-position: top left;
 }
 
 header::after {
     right: 0;
-    transform: scaleX(-1); /* Membalik gambar ornamen untuk sisi kanan agar simetris */
+    background-position: top right;
+    transform: scaleX(-1);
 }
-        header::after {
-            right: 0;
-            background-position: top right;
-        }
-
         .header-content {
             position: relative;
             z-index: 2;
