@@ -3,118 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Putri Pukes, Sang Ratu dari Negeri Gayo - Konadi Media</title>
+    <title>Konadi Media - Merekam Jejak, Merawat Cerita</title>
     <link rel="icon" type="image/png" href="logokonadimedia.PNG">
     <style>
-        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; gap: 30px; flex-wrap: wrap; }
-        main { flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid #c9a86a; }
-        aside { flex: 1; min-width: 250px; background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; }
-        h1 { color: #ffffff; font-size: 24px; line-height: 1.3; margin-top: 15px; }
-        .kategori { background: #c9a86a; color: #0b111e; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; }
-        p { line-height: 1.8; margin-bottom: 20px; text-align: justify; }
-        a.back { display: inline-block; margin-bottom: 20px; color: #c9a86a; text-decoration: none; font-weight: bold; }
-        a.back:hover { text-decoration: underline; }
+        body {
+            background: #0b111e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Header / Navbar */
+        header {
+            background: #111a2e;
+            border-bottom: 1px solid #c9a86a;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h2 {
+            margin: 0;
+        }
+        header h2 a {
+            color: #c9a86a;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-        @media screen and (max-width: 768px) {
-            header {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: center !important;
-                padding: 12px 15px !important;
+        /* Container Utama */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* Headline Utama */
+        .headline-card {
+            background: #111a2e;
+            border: 1px solid #c9a86a;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .headline-img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+        }
+        .headline-content {
+            padding: 20px;
+        }
+        .headline-title {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1.3;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+
+        /* Section Berita Terkini */
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            border-bottom: 2px solid #c9a86a;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* List Berita (Gaya Portal Berita) */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .news-item {
+            display: flex;
+            gap: 15px;
+            background: #111a2e;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            padding: 12px;
+            transition: border-color 0.2s;
+        }
+        .news-item:hover {
+            border-color: #c9a86a;
+        }
+        .news-thumb {
+            width: 120px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .news-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .news-title {
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.4;
+            color: #ffffff;
+            margin: 0;
+        }
+        .news-meta {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        .news-meta span {
+            color: #c9a86a;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+            border-top: 1px solid #1a2744;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        /* Responsive HP */
+        @media screen and (max-width: 480px) {
+            .headline-title {
+                font-size: 18px;
             }
-            header h2 {
-                font-size: 16px !important;
+            .news-thumb {
+                width: 100px;
+                height: 80px;
             }
-            nav a {
-                font-size: 13px !important;
-            }
-            h1 {
-                font-size: 22px !important;
-                margin-top: 10px !important;
-            }
-            main {
-                padding: 20px !important;
-            }
-            div[style*="max-width: 1200px"], .container {
-                padding: 0 10px !important;
-                margin: 15px auto !important;
+            .news-title {
+                font-size: 14px;
             }
         }
     </style>
 </head>
-<body style="background: #0b111e; color: #ffffff; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+<body>
 
     <!-- HEADER / NAVBAR -->
-    <header style="background: #111a2e; border-bottom: 1px solid #c9a86a; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center;">
-        <h2 style="margin: 0;"><a href="index.html" style="color: #c9a86a; text-decoration: none;">KONADI MEDIA</a></h2>
-        <nav>
-            <a href="index.html" style="color: #cbd5e1; text-decoration: none; font-weight: bold;">← Kembali ke Beranda</a>
-        </nav>
+    <header>
+        <h2><a href="index.html">KONADI MEDIA</a></h2>
     </header>
 
-    <!-- LAYOUT UTAMA DUA KOLOM -->
+    <!-- KONTEN UTAMA -->
     <div class="container">
-        
-        <!-- KOLOM KIRI: ARTIKEL UTAMA -->
-        <main>
-            <span class="kategori">LEGENDA GAYO</span>
-            <h1>Putri Pukes, Sang Ratu dari Negeri Gayo</h1>
-            <p style="color: #94a3b8; font-size: 14px; margin-top: 5px;">Dipublikasikan oleh Konadi Media | Tanah Gayo</p>
-            
-            <!-- Foto Utama Artikel -->
-            <div style="margin-top: 20px;">
-                <img src="putripukes.jpg" alt="Putri Pukes" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; border: 1px solid #334155;">
-            </div>
 
-            <!-- Isi Artikel -->
-            <div style="color: #cbd5e1; margin-top: 20px; font-size: 16px;">
-                <p>
-                    Kisah Putri Pukes merupakan salah satu legenda rakyat yang paling terkenal di dataran tinggi Gayo, Aceh Tengah. Cerita ini berkaitan erat dengan asal-usul terbentuknya sebuah objek wisata sejarah dan batu bernilai magis di kawasan Danau Lut Tawar.
-                </p>
-                <p>
-                    Konon pada zaman dahulu, hiduplah seorang putri raja yang dikenal dengan nama Putri Pukes. Ia dijodohkan dengan seorang pangeran dari kerajaan tetangga. Meskipun awalnya perjodohan ini diatur oleh adat dan orang tua, seiring berjalan waktu keduanya saling mengasihi.
-                </p>
-                <p>
-                    Singkat cerita, tibalah hari di mana Putri Pukes harus meninggalkan istana orang tuanya untuk mengikuti suaminya ke negeri seberang. Sebelum berangkat, ibunya berpesan satu hal yang sangat penting: <em>"Selama di perjalanan menuju istana suamimu, jangan sekali-kali menoleh ke belakang untuk melihat istana atau kampung halamanmu."</em>
-                </p>
-                <p>
-                    Rombongan pun berjalan meninggalkan istana. Namun, di tengah perjalanan, rasa rindu yang amat mendalam serta suara tangis ibunda yang memanggil dari kejauhan membuat hati Putri Pukes goyah. Melanggar pesan ibunya, ia pun menolehkan kepalanya ke belakang.
-                </p>
-                <p>
-                    Seketika itu juga, kutukan dari pelanggaran sumpah adat pun terjadi. Konon, cuaca mendadak berubah buruk disertai petir menyambar, dan tubuh Putri Pukes perlahan-lahan berubah menjadi batu keras. Hingga kini, batu yang menyerupai wujud manusia di dalam sebuah gua di dataran Gayo tersebut diyakini oleh masyarakat setempat sebagai wujud dari Putri Pukes.
-                </p>
+        <!-- HEADLINE / BERITA UTAMA -->
+        <a href="danauluttawar.html" class="headline-card">
+            <img src="danauluttawar.jpg" alt="Danau Lut Tawar" class="headline-img">
+            <div class="headline-content">
+                <h1 class="headline-title">Asal Usul Danau Lut Tawar dan Legenda Masyarakat Gayo</h1>
+                <div class="news-meta">BY <span>KONADI MEDIA</span> • 11 September 2026</div>
             </div>
+        </a>
 
-            <!-- Tombol Bagikan / Sosmed di Bawah Artikel -->
-            <div style="margin-top: 30px; border-top: 1px solid #334155; padding-top: 20px;">
-                <p style="color: #ffffff; font-weight: bold; margin-bottom: 12px;">Bagikan Cerita Ini:</p>
-                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://radenkonady.github.io/Konadi-Media/putripukes.html" target="_blank" style="background: #1877f2; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">Facebook</a>
-                    <a href="https://api.whatsapp.com/send?text=Baca%20Kisah%20Putri%20Pukes%20di%20Konadi%20Media:%20https://radenkonady.github.io/Konadi-Media/putripukes.html" target="_blank" style="background: #25d366; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">WhatsApp</a>
-                    <a href="https://t.me/share/url?url=https://radenkonady.github.io/Konadi-Media/putripukes.html&text=Putri%20Pukes%20Negeri%20Gayo" target="_blank" style="background: #0088cc; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">Telegram</a>
+        <!-- BERITA TERKINI -->
+        <div class="section-title">Berita Terkini</div>
+
+        <div class="news-list">
+            <!-- Berita 1 -->
+            <a href="putripukes.html" class="news-item">
+                <img src="putripukes.jpg" alt="Putri Pukes" class="news-thumb">
+                <div class="news-info">
+                    <h2 class="news-title">Putri Pukes, Sang Ratu dari Negeri Gayo yang Dikutuk Menjadi Batu</h2>
+                    <div class="news-meta">BY <span>KONADI MEDIA</span> • 11 September 2026</div>
                 </div>
-            </div>
-        </main>
+            </a>
 
-        <!-- KOLOM KANAN: SIDEBAR -->
-        <aside>
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
-                    <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 16px;">Cerita Gayo Lainnya</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                        <li>
-                            <a href="danauluttawar.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block;">
-                                🌊 Asal Usul Danau Lut Tawar
-                            </a>
-                        </li>
-                    </ul>
+            <!-- Berita 2 (Nanti bisa ditambah file HTML lainnya kalau ada) -->
+            <a href="danauluttawar.html" class="news-item">
+                <img src="danauluttawar.jpg" alt="Cerita Gayo" class="news-thumb">
+                <div class="news-info">
+                    <h2 class="news-title">Mengenal Lebih Dekat Sejarah dan Budaya Tanah Gayo di Aceh Tengah</h2>
+                    <div class="news-meta">BY <span>KONADI MEDIA</span> • 10 September 2026</div>
                 </div>
-            </div>
-        </aside>
+            </a>
+        </div>
+
     </div>
 
     <!-- FOOTER -->
-    <footer style="text-align: center; padding: 30px; color: #94a3b8; border-top: 1px solid #1a2744; margin-top: 50px;">
+    <footer>
         <p>&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita.</p>
     </footer>
 
