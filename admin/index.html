@@ -19,5 +19,14 @@
       });
     }
   </script>
+  
+  <!-- Tambahkan inisialisasi APIUrl ini -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.init({
+        APIUrl: "https://dynamic-bonbon-8526fa.netlify.app/.netlify/identity"
+      });
+    }
+  </script>
 </body>
 </html>

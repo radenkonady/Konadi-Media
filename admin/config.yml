@@ -2,7 +2,6 @@ backend:
   name: git-gateway
   branch: main
 
-# Tambahkan baris ini agar terhubung ke Netlify Identity
 site_url: https://dynamic-bonbon-8526fa.netlify.app
 
 media_folder: "images"
@@ -11,7 +10,7 @@ public_folder: "/images"
 collections:
   - name: "berita"
     label: "Berita Gayo"
-    folder: "berita" # Ubah dari string kosong "" menjadi folder penyimpanan
+    folder: "berita"
     create: true
     extension: "html"
     format: "frontmatter"
