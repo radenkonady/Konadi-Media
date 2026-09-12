@@ -38,24 +38,24 @@
 header::after {
     content: "";
     position: absolute;
-    top: 0;
-    width: 140px; /* Lebar area sudut */
-    height: 100%;
+    top: 6px; /* Menurunkan seluruh kotak bingkai ornamen ke bawah sejauh 6px */
+    width: 140px;
+    height: calc(100% - 6px); /* Menyesuaikan tinggi agar bagian bawahnya tetap pas */
     background-image: url("kerawang.png");
     background-repeat: no-repeat;
-    background-size: 280px auto; /* Lebar total gambar background diperbesar agar kedua sisi pas */
+    background-size: 280px auto;
     pointer-events: none;
     z-index: 1;
 }
 
 header::before {
     left: 0;
-    background-position: left 15px; /* Menggeser ornamen kiri ke bawah sejauh 15px */
+    background-position: left top;
 }
 
 header::after {
     right: 0;
-    background-position: right 15px; /* Menggeser ornamen kanan ke bawah sejauh 15px */
+    background-position: right top;
 }
 
         .header-content {
