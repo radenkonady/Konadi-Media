@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: radenkonady/Konadi-Media
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "berita"
+    label: "Berita Gayo"
+    folder: "" 
+    create: true
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Tanggal Publikasi", name: "date", widget: "datetime"}
+      - {label: "Gambar Utama", name: "image", widget: "image"}
+      - {label: "Isi Berita", name: "body", widget: "markdown"}
