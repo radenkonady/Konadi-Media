@@ -2,6 +2,7 @@ backend:
   name: github
   repo: radenkonady/Konadi-Media
   branch: main
+  base_url: https://api.netlify.com # Biarkan atau sesuaikan
 
 media_folder: "images"
 public_folder: "/images"
