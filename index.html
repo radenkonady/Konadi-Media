@@ -34,28 +34,28 @@
             overflow: hidden;
         }
 
-       header::before,
+      header::before,
 header::after {
     content: "";
     position: absolute;
     top: 0;
-    width: 180px; /* Lebar area diperbesar supaya gambarnya lebih kelihatan */
+    width: 140px; /* Lebar area sudut */
     height: 100%;
     background-image: url("kerawang.png");
     background-repeat: no-repeat;
-    background-size: 220px auto; /* Perbesar ukuran gambar ornamennya */
+    background-size: 280px auto; /* Lebar total gambar background diperbesar agar kedua sisi pas */
     pointer-events: none;
     z-index: 1;
 }
 
 header::before {
-    left: -20px; /* Geser sedikit ke kiri agar pas di sudut */
-    background-position: top left;
+    left: 0;
+    background-position: left top; /* Mengambil sisi kiri dari gambar kerawang.png */
 }
 
 header::after {
-    right: -20px; /* Geser sedikit ke kanan agar pas di sudut */
-    background-position: top right;
+    right: 0;
+    background-position: right top; /* Mengambil sisi kanan dari gambar kerawang.png */
 }
 
         .header-content {
