@@ -38,9 +38,9 @@
 header::after {
     content: "";
     position: absolute;
-    top: 3px; /* Dikecilkan dari 6px agar posisinya naik ke atas sedikit lagi */
+    top: 0; /* Menempel persis di garis paling atas */
     width: 140px;
-    height: calc(100% - 3px);
+    height: 100%;
     background-image: url("kerawang.png");
     background-repeat: no-repeat;
     background-size: 280px auto;
@@ -50,12 +50,12 @@ header::after {
 
 header::before {
     left: 0;
-    background-position: left top;
+    background-position: left 0; /* Menempel rapat di sudut atas-kiri */
 }
 
 header::after {
     right: 0;
-    background-position: right top;
+    background-position: right 0; /* Menempel rapat di sudut atas-kanan */
 }
 
         .header-content {
