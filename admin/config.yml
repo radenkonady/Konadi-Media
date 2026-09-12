@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: radenkonady/Konadi-Media
+  name: git-gateway
   branch: main
-  site_domain: radenkonady.github.io
 
 media_folder: "images"
 public_folder: "/images"
