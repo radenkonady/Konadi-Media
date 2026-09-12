@@ -117,7 +117,18 @@ header::after {
 /* Ukuran khusus saat dibuka di laptop/komputer */
 @media (min-width: 768px) {
     nav a {
-font-size: 16px !important;
+        font-size: 16px !important;
+    }
+    
+    /* TAMBAHAN UNTUK SLIDER PC */
+    .hero-container-pc {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .hero-slider {
+        border-radius: 0 !important;
+        height: 480px !important;
     }
 }
         nav a:hover, nav a.active {
@@ -289,8 +300,8 @@ font-size: 16px !important;
 </nav>
 
     <!-- HERO SLIDER INTERAKTIF -->
-    <div style="max-width: 1150px; margin: 40px auto; padding: 0 20px;">
-        <div class="hero-slider" style="position: relative; width: 100%; height: 380px; overflow: hidden; border-radius: 12px; background: #0b111e;">
+    <div class="hero-container-pc">
+        <div class="hero-slider" style="position: relative; width: 100%; height: 450px; overflow: hidden; border-radius: 0; background: #0b111e;">
             
             <!-- Slide 1: Danau Lut Tawar -->
             <a href="danauluttawar.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('danauluttawar.jpg'); text-decoration: none;">
