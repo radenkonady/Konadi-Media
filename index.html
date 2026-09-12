@@ -16,53 +16,53 @@
         }
 
        html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 60px;
-}
+            scroll-behavior: smooth;
+            scroll-padding-top: 60px;
+        }
 
         body {
             background-color: #071116;
             color: #ffffff;
         }
 
-        /* HEADER & ORNAMEN KERAWANG GAYO (DIPERBAIKI AGAR BISA GESER KIRI) */
+        /* HEADER */
         header {
             position: relative;
             background-color: #071116;
             border-bottom: 1px solid #1f293d;
-          padding: 15px 20px 15px 70px;
+            padding: 15px 20px 15px 70px;
             overflow: hidden;
         }
 
-     header::before,
-header::after {
-    content: "";
-    position: absolute;
-    top: 0; /* Menempel persis di garis paling atas */
-    width: 140px;
-    height: 100%;
-    background-image: url("kerawang.png");
-    background-repeat: no-repeat;
-    background-size: 280px auto;
-    pointer-events: none;
-    z-index: 1;
-}
+        header::before,
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 140px;
+            height: 100%;
+            background-image: url("kerawang.png");
+            background-repeat: no-repeat;
+            background-size: 280px auto;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-header::before {
-    left: 0;
-    background-position: left 0; /* Menempel rapat di sudut atas-kiri */
-}
+        header::before {
+            left: 0;
+            background-position: left 0;
+        }
 
-header::after {
-    right: 0;
-    background-position: right 0; /* Menempel rapat di sudut atas-kanan */
-}
+        header::after {
+            right: 0;
+            background-position: right 0;
+        }
 
         .header-content {
             position: relative;
             z-index: 2;
             display: flex;
-            justify-content: flex-start; /* Membuat konten bergeser ke kiri */
+            justify-content: flex-start;
             align-items: center;
             max-width: 100%;
             margin: 0;
@@ -80,19 +80,7 @@ header::after {
             object-fit: contain;
         }
 
-        .logo-text h1 {
-            font-size: 25px;
-            letter-spacing: 1px;
-            color: #fff;
-        }
-
-       .logo-text p {
-    font-size: 11px; /* Sesuaikan ukuran font teks kecil */
-    color: #d9a441; /* Warna kuning */
-    letter-spacing: 0.5px;
-}
-
-        /* NAVBAR / MENU UTAMA */
+        /* NAVBAR */
         nav {
             display: flex;
             justify-content: center;
@@ -106,43 +94,24 @@ header::after {
             z-index: 999;
         }
 
-      nav a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 16px; /* Diubah jadi 16px untuk ukuran PC */
-    font-weight: normal;
-    transition: color 0.3s;
-}
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
 
-/* Ukuran khusus saat dibuka di laptop/komputer */
-@media (min-width: 768px) {
-    nav a {
-        font-size: 16px !important;
-    }
-    
-    /* TAMBAHAN UNTUK SLIDER PC */
-    .hero-container-pc {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    .hero-slider {
-        border-radius: 0 !important;
-        height: 480px !important;
-    }
-}
         nav a:hover, nav a.active {
             color: #d9a441;
         }
 
-
-   /* SECTION KONTEN */
-.section-container {
-    max-width: 1220px; /* Lebar maksimal diperbesar sedikit agar sisi kiri-kanan lebih melebar keluar */
-    margin: 0 auto;
-    padding-left: 15px; /* Mengurangi padding kiri agar kotak berita di kiri lebih bergeser ke pinggir */
-    padding-right: 15px; /* Mengurangi padding kanan agar kotak video di kanan lebih bergeser ke pinggir */
-}
+        /* SECTION KONTEN */
+        .section-container {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
 
         .section-title {
             font-size: 20px;
@@ -152,38 +121,6 @@ header::after {
             padding-left: 10px;
         }
 
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #0e1721;
-            border: 1px solid #1f293d;
-            border-radius: 8px;
-            padding: 25px;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #d9a441;
-        }
-
-        .card h3 {
-            color: #d9a441;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #94a3b8;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
-        /* TENTANG & KONTAK BOX */
         .info-box {
             background: #0e1721;
             border: 1px solid #1f293d;
@@ -194,7 +131,6 @@ header::after {
             font-size: 14px;
         }
 
-        /* SOSIAL MEDIA LIST STYLE */
         .social-links {
             display: flex;
             flex-wrap: wrap;
@@ -216,20 +152,6 @@ header::after {
             gap: 10px;
         }
 
-        .social-item i {
-            font-size: 16px;
-        }
-
-        .social-item.yt:hover { border-color: #ff0000; color: #ff0000; }
-        .social-item.ig:hover { border-color: #e1306c; color: #e1306c; }
-        .social-item.tt:hover { border-color: #25f4ee; color: #25f4ee; }
-        .social-item.fb:hover { border-color: #1877f2; color: #1877f2; }
-
-        .social-item:hover {
-            transform: translateY(-3px);
-        }
-
-        /* FOOTER */
         footer {
             background-color: #071116;
             color: #94a3b8;
@@ -240,116 +162,61 @@ header::after {
             font-size: 13px;
         }
 
-        footer p {
-            margin-bottom: 8px;
+        @media screen and (max-width: 768px) {
+            nav { gap: 12px !important; padding: 12px 5px !important; }
+            nav a { font-size: 13px !important; }
         }
-@media screen and (max-width: 768px) {
-    .logo-text h1 {
-        font-size: 18px !important;
-    }
-    .logo-text p {
-        font-size: 12px !important;
-    }
-    
-    /* Pengaturan menu navigasi khusus HP agar pas dan sebaris */
-    nav {
-        gap: 12px !important;
-        padding: 12px 5px !important;
-    }
-    nav a, .nav-links a, header nav a {
-        font-size: 13px !important;
-        margin: 0 !important;
-    }
-
-    /* TAMBAHAN: Mengatur ukuran judul & isi artikel di HP */
-    main h1, h1 {
-        font-size: 22px !important;
-        line-height: 1.3 !important;
-    }
-
-    main p, p {
-        font-size: 15px !important;
-        line-height: 1.6 !important;
-    }
-}
     </style>
 </head>
 <body>
 
     <!-- HEADER -->
-  <header style="text-align: center; padding: 20px 15px; position: relative;">
-    <div class="header-content" style="display: flex; justify-content: center; align-items: center;">
-        
-        <!-- Grup Logo & Teks yang berdampingan dan pas di tengah -->
-        <div class="logo-area" style="display: flex; align-items: center; gap: 12px; text-align: left;">
-            <img src="logokonadimedia.PNG" alt="Logo Konadi Media" class="logo-img" style="height: 38px; width: auto;">
-            
-           <div class="logo-text">
-                <h1 style="font-size: 18px; margin: 0; font-weight: bold; line-height: 1.2; color: #fff;">KONADI MEDIA</h1>
-                <p style="font-size: 11px; margin: 2px 0 0 0; color: #d9a441;">Merekam Jejak, Merawat Cerita.</p>
+    <header style="text-align: center; padding: 20px 15px; position: relative;">
+        <div class="header-content" style="display: flex; justify-content: center; align-items: center;">
+            <div class="logo-area" style="display: flex; align-items: center; gap: 12px; text-align: left;">
+                <img src="logokonadimedia.PNG" alt="Logo Konadi Media" class="logo-img" style="height: 38px; width: auto;">
+               <div class="logo-text">
+                    <h1 style="font-size: 18px; margin: 0; font-weight: bold; line-height: 1.2; color: #fff;">KONADI MEDIA</h1>
+                    <p style="font-size: 11px; margin: 2px 0 0 0; color: #d9a441;">Merekam Jejak, Merawat Cerita.</p>
+                </div>
             </div>
         </div>
+    </header>
 
-    </div>
-</header>
+    <!-- NAVBAR -->
+    <nav class="main-nav">
+        <a href="#" class="active">Beranda</a>
+        <a href="#berita">Berita Gayo</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
 
-<nav class="main-nav" style="position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 20px; padding: 15px 10px; background: #111a2e; border-bottom: 1px solid #c9a86a;">
-    <a href="#" class="active" style="color: #c9a86a; text-decoration: none; font-weight: normal;">Beranda</a>
-    <a href="#berita" style="color: #cbd5e1; text-decoration: none; font-weight: normal;">Berita Gayo</a>
-    <a href="#tentang" style="color: #cbd5e1; text-decoration: none; font-weight: normal;">Tentang</a>
-    <a href="#kontak" style="color: #cbd5e1; text-decoration: none; font-weight: normal;">Kontak</a>
-</nav>
-
-    <!-- HERO SLIDER INTERAKTIF -->
-    <div class="hero-container-pc">
-        <div class="hero-slider" style="position: relative; width: 100%; height: 450px; overflow: hidden; border-radius: 0; background: #0b111e;">
-            
-            <!-- Slide 1: Danau Lut Tawar -->
-            <a href="danauluttawar.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('danauluttawar.jpg'); text-decoration: none;">
-                <div style="background: linear-gradient(to top, rgba(11,17,30,0.95), transparent); width: 100%; padding: 25px;">
-                    <span style="background: #c9a86a; color: #0b111e; padding: 4px 10px; font-size: 11px; font-weight: bold; border-radius: 4px;">Pilihan Utama</span>
-                    <h2 style="color: #ffffff; font-size: 20px; margin-top: 8px; line-height: 1.3;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
-                </div>
-            </a>
-
-            <!-- Slide 2: Putri Pukes -->
-            <a href="putripukes.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('putripukes.jpg'); text-decoration: none;">
-                <div style="background: linear-gradient(to top, rgba(11,17,30,0.95), transparent); width: 100%; padding: 25px;">
-                    <span style="background: #c9a86a; color: #0b111e; padding: 4px 10px; font-size: 11px; font-weight: bold; border-radius: 4px;">Budaya Gayo</span>
-                    <h2 style="color: #ffffff; font-size: 20px; margin-top: 8px; line-height: 1.3;">Kisah Legenda Putri Pukes di Tanah Gayo</h2>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <!-- Script Slider Otomatis -->
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.hero-slider .slide');
+    <!-- LAYOUT UTAMA: 2 KOLOM (DENGAN EFEK STICKY DI KANAN) -->
+    <div class="section-container" style="display: flex; gap: 30px; max-width: 1200px; margin: 30px auto; flex-wrap: wrap; align-items: flex-start;">
         
-        function showSlide() {
-            if (slides.length === 0) return;
-            slides.forEach((slide, index) => {
-                slide.style.opacity = (index === currentSlide) ? '1' : '0';
-                slide.style.zIndex = (index === currentSlide) ? '2' : '1';
-            });
-            currentSlide = (currentSlide + 1) % slides.length;
-        }
-        
-        if (slides.length > 0) {
-            showSlide();
-            setInterval(showSlide, 4000);
-        }
-    </script>
-
-<!-- LAYOUT UTAMA DUA KOLOM -->
-    <div id="berita" class="section-container" style="display: flex; gap: 30px; max-width: 1200px; margin: 40px auto; padding: 0 20px; flex-wrap: wrap;">
-        
-        <!-- KOLOM KIRI: KATEGORI & BERITA TERBARU -->
+        <!-- ================= KOLOM KIRI (BERGERAK SAAT SCROLL) ================= -->
         <main style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 20px;">
             
+            <!-- HERO SLIDER DI ATAS -->
+            <div class="hero-slider" style="position: relative; width: 100%; height: 340px; overflow: hidden; border-radius: 8px; border: 1px solid #1f293d; background: #0b111e;">
+                <!-- Slide 1 -->
+                <a href="danauluttawar.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('danauluttawar.jpg'); text-decoration: none;">
+                    <div style="background: linear-gradient(to top, rgba(11,17,30,0.95), transparent); width: 100%; padding: 20px;">
+                        <span style="background: #c9a86a; color: #0b111e; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Pilihan Utama</span>
+                        <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
+                    </div>
+                </a>
+                <!-- Slide 2 -->
+                <a href="putripukes.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('putripukes.jpg'); text-decoration: none;">
+                    <div style="background: linear-gradient(to top, rgba(11,17,30,0.95), transparent); width: 100%; padding: 20px;">
+                        <span style="background: #c9a86a; color: #0b111e; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya Gayo</span>
+                        <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Kisah Legenda Putri Pukes di Tanah Gayo</h2>
+                    </div>
+                </a>
+            </div>
+
             <!-- 1. KATEGORI: GAYO POPULER -->
-            <section>
+            <section id="berita">
                 <h3 style="margin-bottom: 10px; color: #ffffff; font-size: 16px; border-left: 3px solid #c9a86a; padding-left: 8px;">Gayo Populer</h3>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
                     <a href="danauluttawar.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
@@ -375,6 +242,15 @@ header::after {
                             <p style="color: #94a3b8; font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Konon pada zaman dahulu di Tanah Gayo, Aceh Tengah, hiduplah seorang putri bangsawan...</p>
                         </div>
                     </a>
+
+                    <a href="berita/sejarah-kopi-gayo-perjalanan-panjang-warisan-tanah-tinggi-dari-dataran-aceh-ke-panggung-dunia.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
+                        <img src="images/gemini_generated_image_atbj1ratbj1ratbj.jpg" alt="Sejarah Kopi Gayo" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
+                        <div style="display: flex; flex-direction: column; gap: 3px;">
+                            <span style="background: #c9a86a; color: #0b111e; padding: 1px 5px; border-radius: 3px; font-weight: bold; font-size: 9px; width: fit-content;">Sejarah</span>
+                            <h2 style="color: #ffffff; font-size: 13px; line-height: 1.2;">Sejarah Kopi Gayo: Perjalanan Panjang Warisan Tanah Tinggi</h2>
+                            <p style="color: #94a3b8; font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Menelusuri jejak perjalanan kopi Gayo dari dataran Aceh hingga ke panggung dunia.</p>
+                        </div>
+                    </a>
                 </div>
             </section>
 
@@ -395,8 +271,8 @@ header::after {
 
         </main>
         
-        <!-- KOLOM KANAN: SIDEBAR (Video YouTube Pilihan) -->
-        <aside style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px;">
+        <!-- ================= KOLOM KANAN: STICKY SIDEBAR (DIAM SAAT SCROLL SEBELUM HABIS) ================= -->
+        <aside style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 20px; position: sticky; top: 85px;">
             
             <!-- Video 1 -->
             <div style="background: #121824; padding: 20px; border-radius: 12px; border: 1px solid #1f293d;">
@@ -441,75 +317,28 @@ header::after {
 
     </div>
 
-            <!-- Widget Cerita Gayo Lainnya -->
-            <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a;">
-                <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 15px; font-size: 18px;">Cerita Gayo Lainnya</h3>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                    <li>
-                        <a href="danauluttawar.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; line-height: 1.4;">
-                            ✨ Asal Usul Danau Lut Tawar dan Legenda Masyarakat Gayo
-                        </a>
-                    </li>
-                    <li><hr style="border: 0; border-top: 1px solid #22304d; margin: 0;"></li>
-                    <li>
-                       <a href="berita/sejarah-kopi-gayo-perjalanan-panjang-warisan-tanah-tinggi-dari-dataran-aceh-ke-panggung-dunia.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; line-height: 1.4;">
-                            ☕ Sejarah Kopi Gayo yang Mendunia dan Filosofinya
-                        </a>
-                    </li>
-                    <li><hr style="border: 0; border-top: 1px solid #22304d; margin: 0;"></li>
-                    <li>
-                        <a href="#" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; line-height: 1.4;">
-                            💃 Mengenal Tari Saman, Warisan Budaya Tak Benda Dunia
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Kotak Sidebar Sosmed / Follow Us -->
-            <div style="background: #111a2e; padding: 20px; border-radius: 12px; border: 1px solid #c9a86a; text-align: center;">
-                <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 18px;">Ikuti Konadi Media</h3>
-                <p style="color: #94a3b8; font-size: 13px; margin-bottom: 15px;">Dapatkan update cerita dan budaya Gayo terbaru.</p>
-                <div style="display: flex; justify-content: center; gap: 12px;">
-                    <a href="https://www.youtube.com/@konadimedia" target="_blank" title="YouTube" style="color: #ff0000; background: #1a2744; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 18px; border: 1px solid #2a3a5a; transition: 0.3s;">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://www.instagram.com/radenkonady" target="_blank" title="Instagram" style="color: #e1306c; background: #1a2744; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 18px; border: 1px solid #2a3a5a; transition: 0.3s;">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/konadi.arietanoga" target="_blank" title="Facebook" style="color: #1877f2; background: #1a2744; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 18px; border: 1px solid #2a3a5a; transition: 0.3s;">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@radenkonady" target="_blank" title="TikTok" style="color: #25f4ee; background: #1a2744; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 18px; border: 1px solid #2a3a5a; transition: 0.3s;">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
-                </div>
-            </div>
-
-        </aside>
-
-    </div>
-
-    <!-- BERITA SECTION -->
-    <div class="section-container" id="berita">
-        <h3 class="section-title">Berita & Informasi Terbaru</h3>
-        <div class="grid-cards">
-            <div class="card">
-                <h3>Gayo Populer</h3>
-                <p>Kabar atau topik yang sedang hangat dan banyak dibicarakan di wilayah Gayo.</p>
-            </div>
-            <a href="sejarah-adat.html" class="card" style="text-decoration: none; display: block; color: inherit;">
-                <h3>Sejarah & Adat</h3>
-                <p>Menelusuri jejak masa lalu, asal-usul, serta tatanan adat istiadat masyarakat Gayo.</p>
-            </a>
-            <div class="card">
-                <h3>Budaya & Seni</h3>
-                <p>Mengenal kekayaan seni tradisional, tarian khas, dan kearifan lokal tanah Gayo.</p>
-            </div>
-        </div>
-    </div>
+    <!-- Script Slider Otomatis -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slider .slide');
+        
+        function showSlide() {
+            if (slides.length === 0) return;
+            slides.forEach((slide, index) => {
+                slide.style.opacity = (index === currentSlide) ? '1' : '0';
+                slide.style.zIndex = (index === currentSlide) ? '2' : '1';
+            });
+            currentSlide = (currentSlide + 1) % slides.length;
+        }
+        
+        if (slides.length > 0) {
+            showSlide();
+            setInterval(showSlide, 4000);
+        }
+    </script>
 
     <!-- TENTANG KAMI -->
-    <div class="section-container" id="tentang">
+    <div class="section-container" id="tentang" style="margin-bottom: 40px;">
         <h3 class="section-title">Tentang Konadi Media</h3>
         <div class="info-box">
             <p>Konadi Media hadir sebagai platform media digital yang berfokus untuk merekam jejak, merawat cerita, serta mengangkat potensi budaya, sejarah, pariwisata, dan informasi aktual dari dataran tinggi Gayo ke kancah yang lebih luas.</p>
@@ -517,25 +346,23 @@ header::after {
     </div>
 
     <!-- KONTAK & SOSIAL MEDIA -->
-    <div class="section-container" id="kontak">
+    <div class="section-container" id="kontak" style="margin-bottom: 40px;">
         <h3 class="section-title">Kontak & Media Sosial</h3>
         <div class="info-box">
             <p>Punya info menarik, masukan, atau ingin bekerja sama? Hubungi dan ikuti saluran resmi kami:</p>
-            <p style="color: #d9a441; margin-top: 10px; font-weight: bold;">Email: <a href="mailto:tvkonadi@gmail.com" style="color: #c9a86a; text-decoration: underline;">tvkonadi@gmail.com</a> | WhatsApp: <a href="https://wa.me/6282165707607" target="_blank" style="color: #c9a86a; text-decoration: underline;">0821-6570-7607</a></p>
+            <p style="color: #d9a441; margin-top: 10px; font-weight: bold;">Email: <a href="mailto:tvkonadi@gmail.com" style="color: #c9a86a;">tvkonadi@gmail.com</a> | WhatsApp: <a href="https://wa.me/6282165707607" target="_blank" style="color: #c9a86a;">0821-6570-7607</a></p>
             
-            <!-- DAFTAR MEDIA SOSIAL DENGAN LINK AKTIF -->
-            <!-- DAFTAR MEDIA SOSIAL DENGAN LINK AKTIF -->
             <div class="social-links">
-                <a href="https://www.youtube.com/@konadimedia" target="_blank" class="social-item yt">
+                <a href="https://www.youtube.com/@konadimedia" target="_blank" class="social-item">
                     <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Konadi Media
                 </a>
-                <a href="https://www.instagram.com/radenkonady" target="_blank" class="social-item ig">
+                <a href="https://www.instagram.com/radenkonady" target="_blank" class="social-item">
                     <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> @radenkonady
                 </a>
-                <a href="https://www.tiktok.com/@radenkonady" target="_blank" class="social-item tt">
+                <a href="https://www.tiktok.com/@radenkonady" target="_blank" class="social-item">
                     <i class="fa-brands fa-tiktok" style="color: #25f4ee;"></i> @raden konadi
                 </a>
-                <a href="https://www.facebook.com/konadi.arietanoga" target="_blank" class="social-item fb">
+                <a href="https://www.facebook.com/konadi.arietanoga" target="_blank" class="social-item">
                     <i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Raden Konadi
                 </a>
             </div>
