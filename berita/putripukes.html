@@ -5,50 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo - Konadi Media</title>
     <link rel="icon" type="image/png" href="../logokonadimedia.PNG">
+    <!-- PUSTAKA IKON SOSIAL MEDIA (FONTAWESOME) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SKRIP OTOMATIS MENYESUAIKAN TEMA DARI HALAMAN UTAMA -->
+    <script>
+        if (localStorage.getItem('konadi_theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
     <style>
-        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; }
+        /* VARIABEL TEMA (DEFAULT: LIGHT MODE) */
+        :root {
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-main: #1f2937;
+            --text-sub: #6b7280;
+            --border-color: #e5e7eb;
+            --accent-color: #dc2626;
+            --nav-bg: #ffffff;
+            --nav-text: #4b5563;
+        }
+
+        /* JIKA KELAS DARK-MODE AKTIF DARI HALAMAN UTAMA */
+        html.dark-mode {
+            --bg-body: #071116;
+            --bg-card: #0e1721;
+            --text-main: #ffffff;
+            --text-sub: #94a3b8;
+            --border-color: #1f293d;
+            --accent-color: #d9a441;
+            --nav-bg: #071116;
+            --nav-text: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 30px auto; 
+            padding: 0 20px; 
+            display: flex; 
+            gap: 30px; 
+            flex-wrap: wrap; 
+            align-items: flex-start; 
+        }
         
-        main { flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        main { 
+            flex: 2; 
+            min-width: 300px; 
+            background: var(--bg-card); 
+            padding: 30px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
         
         aside { 
             flex: 0 0 260px; 
-            background: #111a2e; 
+            background: var(--bg-card); 
             padding: 20px; 
             border-radius: 12px; 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border: 1px solid var(--border-color); 
             position: sticky; 
-            top: 20px; 
+            top: 85px; 
             height: fit-content; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
-        h1 { color: #ffffff; font-size: 24px; line-height: 1.3; margin-top: 15px; }
-        .kategori { background: rgba(255, 255, 255, 0.1); color: #ffffff; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        h1 { color: var(--text-main); font-size: 24px; line-height: 1.3; margin-top: 15px; }
+        
+        .kategori { 
+            background: var(--bg-body); 
+            color: var(--accent-color); 
+            border: 1px solid var(--border-color);
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            font-size: 12px; 
+            text-transform: uppercase;
+        }
+        
         p { line-height: 1.8; margin-bottom: 20px; text-align: justify; }
-        a.back { display: inline-block; margin-bottom: 20px; color: #ffffff; opacity: 0.8; text-decoration: none; font-weight: bold; }
-        a.back:hover { opacity: 1; text-decoration: underline; }
 
         @media screen and (max-width: 768px) {
             header {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: center !important;
                 padding: 12px 15px !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-            }
-            header h2 {
-                font-size: 16px !important;
-            }
-            nav a {
-                font-size: 13px !important;
             }
             h1 {
-                font-size: 22px !important;
+                font-size: 20px !important;
                 margin-top: 10px !important;
             }
             main {
                 padding: 20px !important;
             }
-            div[style*="max-width: 1200px"], .container {
+            .container {
                 padding: 0 10px !important;
                 margin: 15px auto !important;
             }
@@ -60,13 +123,13 @@
         }
     </style>
 </head>
-<body style="background: #0b111e; color: #ffffff; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+<body>
 
-    <!-- HEADER / NAVBAR -->
-    <header style="background: #111a2e; border-bottom: 1px solid #c9a86a; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center;">
-        <h2 style="margin: 0;"><a href="../index.html" style="color: #c9a86a; text-decoration: none;">KONADI MEDIA</a></h2>
+    <!-- HEADER / NAVBAR (Hanya ada Logo & Tombol Beranda) -->
+    <header style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 999;">
+        <h2 style="margin: 0;"><a href="../index.html" style="color: var(--accent-color); text-decoration: none; font-size: 18px;">KONADI MEDIA</a></h2>
         <nav>
-            <a href="../index.html" style="color: #cbd5e1; text-decoration: none; font-weight: bold;">← Kembali ke Beranda</a>
+            <a href="../index.html" style="color: var(--nav-text); text-decoration: none; font-weight: 600; font-size: 14px;"><i class="fa-solid fa-arrow-left"></i> Beranda</a>
         </nav>
     </header>
 
@@ -75,19 +138,19 @@
         
         <!-- KOLOM KIRI: ARTIKEL UTAMA -->
         <main>
-            <span class="kategori">LEGENDA GAYO</span>
-            <h1 style="font-size: 20px; color: #ffffff; margin-top: 15px; line-height: 1.3;">Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo</h1>
-            <p style="color: #94a3b8; font-size: 14px; margin-top: 5px; margin-bottom: 20px;">
+            <span class="kategori">Legenda Gayo</span>
+            <h1>Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo</h1>
+            <p style="color: var(--text-sub); font-size: 13px; margin-top: 5px; margin-bottom: 20px;">
                 Dipublikasikan oleh Konadi Media | 11 September 2026 | Dilihat <span id="view-count">0</span> kali
             </p>
             
-            <!-- Foto Utama Artikel (Sudah Diperbaiki pakai ../images/) -->
+            <!-- Foto Utama Artikel -->
             <div style="margin-top: 20px;">
-                <img src="../images/putripukes.jpg" alt="Putri Pukes" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; border: 1px solid #334155;">
+                <img src="../images/putripukes.jpg" alt="Putri Pukes" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color);">
             </div>
 
             <!-- Isi Artikel -->
-            <div style="color: #cbd5e1; margin-top: 20px; font-size: 16px;">
+            <div style="color: var(--text-main); margin-top: 20px; font-size: 15px;">
                 <p>Konon pada zaman dahulu di Tanah Gayo, Aceh Tengah, hiduplah seorang putri bangsawan bernama Putri Pukes yang berasal dari Kampung Nosar. Ia baru saja melangsungkan pernikahan dengan seorang pemuda baik hati keturunan saudagar kaya asal Samar Kilang, sebuah daerah yang berjarak cukup jauh dari kampung halamannya.</p>
 
                 <p>Sesuai dengan adat istiadat Gayo yang berlaku saat itu, seorang perempuan yang telah menikah wajib mengikuti suami dan tinggal menetap di kampung halaman sang suami selamanya. Hal ini membuat hati Putri Pukes dirundung kesedihan yang mendalam. Ia merasa berat harus berpisah dan meninggalkan ayah serta ibunya tercinta.</p>
@@ -102,12 +165,12 @@
             </div>
 
             <!-- Tombol Bagikan / Sosmed di Bawah Artikel -->
-            <div style="margin-top: 30px; border-top: 1px solid #334155; padding-top: 20px;">
-                <p style="color: #ffffff; font-weight: bold; margin-bottom: 12px;">Bagikan Cerita Ini:</p>
+            <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                <p style="color: var(--text-main); font-weight: bold; margin-bottom: 12px; font-size: 14px;">Bagikan Cerita Ini:</p>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://radenkonady.github.io/Konadi-Media/berita/putripukes.html" target="_blank" style="background: #1877f2; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">Facebook</a>
-                    <a href="https://api.whatsapp.com/send?text=Baca%20Kisah%20Putri%20Pukes%20di%20Konadi%20Media:%20https://radenkonady.github.io/Konadi-Media/berita/putripukes.html" target="_blank" style="background: #25d366; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">WhatsApp</a>
-                    <a href="https://t.me/share/url?url=https://radenkonady.github.io/Konadi-Media/berita/putripukes.html&text=Putri%20Pukes%20Negeri%20Gayo" target="_blank" style="background: #0088cc; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold;">Telegram</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://radenkonady.github.io/Konadi-Media/berita/putripukes.html" target="_blank" style="background: #1877f2; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold;">Facebook</a>
+                    <a href="https://api.whatsapp.com/send?text=Baca%20Kisah%20Putri%20Pukes%20di%20Konadi%20Media:%20https://radenkonady.github.io/Konadi-Media/berita/putripukes.html" target="_blank" style="background: #25d366; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold;">WhatsApp</a>
+                    <a href="https://t.me/share/url?url=https://radenkonady.github.io/Konadi-Media/berita/putripukes.html&text=Putri%20Pukes%20Negeri%20Gayo" target="_blank" style="background: #0088cc; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold;">Telegram</a>
                 </div>
             </div>
         </main>
@@ -116,11 +179,11 @@
         <aside>
             <div style="display: flex; flex-direction: column; gap: 15px;">
                 
-                <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 0; font-size: 16px;">Video Pilihan</h3>
+                <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-bottom: 0; font-size: 14px; font-weight: bold;">Video Pilihan</h3>
 
                 <!-- Video 1 -->
-                <div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid #334155;">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 8px; font-weight: bold;">Ceramah Tengku Husaini Sasa</p>
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold;">Ceramah Tengku Husaini Sasa</p>
                     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
                         <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
                                 title="YouTube video player" frameborder="0" 
@@ -132,8 +195,8 @@
                 </div>
 
                 <!-- Video 2 -->
-                <div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid #334155;">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 8px; font-weight: bold;">Ceramah Tengku Irwansyah</p>
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold;">Ceramah Tengku Irwansyah</p>
                     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
                         <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
                                 title="YouTube video player" frameborder="0" 
@@ -145,8 +208,8 @@
                 </div>
 
                 <!-- Video 3 -->
-                <div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 8px; font-weight: bold;">Samadiah & Doa - Tengku Syakirin</p>
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold;">Samadiah & Doa - Tengku Syakirin</p>
                     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
                         <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
                                 title="YouTube video player" frameborder="0" 
@@ -157,12 +220,12 @@
                     </div>
                 </div>
 
-                <!-- Kotak Cerita Gayo Lainnya (Sudah diperbaiki linknya) -->
-                <div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid #334155; margin-top: 5px;">
-                    <h3 style="color: #c9a86a; border-bottom: 2px solid #c9a86a; padding-bottom: 8px; margin-bottom: 12px; font-size: 16px;">Cerita Gayo Lainnya</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                <!-- Kotak Cerita Gayo Lainnya -->
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 5px;">
+                    <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-bottom: 10px; font-size: 14px; font-weight: bold;">Cerita Gayo Lainnya</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
                         <li>
-                            <a href="danauluttawar.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; padding: 4px 0;">
+                            <a href="danauluttawar.html" style="color: var(--text-sub); text-decoration: none; font-size: 13px; display: block; padding: 2px 0;">
                                 🌊 Asal Usul Danau Lut Tawar
                             </a>
                         </li>
@@ -175,11 +238,12 @@
     </div>
 
     <!-- FOOTER -->
-    <footer style="text-align: center; width: 100%; padding: 30px 0; color: #94a3b8; border-top: 1px solid #1a2744; margin-top: 50px;">
-        <p style="margin: 0;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita.</p>
+    <footer style="background-color: var(--bg-card); color: var(--text-sub); padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--border-color); text-align: center; font-size: 13px;">
+        <p style="margin: 0;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
 
     <script>
+        // Penghitung Views Artikel
         let views = localStorage.getItem('putri_pukes_views') || 0;
         views++;
         localStorage.setItem('putri_pukes_views', views);
