@@ -4,34 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konadi Media - Merekam Jejak, Merawat Cerita</title>
-    <!-- FICON & LOGO DI ROOT FOLDER -->
+    <!-- FAVICON & LOGO DI ROOT FOLDER -->
     <link rel="icon" type="image/png" href="logokonadimedia.PNG">
     <!-- PUSTAKA IKON SOSIAL MEDIA (FONTAWESOME) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* VARIABEL TEMA (DEFAULT: LIGHT MODE) */
+        :root {
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-main: #1f2937;
+            --text-sub: #6b7280;
+            --border-color: #e5e7eb;
+            --accent-color: #dc2626;
+            --nav-bg: #ffffff;
+            --nav-text: #4b5563;
+        }
+
+        /* JIKA KELAS DARK-MODE AKTIF PADA HTML */
+        html.dark-mode {
+            --bg-body: #071116;
+            --bg-card: #0e1721;
+            --text-main: #ffffff;
+            --text-sub: #94a3b8;
+            --border-color: #1f293d;
+            --accent-color: #d9a441;
+            --nav-bg: #071116;
+            --nav-text: #cbd5e1;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
-       html {
+        html {
             scroll-behavior: smooth;
             scroll-padding-top: 60px;
         }
 
         body {
-            background-color: #071116;
-            color: #ffffff;
+            background-color: var(--bg-body);
+            color: var(--text-main);
         }
 
-        /* HEADER */
+        /* HEADER DENGAN ORNAMEN WARNA ASLI (OPACITY 1) */
         header {
             position: relative;
-            background-color: #071116;
-            border-bottom: 1px solid #1f293d;
-            padding: 15px 20px 15px 70px;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 15px;
             overflow: hidden;
         }
 
@@ -47,6 +72,7 @@
             background-size: 280px auto;
             pointer-events: none;
             z-index: 1;
+            opacity: 1; /* Warna asli ditampilkan penuh tanpa transparan */
         }
 
         header::before {
@@ -63,7 +89,7 @@
             position: relative;
             z-index: 2;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             max-width: 100%;
             margin: 0;
@@ -76,7 +102,7 @@
         }
 
         .logo-img {
-            height: 75px;
+            height: 38px;
             width: auto;
             object-fit: contain;
         }
@@ -85,25 +111,49 @@
         nav {
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             gap: 25px;
-            background-color: #071116;
-            border-bottom: 1px solid #1f293d;
-            padding: 15px 20px;
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 20px;
             position: sticky;
             top: 0;
             z-index: 999;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         nav a {
-            color: #cbd5e1;
+            color: var(--nav-text);
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
         nav a:hover, nav a.active {
-            color: #d9a441;
+            color: var(--accent-color);
+        }
+
+        /* TOMBOL TEMA LEBIH KECIL & COMPACT */
+        .theme-toggle-btn {
+            background: var(--bg-body);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            margin-left: 10px;
+        }
+        .theme-toggle-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
 
         /* SECTION KONTEN */
@@ -115,65 +165,75 @@
         }
 
         .section-title {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #ffffff;
-            border-left: 4px solid #d9a441;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            border-left: 4px solid var(--accent-color);
             padding-left: 10px;
+            font-weight: bold;
         }
 
         .info-box {
-            background: #0e1721;
-            border: 1px solid #1f293d;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 30px;
-            color: #94a3b8;
+            color: var(--text-sub);
             line-height: 1.7;
             font-size: 14px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
         footer {
-            background-color: #071116;
-            color: #94a3b8;
+            background-color: var(--bg-card);
+            color: var(--text-sub);
             padding: 40px 20px;
             margin-top: 60px;
-            border-top: 1px solid #1f293d;
+            border-top: 1px solid var(--border-color);
             text-align: center;
             font-size: 13px;
         }
 
         @media screen and (max-width: 768px) {
-            nav { gap: 12px !important; padding: 12px 5px !important; }
+            nav { gap: 12px !important; padding: 10px 5px !important; }
             nav a { font-size: 13px !important; }
-            
             aside {
                 flex: 1 1 100% !important;
                 width: 100% !important;
+            }
+            .theme-toggle-btn {
+                padding: 4px 8px;
+                font-size: 11px;
+                margin-left: 5px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header style="text-align: center; padding: 20px 15px; position: relative;">
-        <div class="header-content" style="display: flex; justify-content: center; align-items: center;">
-            <div class="logo-area" style="display: flex; align-items: center; gap: 12px; text-align: left;">
-                <img src="logokonadimedia.PNG" alt="Logo Konadi Media" class="logo-img" style="height: 38px; width: auto;">
+    <!-- HEADER DENGAN ORNAMEN WARNA ASLI -->
+    <header>
+        <div class="header-content">
+            <div class="logo-area">
+                <img src="logokonadimedia.PNG" alt="Logo Konadi Media" class="logo-img">
                <div class="logo-text">
-                    <h1 style="font-size: 18px; margin: 0; font-weight: bold; line-height: 1.2; color: #fff;">KONADI MEDIA</h1>
-                    <p style="font-size: 11px; margin: 2px 0 0 0; color: #d9a441;">Merekam Jejak, Merawat Cerita.</p>
+                    <h1 style="font-size: 18px; margin: 0; font-weight: bold; line-height: 1.2; color: var(--text-main);">KONADI MEDIA</h1>
+                    <p style="font-size: 11px; margin: 2px 0 0 0; color: var(--accent-color); font-weight: bold;">Merekam Jejak, Merawat Cerita.</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR DENGAN TOMBOL TEMA COMPACT -->
     <nav class="main-nav">
         <a href="#" class="active">Beranda</a>
         <a href="#berita">Berita Gayo</a>
         <a href="#tentang">Tentang</a>
         <a href="#kontak">Kontak</a>
+        <!-- TOMBOL TEMA -->
+        <button id="themeToggle" class="theme-toggle-btn" onclick="toggleTheme()">
+            <i id="themeIcon" class="fa-solid fa-moon"></i> <span id="themeText">Dark</span>
+        </button>
     </nav>
 
     <!-- LAYOUT UTAMA: 2 KOLOM -->
@@ -183,18 +243,18 @@
         <main style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 20px;">
             
             <!-- HERO SLIDER DI ATAS -->
-            <div class="hero-slider" style="position: relative; width: 100%; height: 340px; overflow: hidden; border-radius: 8px; border: 1px solid #1f293d; background: #0b111e;">
+            <div class="hero-slider" style="position: relative; width: 100%; height: 340px; overflow: hidden; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                 <!-- Slide 1 -->
                 <a href="berita/danauluttawar.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('images/danauluttawar.jpg'); text-decoration: none;">
-                    <div style="background: linear-gradient(to top, rgba(11,17,30,0.95), transparent); width: 100%; padding: 20px;">
-                        <span style="background: #c9a86a; color: #0b111e; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Pilihan Utama</span>
+                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px;">
+                        <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Pilihan Utama</span>
                         <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
                     </div>
                 </a>
                 <!-- Slide 2 -->
                 <a href="berita/putripukes.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('images/putripukes.jpg'); text-decoration: none;">
-                    <div style="background: linear-gradient(to top, rgba(11,17,30,0.95), transparent); width: 100%; padding: 20px;">
-                        <span style="background: #c9a86a; color: #0b111e; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya Gayo</span>
+                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px;">
+                        <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya Gayo</span>
                         <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Kisah Legenda Putri Pukes di Tanah Gayo</h2>
                     </div>
                 </a>
@@ -202,14 +262,14 @@
 
             <!-- 1. KATEGORI: GAYO POPULER -->
             <section id="berita">
-                <h3 style="margin-bottom: 10px; color: #ffffff; font-size: 16px; border-left: 3px solid #c9a86a; padding-left: 8px;">Gayo Populer</h3>
+                <h3 class="section-title">Gayo Populer</h3>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="berita/danauluttawar.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
+                    <a href="berita/danauluttawar.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 8px; transition: 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
                         <img src="images/danauluttawar.jpg" alt="Danau Lut Tawar" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
                         <div style="display: flex; flex-direction: column; gap: 3px;">
-                            <span style="background: #c9a86a; color: #0b111e; padding: 1px 5px; border-radius: 3px; font-weight: normal; font-size: 9px; width: fit-content;">Populer</span>
-                            <h2 style="color: #ffffff; font-size: 13px; line-height: 1.2; font-weight: normal;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
-                            <p style="color: #94a3b8; font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Menikmati keindahan alam panorama Danau Lut Tawar serta menyelisik legenda mendalam.</p>
+                            <span style="color: var(--accent-color); font-weight: bold; font-size: 9px; text-transform: uppercase;">Populer</span>
+                            <h2 style="color: var(--text-main); font-size: 13px; line-height: 1.2; font-weight: 600;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
+                            <p style="color: var(--text-sub); font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Menikmati keindahan alam panorama Danau Lut Tawar serta menyelisik legenda mendalam.</p>
                         </div>
                     </a>
                 </div>
@@ -217,23 +277,23 @@
  
            <!-- 2. KATEGORI: SEJARAH & ADAT -->
             <section>
-                <h3 style="margin-bottom: 10px; color: #ffffff; font-size: 16px; border-left: 3px solid #c9a86a; padding-left: 8px;">Sejarah & Adat</h3>
+                <h3 class="section-title">Sejarah & Adat</h3>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="berita/putripukes.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
+                    <a href="berita/putripukes.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 8px; transition: 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
                         <img src="images/putripukes.jpg" alt="Sejarah Adat" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
                         <div style="display: flex; flex-direction: column; gap: 3px;">
-                            <span style="background: #c9a86a; color: #0b111e; padding: 1px 5px; border-radius: 3px; font-weight: normal; font-size: 9px; width: fit-content;">Sejarah</span>
-                            <h2 style="color: #ffffff; font-size: 13px; line-height: 1.2; font-weight: normal;">Legenda Putri Pukes & Asal-Usul Danau Laut Tawar</h2>
-                            <p style="color: #94a3b8; font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Konon pada zaman dahulu di Tanah Gayo, Aceh Tengah, hiduplah seorang putri bangsawan...</p>
+                            <span style="color: var(--accent-color); font-weight: bold; font-size: 9px; text-transform: uppercase;">Sejarah</span>
+                            <h2 style="color: var(--text-main); font-size: 13px; line-height: 1.2; font-weight: 600;">Legenda Putri Pukes & Asal-Usul Danau Laut Tawar</h2>
+                            <p style="color: var(--text-sub); font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Konon pada zaman dahulu di Tanah Gayo, Aceh Tengah, hiduplah seorang putri bangsawan...</p>
                         </div>
                     </a>
 
-                    <a href="berita/sejarah-kopi-gayo-perjalanan-panjang-warisan-tanah-tinggi-dari-dataran-aceh-ke-panggung-dunia.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
+                    <a href="berita/sejarah-kopi-gayo-perjalanan-panjang-warisan-tanah-tinggi-dari-dataran-aceh-ke-panggung-dunia.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 8px; transition: 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
                         <img src="images/gemini_generated_image_atbj1ratbj1ratbj.jpg" alt="Sejarah Kopi Gayo" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
                         <div style="display: flex; flex-direction: column; gap: 3px;">
-                            <span style="background: #c9a86a; color: #0b111e; padding: 1px 5px; border-radius: 3px; font-weight: normal; font-size: 9px; width: fit-content;">Sejarah</span>
-                            <h2 style="color: #ffffff; font-size: 13px; line-height: 1.2; font-weight: normal;">Sejarah Kopi Gayo: Perjalanan Panjang Warisan Tanah Tinggi</h2>
-                            <p style="color: #94a3b8; font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Menelusuri jejak perjalanan kopi Gayo dari dataran Aceh hingga ke panggung dunia.</p>
+                            <span style="color: var(--accent-color); font-weight: bold; font-size: 9px; text-transform: uppercase;">Sejarah</span>
+                            <h2 style="color: var(--text-main); font-size: 13px; line-height: 1.2; font-weight: 600;">Sejarah Kopi Gayo: Perjalanan Panjang Warisan Tanah Tinggi</h2>
+                            <p style="color: var(--text-sub); font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Menelusuri jejak perjalanan kopi Gayo dari dataran Aceh hingga ke panggung dunia.</p>
                         </div>
                     </a>
                 </div>
@@ -241,14 +301,14 @@
 
             <!-- 3. KATEGORI: BUDAYA & SENI -->
             <section>
-                <h3 style="margin-bottom: 10px; color: #ffffff; font-size: 16px; border-left: 3px solid #c9a86a; padding-left: 8px;">Budaya & Seni</h3>
+                <h3 class="section-title">Budaya & Seni</h3>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="berita/sejarah-adat.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
+                    <a href="berita/sejarah-adat.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 8px; transition: 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
                         <img src="images/kerawang.png" alt="Budaya Seni" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
                         <div style="display: flex; flex-direction: column; gap: 3px;">
-                            <span style="background: #c9a86a; color: #0b111e; padding: 1px 5px; border-radius: 3px; font-weight: normal; font-size: 9px; width: fit-content;">Budaya</span>
-                            <h2 style="color: #ffffff; font-size: 13px; line-height: 1.2; font-weight: normal;">Mengenal Kekayaan Seni Tradisional & Kerawang Gayo</h2>
-                            <p style="color: #94a3b8; font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Mengenal kekayaan seni tradisional, tarian khas, dan kearifan lokal tanah Gayo.</p>
+                            <span style="color: var(--accent-color); font-weight: bold; font-size: 9px; text-transform: uppercase;">Budaya</span>
+                            <h2 style="color: var(--text-main); font-size: 13px; line-height: 1.2; font-weight: 600;">Mengenal Kekayaan Seni Tradisional & Kerawang Gayo</h2>
+                            <p style="color: var(--text-sub); font-size: 11px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Mengenal kekayaan seni tradisional, tarian khas, dan kearifan lokal tanah Gayo.</p>
                         </div>
                     </a>
                 </div>
@@ -259,31 +319,31 @@
         <!-- ================= KOLOM KANAN: SIDEBAR ================= -->
         <aside style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 15px; position: sticky; top: 85px;">
             <!-- Video 1 -->
-            <div style="background: #121824; padding: 12px; border-radius: 10px; border: 1px solid #1f293d;">
-                <p style="color: #ffffff; font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid #d9a441; padding-bottom: 3px;">Ceramah Tengku Husaini Sasa</p>
+            <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
+                <p style="color: var(--text-main); font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid var(--accent-color); padding-bottom: 3px;">Ceramah Tengku Husaini Sasa</p>
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px;">
                     <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
                 </div>
             </div>
             <!-- Video 2 -->
-            <div style="background: #121824; padding: 12px; border-radius: 10px; border: 1px solid #1f293d;">
-                <p style="color: #ffffff; font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid #d9a441; padding-bottom: 3px;">Ceramah Tengku Irwansyah</p>
+            <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
+                <p style="color: var(--text-main); font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid var(--accent-color); padding-bottom: 3px;">Ceramah Tengku Irwansyah</p>
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px;">
                     <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
                 </div>
             </div>
             <!-- Video 3 -->
-            <div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                <p style="color: #ffffff; font-size: 13px; margin-bottom: 8px; font-weight: bold;">Samadiah & Doa - Tengku Syakirin</p>
-                <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                    <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;"></iframe>
+            <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
+                <p style="color: var(--text-main); font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid var(--accent-color); padding-bottom: 3px;">Samadiah & Doa - Tengku Syakirin</p>
+                <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px;">
+                    <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
                 </div>
             </div>
         </aside>
 
     </div>
 
-    <!-- Script Slider Otomatis -->
+    <!-- Script Slider & Toggle Tema -->
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slider .slide');
@@ -301,6 +361,33 @@
             showSlide();
             setInterval(showSlide, 4000);
         }
+
+        function toggleTheme() {
+            const htmlTag = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+
+            htmlTag.classList.toggle('dark-mode');
+
+            if (htmlTag.classList.contains('dark-mode')) {
+                themeIcon.className = "fa-solid fa-sun";
+                themeText.innerText = "Light";
+                localStorage.setItem('konadi_theme', 'dark');
+            } else {
+                themeIcon.className = "fa-solid fa-moon";
+                themeText.innerText = "Dark";
+                localStorage.setItem('konadi_theme', 'light');
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('konadi_theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+                document.getElementById('themeIcon').className = "fa-solid fa-sun";
+                document.getElementById('themeText').innerText = "Light";
+            }
+        });
     </script>
 
     <!-- TENTANG KAMI -->
@@ -315,24 +402,24 @@
     <div class="section-container" id="kontak" style="margin-bottom: 48px;">
         <h3 class="section-title">Kontak & Media Sosial</h3>
         <div class="info-box" style="text-align: center;">
-            <p style="color: #ffffff; font-size: 14px; line-height: 1.5; margin-bottom: 12px;">
+            <p style="color: var(--text-main); font-size: 14px; line-height: 1.5; margin-bottom: 12px; font-weight: 500;">
                 Punya info menarik, masukan, atau ingin bekerja sama? Hubungi dan ikuti saluran resmi kami:
             </p>
-            <p style="color: #94a3b8; font-size: 13px; margin-bottom: 20px;">
-                <strong style="color: #ffffff;">Email:</strong> <a href="mailto:tvkonadi@gmail.com" style="color: #38bdf8; text-decoration: none;">tvkonadi@gmail.com</a> &nbsp;|&nbsp; 
-                <strong style="color: #ffffff;">WhatsApp:</strong> <a href="https://wa.me/6282165707607" style="color: #38bdf8; text-decoration: none;">0821-6570-7607</a>
+            <p style="color: var(--text-sub); font-size: 13px; margin-bottom: 20px;">
+                <strong style="color: var(--text-main);">Email:</strong> <a href="mailto:tvkonadi@gmail.com" style="color: #2563eb; text-decoration: none;">tvkonadi@gmail.com</a> &nbsp;|&nbsp; 
+                <strong style="color: var(--text-main);">WhatsApp:</strong> <a href="https://wa.me/6282165707607" style="color: #2563eb; text-decoration: none;">0821-6570-7607</a>
             </p>
             <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-                <a href="https://www.youtube.com/@konadimedia" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
+                <a href="https://www.youtube.com/@konadimedia" target="_blank" style="background: var(--bg-body); color: var(--text-main); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid var(--border-color); display: inline-flex; align-items: center; gap: 8px; font-weight: 600;">
                     <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 15px;"></i> Konadi Media
                 </a>
-                <a href="https://www.instagram.com/radenkonady" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
+                <a href="https://www.instagram.com/radenkonady" target="_blank" style="background: var(--bg-body); color: var(--text-main); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid var(--border-color); display: inline-flex; align-items: center; gap: 8px; font-weight: 600;">
                     <i class="fa-brands fa-instagram" style="color: #e1306c; font-size: 15px;"></i> @radenkonady
                 </a>
-                <a href="https://www.tiktok.com/@radenkonady" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
-                    <i class="fa-brands fa-tiktok" style="color: #ffffff; font-size: 15px;"></i> @raden konadi
+                <a href="https://www.tiktok.com/@radenkonady" target="_blank" style="background: var(--bg-body); color: var(--text-main); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid var(--border-color); display: inline-flex; align-items: center; gap: 8px; font-weight: 600;">
+                    <i class="fa-brands fa-tiktok" style="font-size: 15px;"></i> @raden konadi
                 </a>
-                <a href="https://www.facebook.com/konadi.arietanoga" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
+                <a href="https://www.facebook.com/konadi.arietanoga" target="_blank" style="background: var(--bg-body); color: var(--text-main); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid var(--border-color); display: inline-flex; align-items: center; gap: 8px; font-weight: 600;">
                     <i class="fa-brands fa-facebook" style="color: #1877f2; font-size: 15px;"></i> Raden Konadi
                 </a>
             </div>
