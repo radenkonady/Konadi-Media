@@ -7,25 +7,27 @@
     <link rel="icon" type="image/png" href="logokonadimedia.PNG">
     <style>
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; }
-        main { flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid #c9a86a; }
         
-        /* SIDEBAR STICKY DIHALAMAN ARTIKEL */
+        /* Ubah border kuning emas jadi putih transparan ala kaca (glassmorphism) */
+        main { flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        /* SIDEBAR STICKY DI HALAMAN ARTIKEL */
         aside { 
             flex: 0 0 260px; 
             background: #111a2e; 
             padding: 20px; 
             border-radius: 12px; 
-            border: 1px solid #c9a86a; 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
             position: sticky; 
             top: 20px; 
             height: fit-content; 
         }
 
         h1 { color: #ffffff; font-size: 24px; line-height: 1.3; margin-top: 15px; }
-        .kategori { background: #c9a86a; color: #0b111e; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        .kategori { background: rgba(255, 255, 255, 0.1); color: #ffffff; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; }
         p { line-height: 1.8; margin-bottom: 20px; text-align: justify; }
-        a.back { display: inline-block; margin-bottom: 20px; color: #c9a86a; text-decoration: none; font-weight: bold; }
-        a.back:hover { text-decoration: underline; }
+        a.back { display: inline-block; margin-bottom: 20px; color: #ffffff; opacity: 0.8; text-decoration: none; font-weight: bold; }
+        a.back:hover { opacity: 1; text-decoration: underline; }
 
         @media screen and (max-width: 768px) {
             header {
@@ -33,6 +35,7 @@
                 justify-content: space-between !important;
                 align-items: center !important;
                 padding: 12px 15px !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
             }
             header h2 {
                 font-size: 16px !important;
@@ -51,7 +54,8 @@
                 padding: 0 10px !important;
                 margin: 15px auto !important;
             }
-           aside {
+            /* Aturan agar di HP sidebar turun dan lebarnya pas 100% */
+            aside {
                 flex: 1 1 100% !important;
                 width: 100% !important;
                 position: static !important;
