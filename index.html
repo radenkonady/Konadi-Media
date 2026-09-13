@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konadi Media - Merekam Jejak, Merawat Cerita</title>
+    <!-- FICON & LOGO DI ROOT FOLDER -->
     <link rel="icon" type="image/png" href="logokonadimedia.PNG">
     <!-- PUSTAKA IKON SOSIAL MEDIA (FONTAWESOME) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -131,27 +132,6 @@
             font-size: 14px;
         }
 
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-item {
-            background: #16222f;
-            border: 1px solid #2a3a5a;
-            padding: 10px 18px;
-            border-radius: 6px;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 13px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
         footer {
             background-color: #071116;
             color: #94a3b8;
@@ -166,7 +146,6 @@
             nav { gap: 12px !important; padding: 12px 5px !important; }
             nav a { font-size: 13px !important; }
             
-            /* Tambahan untuk sidebar di HP */
             aside {
                 flex: 1 1 100% !important;
                 width: 100% !important;
@@ -197,23 +176,23 @@
         <a href="#kontak">Kontak</a>
     </nav>
 
-    <!-- LAYOUT UTAMA: 2 KOLOM (DENGAN EFEK STICKY DI KANAN) -->
+    <!-- LAYOUT UTAMA: 2 KOLOM -->
     <div class="section-container" style="display: flex; gap: 30px; max-width: 1200px; margin: 30px auto; flex-wrap: wrap; align-items: flex-start;">
         
-        <!-- ================= KOLOM KIRI (BERGERAK SAAT SCROLL) ================= -->
+        <!-- ================= KOLOM KIRI ================= -->
         <main style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 20px;">
             
             <!-- HERO SLIDER DI ATAS -->
             <div class="hero-slider" style="position: relative; width: 100%; height: 340px; overflow: hidden; border-radius: 8px; border: 1px solid #1f293d; background: #0b111e;">
                 <!-- Slide 1 -->
-                <a href="berita/danauluttawar.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('danauluttawar.jpg'); text-decoration: none;">
+                <a href="berita/danauluttawar.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('images/danauluttawar.jpg'); text-decoration: none;">
                     <div style="background: linear-gradient(to top, rgba(11,17,30,0.95), transparent); width: 100%; padding: 20px;">
                         <span style="background: #c9a86a; color: #0b111e; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Pilihan Utama</span>
                         <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
                     </div>
                 </a>
                 <!-- Slide 2 -->
-                <a href="berita/berita/putripukes.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('putripukes.jpg'); text-decoration: none;">
+                <a href="berita/putripukes.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('images/putripukes.jpg'); text-decoration: none;">
                     <div style="background: linear-gradient(to top, rgba(11,17,30,0.95), transparent); width: 100%; padding: 20px;">
                         <span style="background: #c9a86a; color: #0b111e; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya Gayo</span>
                         <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Kisah Legenda Putri Pukes di Tanah Gayo</h2>
@@ -225,8 +204,8 @@
             <section id="berita">
                 <h3 style="margin-bottom: 10px; color: #ffffff; font-size: 16px; border-left: 3px solid #c9a86a; padding-left: 8px;">Gayo Populer</h3>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="berita/berita/danauluttawar.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
-                        <img src="danauluttawar.jpg" alt="Danau Lut Tawar" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
+                    <a href="berita/danauluttawar.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
+                        <img src="images/danauluttawar.jpg" alt="Danau Lut Tawar" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
                         <div style="display: flex; flex-direction: column; gap: 3px;">
                             <span style="background: #c9a86a; color: #0b111e; padding: 1px 5px; border-radius: 3px; font-weight: normal; font-size: 9px; width: fit-content;">Populer</span>
                             <h2 style="color: #ffffff; font-size: 13px; line-height: 1.2; font-weight: normal;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
@@ -264,8 +243,8 @@
             <section>
                 <h3 style="margin-bottom: 10px; color: #ffffff; font-size: 16px; border-left: 3px solid #c9a86a; padding-left: 8px;">Budaya & Seni</h3>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="#" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
-                        <img src="kerawang.png" alt="Budaya Seni" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
+                    <a href="berita/sejarah-adat.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: #0e1721; border: 1px solid #1f293d; border-radius: 6px; padding: 8px; transition: 0.3s;">
+                        <img src="images/kerawang.png" alt="Budaya Seni" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
                         <div style="display: flex; flex-direction: column; gap: 3px;">
                             <span style="background: #c9a86a; color: #0b111e; padding: 1px 5px; border-radius: 3px; font-weight: normal; font-size: 9px; width: fit-content;">Budaya</span>
                             <h2 style="color: #ffffff; font-size: 13px; line-height: 1.2; font-weight: normal;">Mengenal Kekayaan Seni Tradisional & Kerawang Gayo</h2>
@@ -277,48 +256,29 @@
 
         </main>
         
-        <!-- ================= KOLOM KANAN: STICKY SIDEBAR (DIAM SAAT SCROLL) ================= -->
+        <!-- ================= KOLOM KANAN: SIDEBAR ================= -->
         <aside style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 15px; position: sticky; top: 85px;">
-            
             <!-- Video 1 -->
             <div style="background: #121824; padding: 12px; border-radius: 10px; border: 1px solid #1f293d;">
                 <p style="color: #ffffff; font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid #d9a441; padding-bottom: 3px;">Ceramah Tengku Husaini Sasa</p>
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px;">
-                    <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
-                            title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen 
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;">
-                    </iframe>
+                    <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
                 </div>
             </div>
-
             <!-- Video 2 -->
             <div style="background: #121824; padding: 12px; border-radius: 10px; border: 1px solid #1f293d;">
                 <p style="color: #ffffff; font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid #d9a441; padding-bottom: 3px;">Ceramah Tengku Irwansyah</p>
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px;">
-                    <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
-                            title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen 
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;">
-                    </iframe>
+                    <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
                 </div>
             </div>
- 
-            <!-- Video 3: Samadiah & Doa -->
-<div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-    <p style="color: #ffffff; font-size: 13px; margin-bottom: 8px; font-weight: bold;">Samadiah & Doa - Tengku Syakirin</p>
-    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-        <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-        </iframe>
-    </div>
-</div>
-
+            <!-- Video 3 -->
+            <div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="color: #ffffff; font-size: 13px; margin-bottom: 8px; font-weight: bold;">Samadiah & Doa - Tengku Syakirin</p>
+                <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                    <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;"></iframe>
+                </div>
+            </div>
         </aside>
 
     </div>
@@ -351,36 +311,33 @@
         </div>
     </div>
 
- <!-- Bagian Kontak & Media Sosial -->
-<div class="section-container" id="kontak" style="margin-bottom: 48px;">
-    <h3 class="section-title">Kontak & Media Sosial</h3>
-    <div class="info-box" style="text-align: center;">
-        <p style="color: #ffffff; font-size: 14px; line-height: 1.5; margin-bottom: 12px;">
-            Punya info menarik, masukan, atau ingin bekerja sama? Hubungi dan ikuti saluran resmi kami:
-        </p>
-        
-        <p style="color: #94a3b8; font-size: 13px; margin-bottom: 20px;">
-            <strong style="color: #ffffff;">Email:</strong> <a href="mailto:tvkonadi@gmail.com" style="color: #38bdf8; text-decoration: none;">tvkonadi@gmail.com</a> &nbsp;|&nbsp; 
-            <strong style="color: #ffffff;">WhatsApp:</strong> <a href="https://wa.me/6282165707607" style="color: #38bdf8; text-decoration: none;">0821-6570-7607</a>
-        </p>
-
-        <!-- Tombol Sosmed Minimalis (Hanya Ikon + Nama Akun) -->
-        <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-            <a href="https://www.youtube.com/@konadimedia" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
-                <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 15px;"></i> Konadi Media
-            </a>
-            <a href="https://www.instagram.com/radenkonady" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
-                <i class="fa-brands fa-instagram" style="color: #e1306c; font-size: 15px;"></i> @radenkonady
-            </a>
-            <a href="https://www.tiktok.com/@radenkonady" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
-                <i class="fa-brands fa-tiktok" style="color: #ffffff; font-size: 15px;"></i> @raden konadi
-            </a>
-            <a href="https://www.facebook.com/konadi.arietanoga" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
-                <i class="fa-brands fa-facebook" style="color: #1877f2; font-size: 15px;"></i> Raden Konadi
-            </a>
+    <!-- KONTAK & MEDIA SOSIAL -->
+    <div class="section-container" id="kontak" style="margin-bottom: 48px;">
+        <h3 class="section-title">Kontak & Media Sosial</h3>
+        <div class="info-box" style="text-align: center;">
+            <p style="color: #ffffff; font-size: 14px; line-height: 1.5; margin-bottom: 12px;">
+                Punya info menarik, masukan, atau ingin bekerja sama? Hubungi dan ikuti saluran resmi kami:
+            </p>
+            <p style="color: #94a3b8; font-size: 13px; margin-bottom: 20px;">
+                <strong style="color: #ffffff;">Email:</strong> <a href="mailto:tvkonadi@gmail.com" style="color: #38bdf8; text-decoration: none;">tvkonadi@gmail.com</a> &nbsp;|&nbsp; 
+                <strong style="color: #ffffff;">WhatsApp:</strong> <a href="https://wa.me/6282165707607" style="color: #38bdf8; text-decoration: none;">0821-6570-7607</a>
+            </p>
+            <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                <a href="https://www.youtube.com/@konadimedia" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 15px;"></i> Konadi Media
+                </a>
+                <a href="https://www.instagram.com/radenkonady" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fa-brands fa-instagram" style="color: #e1306c; font-size: 15px;"></i> @radenkonady
+                </a>
+                <a href="https://www.tiktok.com/@radenkonady" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fa-brands fa-tiktok" style="color: #ffffff; font-size: 15px;"></i> @raden konadi
+                </a>
+                <a href="https://www.facebook.com/konadi.arietanoga" target="_blank" style="background: #1e293b; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fa-brands fa-facebook" style="color: #1877f2; font-size: 15px;"></i> Raden Konadi
+                </a>
+            </div>
         </div>
     </div>
-</div>
     
     <!-- FOOTER -->
     <footer>
