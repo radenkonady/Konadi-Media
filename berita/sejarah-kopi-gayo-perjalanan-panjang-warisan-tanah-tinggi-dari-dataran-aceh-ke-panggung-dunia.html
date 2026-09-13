@@ -5,44 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sejarah Kopi Gayo: Perjalanan Panjang Warisan Tanah Tinggi - Konadi Media</title>
     <link rel="icon" type="image/png" href="../logokonadimedia.PNG">
+    <!-- PUSTAKA IKON SOSIAL MEDIA (FONTAWESOME) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SKRIP OTOMATIS MENYESUAIKAN TEMA DARI HALAMAN UTAMA -->
+    <script>
+        if (localStorage.getItem('konadi_theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
     <style>
+        /* VARIABEL TEMA (DEFAULT: LIGHT MODE) */
+        :root {
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-main: #1f2937;
+            --text-sub: #6b7280;
+            --border-color: #e5e7eb;
+            --accent-color: #dc2626;
+            --nav-bg: #ffffff;
+            --nav-text: #4b5563;
+        }
+
+        /* JIKA KELAS DARK-MODE AKTIF DARI HALAMAN UTAMA */
+        html.dark-mode {
+            --bg-body: #071116;
+            --bg-card: #0e1721;
+            --text-main: #ffffff;
+            --text-sub: #94a3b8;
+            --border-color: #1f293d;
+            --accent-color: #d9a441;
+            --nav-bg: #071116;
+            --nav-text: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+        }
+
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; }
         
-        main { flex: 2; min-width: 300px; background: #111a2e; padding: 30px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        main { 
+            flex: 2; 
+            min-width: 300px; 
+            background: var(--bg-card); 
+            padding: 30px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
         
         /* EFEK GULIR / STICKY SIDEBAR DI LAYAR BESAR */
         aside { 
             flex: 0 0 260px; 
-            background: #111a2e; 
+            background: var(--bg-card); 
             padding: 20px; 
             border-radius: 12px; 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border: 1px solid var(--border-color); 
             position: sticky; 
-            top: 20px; 
+            top: 85px; 
             height: fit-content; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
-        h1 { color: #ffffff; font-size: 24px; line-height: 1.3; margin-top: 15px; }
-        .kategori { background: rgba(255, 255, 255, 0.1); color: #ffffff; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 12px; }
-        p { line-height: 1.8; margin-bottom: 20px; text-align: justify; color: #cbd5e1; }
+        h1 { color: var(--text-main); font-size: 24px; line-height: 1.3; margin-top: 15px; }
+        
+        .kategori { 
+            background: var(--bg-body); 
+            color: var(--accent-color); 
+            border: 1px solid var(--border-color);
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            font-size: 12px; 
+            text-transform: uppercase;
+        }
+        
+        p { line-height: 1.8; margin-bottom: 20px; text-align: justify; color: var(--text-main); }
         
         /* PENGATURAN RESPONSIF KHUSUS HP */
         @media screen and (max-width: 768px) {
             header {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: center !important;
                 padding: 12px 15px !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-            }
-            header h2 {
-                font-size: 16px !important;
-            }
-            nav a {
-                font-size: 13px !important;
             }
             h1 {
-                font-size: 22px !important;
+                font-size: 20px !important;
                 margin-top: 10px !important;
             }
             main {
@@ -60,13 +117,13 @@
         }
     </style>
 </head>
-<body style="background: #0b111e; color: #ffffff; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+<body>
 
     <!-- HEADER / NAVBAR -->
-    <header style="background: #111a2e; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 15px; display: flex; justify-content: space-between; align-items: center;">
-        <h2 style="margin: 0;"><a href="../index.html" style="color: #ffffff; text-decoration: none;">KONADI MEDIA</a></h2>
+    <header style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 999;">
+        <h2 style="margin: 0;"><a href="../index.html" style="color: var(--accent-color); text-decoration: none; font-size: 18px;">KONADI MEDIA</a></h2>
         <nav>
-            <a href="../index.html" style="color: #cbd5e1; text-decoration: none; font-weight: bold;">← Kembali ke Beranda</a>
+            <a href="../index.html" style="color: var(--nav-text); text-decoration: none; font-weight: 600; font-size: 14px;"><i class="fa-solid fa-arrow-left"></i> Beranda</a>
         </nav>
     </header>
 
@@ -75,30 +132,30 @@
         
         <!-- KOLOM KIRI: ARTIKEL UTAMA -->
         <main>
-            <span class="kategori">SEJARAH & KOPI</span>
+            <span class="kategori">Sejarah & Kopi</span>
             <h1>Sejarah Kopi Gayo: Perjalanan Panjang Warisan Tanah Tinggi dari Dataran Aceh ke Panggung Dunia</h1>
-            <p style="color: #94a3b8; font-size: 14px; margin-top: 5px; margin-bottom: 20px;">
+            <p style="color: var(--text-sub); font-size: 13px; margin-top: 5px; margin-bottom: 20px;">
                 Dipublikasikan oleh Konadi Media | 12 September 2026
             </p>
             
             <!-- Foto Utama Artikel -->
             <div style="margin-top: 20px;">
-                <img src="../images/gemini_generated_image_atbj1ratbj1ratbj.jpg" alt="Sejarah Kopi Gayo" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <img src="../images/gemini_generated_image_atbj1ratbj1ratbj.jpg" alt="Sejarah Kopi Gayo" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color);">
             </div>
 
             <!-- Isi Berita Kopi Gayo -->
-            <div style="margin-top: 20px; font-size: 16px;">
+            <div style="margin-top: 20px; font-size: 15px;">
                 <p>Tanah Gayo di dataran tinggi Aceh bukan hanya terkenal karena keindahan alamnya, tetapi juga karena julukannya sebagai salah satu produsen kopi terbaik di dunia. Di balik kenikmatan secangkir kopi Gayo yang mendunia saat ini, tersimpan sejarah panjang yang melibatkan perjalanan kolonial, ketekunan masyarakat lokal, serta budaya agraris yang mengakar kuat.</p>
 
-                <h3 style="color: #ffffff; border-bottom: 2px solid rgba(255, 255, 255, 0.2); padding-bottom: 6px; margin-top: 25px; margin-bottom: 10px; font-size: 18px;">Masuknya Tanaman Kopi ke Tanah Gayo</h3>
+                <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-top: 25px; margin-bottom: 10px; font-size: 16px; font-weight: bold;">Masuknya Tanaman Kopi ke Tanah Gayo</h3>
                 <p>Sejarah kopi di Dataran Tinggi Gayo (yang meliputi Kabupaten Aceh Tengah, Bener Meriah, dan Gayo Lues) bermula pada masa kolonial Belanda sekitar awal abad ke-20, tepatnya sekitar tahun 1908. Pemerintah kolonial Hindia Belanda mulai membuka perkebunan besar di wilayah Aceh, termasuk membawa bibit kopi Arabika ke dataran tinggi Gayo yang memiliki kontur tanah vulkanik yang sangat subur serta iklim sejuk di ketinggian 1.000 hingga 1.500 meter di atas permukaan laut.</p>
                 <p>Awalnya, Belanda mempekerjakan penduduk lokal untuk mengelola kebun-kebun tersebut. Namun, seiring berjalannya waktu, masyarakat Gayo mulai mengenal tanaman ini dan menanamnya secara mandiri di pekarangan serta kebun rakyat.</p>
 
-                <h3 style="color: #ffffff; border-bottom: 2px solid rgba(255, 255, 255, 0.2); padding-bottom: 6px; margin-top: 25px; margin-bottom: 10px; font-size: 18px;">Berkembangnya Budaya Kopi di Masyarakat</h3>
+                <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-top: 25px; margin-bottom: 10px; font-size: 16px; font-weight: bold;">Berkembangnya Budaya Kopi di Masyarakat</h3>
                 <p>Kopi perlahan-lahan bukan hanya menjadi komoditas ekonomi bagi masyarakat Gayo, melainkan sudah menyatu dengan tradisi sosial sehari-hari. Tradisi ngopi di kedai kopi tradisional atau warkop menjadi ruang interaksi sosial yang penting bagi warga lokal untuk berdiskusi, bermusyawarah, hingga menikmati waktu santai.</p>
                 <p>Metode pengolahan khas masyarakat Gayo, seperti teknik giling basah (semi-washed atau giling basah), turut memberikan karakteristik rasa yang unik pada kopi Gayo—memiliki tingkat keasaman yang rendah, body yang kuat, serta aroma rempah yang khas (earthy).</p>
 
-                <h3 style="color: #ffffff; border-bottom: 2px solid rgba(255, 255, 255, 0.2); padding-bottom: 6px; margin-top: 25px; margin-bottom: 10px; font-size: 18px;">Menembus Pasar Global</h3>
+                <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-top: 25px; margin-bottom: 10px; font-size: 16px; font-weight: bold;">Menembus Pasar Global</h3>
                 <p>Memasuki era modern, kopi Gayo berhasil menembus pasar internasional dan menjadi salah satu produk ekspor unggulan dari Indonesia. Kopi Arabika Gayo bahkan telah mendapatkan sertifikasi Indikasi Geografis (IG) serta diakui oleh berbagai lembaga kopi dunia berkat kualitas rasanya yang luar biasa. Kini, kopi Gayo telah menjadi simbol kebanggaan masyarakat Aceh, membawa nama Tanah Gayo harum di kancah global dari secangkir kopi yang dirawat dengan penuh ketulusan.</p>
             </div>
         </main>
@@ -108,11 +165,11 @@
             <div style="display: flex; flex-direction: column; gap: 15px;">
                 
                 <!-- Judul Widget Sidebar -->
-                <h3 style="color: #ffffff; border-bottom: 2px solid rgba(255, 255, 255, 0.2); padding-bottom: 8px; margin-bottom: 0; font-size: 16px;">Video Pilihan</h3>
+                <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-bottom: 0; font-size: 14px; font-weight: bold;">Video Pilihan</h3>
 
                 <!-- Video 1 -->
-                <div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 8px; font-weight: bold;">Ceramah Tengku Husaini Sasa</p>
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold;">Ceramah Tengku Husaini Sasa</p>
                     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
                         <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
                                 title="YouTube video player" frameborder="0" 
@@ -124,8 +181,8 @@
                 </div>
 
                 <!-- Video 2 -->
-                <div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <p style="color: #ffffff; font-size: 13px; margin-bottom: 8px; font-weight: bold;">Ceramah Tengku Irwansyah</p>
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold;">Ceramah Tengku Irwansyah</p>
                     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
                         <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
                                 title="YouTube video player" frameborder="0" 
@@ -135,30 +192,31 @@
                         </iframe>
                     </div>
                 </div>
-                <!-- Video 3 (Revisi Link Baru) -->
-<div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-    <p style="color: #ffffff; font-size: 13px; margin-bottom: 8px; font-weight: bold;">Samadiah & Doa - Tengku Syakirin</p>
-    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-        <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
-        </iframe>
-    </div>
-</div>
+                
+                <!-- Video 3 -->
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold;">Samadiah & Doa - Tengku Syakirin</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                        </iframe>
+                    </div>
+                </div>
 
                 <!-- Kotak Cerita Gayo Lainnya -->
-                <div style="background: #111a2e; padding: 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); margin-top: 5px;">
-                    <h3 style="color: #ffffff; border-bottom: 2px solid rgba(255, 255, 255, 0.2); padding-bottom: 8px; margin-bottom: 12px; font-size: 16px;">Cerita Gayo Lainnya</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 5px;">
+                    <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-bottom: 10px; font-size: 14px; font-weight: bold;">Cerita Gayo Lainnya</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
                         <li>
-                            <a href="../danauluttawar.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; padding: 4px 0;">
+                            <a href="danauluttawar.html" style="color: var(--text-sub); text-decoration: none; font-size: 13px; display: block; padding: 2px 0;">
                                 🌊 Asal Usul Danau Lut Tawar
                             </a>
                         </li>
                         <li>
-                            <a href="../putripukes.html" style="color: #ffffff; text-decoration: none; font-size: 14px; display: block; padding: 4px 0;">
+                            <a href="putripukes.html" style="color: var(--text-sub); text-decoration: none; font-size: 13px; display: block; padding: 2px 0;">
                                 👑 Legenda Putri Pukes
                             </a>
                         </li>
@@ -171,8 +229,8 @@
     </div>
 
     <!-- FOOTER -->
-    <footer style="text-align: center; width: 100%; padding: 30px 0; color: #94a3b8; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 50px;">
-        <p style="margin: 0;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita.</p>
+    <footer style="background-color: var(--bg-card); color: var(--text-sub); padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--border-color); text-align: center; font-size: 13px;">
+        <p style="margin: 0;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
 
 </body>
