@@ -250,12 +250,12 @@
         <p style="margin: 0; text-align: center; width: 100%;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
 
-    <!-- SKRIP PENGHITUNG GLOBAL (API COUNTER) -->
+    <!-- SKRIP PENGHITUNG GLOBAL (API COUNTER V2) -->
     <script>
-        fetch('https://api.counterapi.dev/v1/konadimedia/sejarahkopi/up')
+        fetch('https://api.counterapi.dev/v2/konadimedia/sejarahkopi/up')
             .then(response => response.json())
             .then(data => {
-                document.getElementById('view-count').innerText = (data.count || 1).toLocaleString();
+                document.getElementById('view-count').innerText = (data.value || 1).toLocaleString();
             })
             .catch(() => {
                 document.getElementById('view-count').innerText = "1";
