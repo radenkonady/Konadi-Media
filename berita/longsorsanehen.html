@@ -263,7 +263,7 @@
                     <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-bottom: 10px; font-size: 14px; font-weight: bold; text-align: left;">Cerita Gayo Lainnya</h3>
                     <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; text-align: left;">
                         <li>
-                            <a href="danauluttawar.html" style="color: var(--text-sub); text-decoration: none; font-size: 13px; display: block; padding: 2px 0;">
+                            <a href="danauluttawar.html" style="color: var(--text-sub); text-navigation: none; font-size: 13px; display: block; padding: 2px 0;">
                                 🌊 Asal Usul Danau Lut Tawar
                             </a>
                         </li>
@@ -285,12 +285,12 @@
         <p style="margin: 0; text-align: center; width: 100%;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
  
-    <!-- SKRIP PENGHITUNG GLOBAL (API COUNTER) -->
+    <!-- SKRIP PENGHITUNG GLOBAL (API COUNTER V2) -->
     <script>
-        fetch('https://api.counterapi.dev/v1/konadimedia/longsorsanehen/up')
+        fetch('https://api.counterapi.dev/v2/konadimedia/longsorsanehen/up')
             .then(response => response.json())
             .then(data => {
-                document.getElementById('view-count').innerText = (data.count || 1).toLocaleString();
+                document.getElementById('view-count').innerText = (data.value || 1).toLocaleString();
             })
             .catch(() => {
                 document.getElementById('view-count').innerText = "1";
