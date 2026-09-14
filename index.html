@@ -207,11 +207,11 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
-        /* PERBAIKAN SLIDER & RESPONSIF TEKS AGAR TIDAK KEPOTONG */
+        /* ================= KODE UTAMA SLIDER YANG DIPERBAIKI (PRESISI) ================= */
         .hero-slider {
             position: relative;
             width: 100%;
-            height: 360px; /* Ditinggikan sedikit agar ruang teks lebih leluasa */
+            height: 360px;
             overflow: hidden;
             border-radius: 8px;
             border: 1px solid var(--border-color);
@@ -221,13 +221,13 @@
 
         .slides-container {
             display: flex;
-            width: 100%;
+            width: 500%; /* Total 5 slide (4 asli + 1 duplikat), jadi total lebar kontainer 500% */
             height: 100%;
             transition: transform 0.6s ease-in-out;
         }
 
         .slide {
-            min-width: 100%;
+            width: 20%; /* Masing-masing slide mendapat tepat 20% dari 500% (artinya selebar penuh layar induk) */
             height: 100%;
             display: flex;
             align-items: flex-end;
@@ -241,7 +241,7 @@
         .slide-content-box {
             background: linear-gradient(to top, rgba(0,0,0,0.92) 25%, rgba(0,0,0,0.6) 75%, transparent);
             width: 100%;
-            padding: 25px 18px 32px 18px; /* Padding bawah ditambah agar teks tidak menabrak titik indikator */
+            padding: 25px 18px 32px 18px;
             box-sizing: border-box;
         }
 
@@ -301,16 +301,16 @@
                 margin-left: 5px;
             }
             .hero-slider {
-                height: 280px; /* Disesuaikan agar lebih proporsional di HP */
+                height: 280px; 
             }
             .slide-content-box {
-                padding: 15px 15px 35px 15px; /* Mengamankan teks dari titik indikator bawah */
+                padding: 15px 15px 35px 15px; 
             }
             .slide-title {
-                font-size: 14px; /* Ukuran ideal di HP */
+                font-size: 14px; 
                 line-height: 1.4;
                 display: -webkit-box;
-                -webkit-line-clamp: 3; /* Membatasi maksimal 3 baris agar tinggi seragam dan rapi */
+                -webkit-line-clamp: 3; 
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
@@ -350,7 +350,7 @@
         <!-- ================= KOLOM KIRI ================= -->
         <main style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 20px;">
             
-            <!-- HERO SLIDER DENGAN EFEK GESER KONSISTEN DARI KANAN -->
+            <!-- HERO SLIDER -->
             <div class="hero-slider">
                 <div class="slides-container" id="slidesContainer">
                     <!-- Slide 1: Berita Terbaru (Longsor Sanehen) -->
@@ -390,7 +390,7 @@
                     </a>
                 </div>
 
-                <!-- Indikator Titik Slider (Jumlah asli ada 4) -->
+                <!-- Indikator Titik Slider -->
                 <div class="slider-dots" id="sliderDots">
                     <span class="dot active" onclick="currentSlideIndex(0)"></span>
                     <span class="dot" onclick="currentSlideIndex(1)"></span>
@@ -402,7 +402,6 @@
             <!-- 1. KATEGORI: GAYO POPULER -->
             <section id="berita">
                 <h3 class="section-title">Gayo Populer</h3>
-                <!-- Berita Longsor Sanehen (Paling Atas di Gayo Populer) -->
                 <a href="berita/longsorsanehen.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; margin-bottom: 8px;">
                     <img src="images/longsorsanehen.jpeg" alt="Longsor Sanehen" style="width: 90px; height: 60px; object-fit: cover; border-radius: 6px; flex-shrink: 0;">                    
                     <div style="display: flex; flex-direction: column; gap: 3px;">
@@ -491,10 +490,10 @@
 
     </div>
 
-    <!-- Script Slider Konsisten Geser ke Kiri & Toggle Tema -->
+    <!-- Script Slider & Tema -->
     <script>
         let currentSlide = 0;
-        const totalRealSlides = 4; // Jumlah asli slide tanpa duplikat
+        const totalRealSlides = 4; 
         const slidesContainer = document.getElementById('slidesContainer');
         const dots = document.querySelectorAll('.slider-dots .dot');
         let slideInterval;
@@ -502,9 +501,8 @@
         function showSlide(index) {
             currentSlide = index;
             slidesContainer.style.transition = "transform 0.6s ease-in-out";
-            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            slidesContainer.style.transform = `translateX(-${currentSlide * (100 / 5)}%)`;
 
-            // Update titik indikator (jika menyentuh indeks ke-4 (duplikat), aktifkan dot pertama ke-0)
             let activeDotIndex = currentSlide % totalRealSlides;
             dots.forEach((dot, i) => {
                 if (i === activeDotIndex) {
@@ -519,13 +517,12 @@
             currentSlide++;
             showSlide(currentSlide);
 
-            // Jika sudah sampai di slide duplikat terakhir (indeks 4), kembalikan secara instan tanpa animasi ke indeks 0
             if (currentSlide === totalRealSlides) {
                 setTimeout(() => {
                     slidesContainer.style.transition = "none";
                     currentSlide = 0;
                     slidesContainer.style.transform = `translateX(0%)`;
-                }, 600); // Waktu jeda harus sama persis dengan durasi transisi CSS (0.6s)
+                }, 600); 
             }
         }
 
@@ -539,7 +536,6 @@
             slideInterval = setInterval(nextSlide, 4000);
         }
 
-        // Jalankan interval otomatis
         slideInterval = setInterval(nextSlide, 4000);
 
         function toggleTheme() {
