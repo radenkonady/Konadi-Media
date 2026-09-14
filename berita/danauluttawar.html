@@ -175,7 +175,7 @@
 
                 <p>Namun, sebuah musibah besar terjadi akibat kelalaian dan pelanggaran terhadap sumpah adat leluhur. Hujan lebat tiada henti disertai gempa mengguncang lembah tersebut hingga akhirnya dataran rendah itu perlahan-lahan tenggelam dan berubah menjadi lautan air tawar yang luas, yang kini kita kenal sebagai Danau Lut Tawar.</p>
 
-                <p>Hingga hari ini, Danau Lut Tawar tetap menjadi jantung kehidupan masyarakat Gayo—memberikan sumber penghidupan, inspirasi seni, hingga penjaga identitas kultural yang terus dirawat dari masa ke masa.</p>
+                <p>Hingga hari ini, Danau Lut Tawar tetap menjadi jantung kehidupan masyarakat Gayo memberikan sumber penghidupan, inspirasi seni, hingga penjaga identitas kultural yang terus dirawat dari masa ke masa.</p>
             </div>
 
             <!-- Tombol Bagikan / Sosmed di Bawah Artikel -->
@@ -241,7 +241,7 @@
                     <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
                         <li>
                             <a href="putripukes.html" style="color: var(--text-sub); text-decoration: none; font-size: 13px; display: block; padding: 2px 0;">
-                                Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo
+                                ⛰️ Legenda Putri Pukes & Kutukan di Balik Tanah Gayo
                             </a>
                         </li>
                     </ul>
@@ -257,12 +257,12 @@
         <p style="margin: 0; text-align: center; width: 100%;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
 
-    <!-- SKRIP PENGHITUNG GLOBAL (API COUNTER) -->
+    <!-- SKRIP PENGHITUNG GLOBAL (API COUNTER V2) -->
     <script>
-        fetch('https://api.counterapi.dev/v1/konadimedia/danauluttawar/up')
+        fetch('https://api.counterapi.dev/v2/konadimedia/danauluttawar/up')
             .then(response => response.json())
             .then(data => {
-                document.getElementById('view-count').innerText = (data.count || 1).toLocaleString();
+                document.getElementById('view-count').innerText = (data.value || 1).toLocaleString();
             })
             .catch(() => {
                 document.getElementById('view-count').innerText = "1";
