@@ -184,7 +184,37 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
-        /* CSS KHUSUS INDIKATOR SLIDER */
+        /* CSS KHUSUS SLIDER BERGESER KONSISTEN DARI KANAN */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .slides-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            background-size: cover;
+            background-position: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        /* INDIKATOR TITIK SLIDER */
         .slider-dots {
             position: absolute;
             bottom: 12px;
@@ -267,38 +297,47 @@
         <!-- ================= KOLOM KIRI ================= -->
         <main style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 20px;">
             
-            <!-- HERO SLIDER DI ATAS DENGAN INDIKATOR -->
-            <div class="hero-slider" style="position: relative; width: 100%; height: 340px; overflow: hidden; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                <!-- Slide 1: Berita Terbaru (Longsor Sanehen) -->
-                <a href="berita/longsorsanehen.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('images/longsorsanehen.jpeg'); text-decoration: none;">
-                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
-                        <span style="background: #dc2626; color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Terbaru &bull; Bencana Alam</span>
-                        <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Hujan Deras, Longsor Hantam Rumah Warga di Sanehen Aceh Tengah</h2>
-                    </div>
-                </a>
-                <!-- Slide 2: Kerawang Gayo -->
-                <a href="berita/kerawanggayo.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('images/fotokerawanggayo.png'); text-decoration: none;">
-                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
-                        <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya & Tradisi</span>
-                        <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Kerawang Gayo : Mahakarya Seni, Filosofi Luhur, dan Identitas Budaya</h2>
-                    </div>
-                </a>
-                <!-- Slide 3: Danau Lut Tawar -->
-                <a href="berita/danauluttawar.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('images/danauluttawar.jpg'); text-decoration: none;">
-                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
-                        <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Pilihan Utama</span>
-                        <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
-                    </div>
-                </a>
-                <!-- Slide 4: Putri Pukes -->
-                <a href="berita/putripukes.html" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-image: url('images/putripukes.jpg'); text-decoration: none;">
-                    <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
-                        <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya Gayo</span>
-                        <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Kisah Legenda Putri Pukes di Tanah Gayo</h2>
-                    </div>
-                </a>
+            <!-- HERO SLIDER DENGAN EFEK GESER KONSISTEN DARI KANAN -->
+            <div class="hero-slider">
+                <div class="slides-container" id="slidesContainer">
+                    <!-- Slide 1: Berita Terbaru (Longsor Sanehen) -->
+                    <a href="berita/longsorsanehen.html" class="slide" style="background-image: url('images/longsorsanehen.jpeg');">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
+                            <span style="background: #dc2626; color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Terbaru &bull; Bencana Alam</span>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Hujan Deras, Longsor Hantam Rumah Warga di Sanehen Aceh Tengah</h2>
+                        </div>
+                    </a>
+                    <!-- Slide 2: Kerawang Gayo -->
+                    <a href="berita/kerawanggayo.html" class="slide" style="background-image: url('images/fotokerawanggayo.png');">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
+                            <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya & Tradisi</span>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Kerawang Gayo : Mahakarya Seni, Filosofi Luhur, dan Identitas Budaya</h2>
+                        </div>
+                    </a>
+                    <!-- Slide 3: Danau Lut Tawar -->
+                    <a href="berita/danauluttawar.html" class="slide" style="background-image: url('images/danauluttawar.jpg');">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
+                            <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Pilihan Utama</span>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
+                        </div>
+                    </a>
+                    <!-- Slide 4: Putri Pukes -->
+                    <a href="berita/putripukes.html" class="slide" style="background-image: url('images/putripukes.jpg');">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
+                            <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya Gayo</span>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Kisah Legenda Putri Pukes di Tanah Gayo</h2>
+                        </div>
+                    </a>
+                    <!-- DUPLIKAT SLIDE 1 DI AKHIR UNTUK TRANSISI MULUS DARI KANAN KE KIRI -->
+                    <a href="berita/longsorsanehen.html" class="slide" style="background-image: url('images/longsorsanehen.jpeg');">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
+                            <span style="background: #dc2626; color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Terbaru &bull; Bencana Alam</span>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Hujan Deras, Longsor Hantam Rumah Warga di Sanehen Aceh Tengah</h2>
+                        </div>
+                    </a>
+                </div>
 
-                <!-- Indikator Titik Slider -->
+                <!-- Indikator Titik Slider (Jumlah asli ada 4) -->
                 <div class="slider-dots" id="sliderDots">
                     <span class="dot active" onclick="currentSlideIndex(0)"></span>
                     <span class="dot" onclick="currentSlideIndex(1)"></span>
@@ -399,33 +438,42 @@
 
     </div>
 
-    <!-- Script Slider, Indikator & Toggle Tema -->
+    <!-- Script Slider Konsisten Geser ke Kiri & Toggle Tema -->
     <script>
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.hero-slider .slide');
+        const totalRealSlides = 4; // Jumlah asli slide tanpa duplikat
+        const slidesContainer = document.getElementById('slidesContainer');
         const dots = document.querySelectorAll('.slider-dots .dot');
         let slideInterval;
-        
-        function showSlide(index) {
-            if (slides.length === 0) return;
-            currentSlide = (index + slides.length) % slides.length;
-            
-            slides.forEach((slide, i) => {
-                slide.style.opacity = (i === currentSlide) ? '1' : '0';
-                slide.style.zIndex = (i === currentSlide) ? '2' : '1';
-            });
 
+        function showSlide(index) {
+            currentSlide = index;
+            slidesContainer.style.transition = "transform 0.6s ease-in-out";
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update titik indikator (jika menyentuh indeks ke-4 (duplikat), aktifkan dot pertama ke-0)
+            let activeDotIndex = currentSlide % totalRealSlides;
             dots.forEach((dot, i) => {
-                if (i === currentSlide) {
+                if (i === activeDotIndex) {
                     dot.classList.add('active');
                 } else {
                     dot.classList.remove('active');
                 }
             });
         }
-        
+
         function nextSlide() {
-            showSlide(currentSlide + 1);
+            currentSlide++;
+            showSlide(currentSlide);
+
+            // Jika sudah sampai di slide duplikat terakhir (indeks 4), kembalikan secara instan tanpa animasi ke indeks 0
+            if (currentSlide === totalRealSlides) {
+                setTimeout(() => {
+                    slidesContainer.style.transition = "none";
+                    currentSlide = 0;
+                    slidesContainer.style.transform = `translateX(0%)`;
+                }, 600); // Waktu jeda harus sama persis dengan durasi transisi CSS (0.6s)
+            }
         }
 
         function currentSlideIndex(index) {
@@ -437,11 +485,9 @@
             clearInterval(slideInterval);
             slideInterval = setInterval(nextSlide, 4000);
         }
-        
-        if (slides.length > 0) {
-            showSlide(currentSlide);
-            slideInterval = setInterval(nextSlide, 4000);
-        }
+
+        // Jalankan interval otomatis
+        slideInterval = setInterval(nextSlide, 4000);
 
         function toggleTheme() {
             const htmlTag = document.documentElement;
