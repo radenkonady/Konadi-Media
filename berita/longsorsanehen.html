@@ -172,7 +172,7 @@
             <span class="kategori">Bencana Alam</span>
             <h1>Hujan Deras : Longsor Hantam Rumah Warga di Sanehen Aceh Tengah, 1 Orang Meninggal Dunia</h1>
             <p style="color: var(--text-sub); font-size: 13px; margin-top: 5px; margin-bottom: 20px; text-align: left;">
-                Dipublikasikan oleh Konadi Media | 13 September 2026 | Dilihat <span id="view-count">0</span> kali
+                Dipublikasikan oleh Konadi Media | 13 September 2026 | Dilihat <span id="view-count">...</span> kali
             </p>
             
             <!-- Foto Utama Artikel -->
@@ -285,12 +285,16 @@
         <p style="margin: 0; text-align: center; width: 100%;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
  
-    <!-- SKRIP PENGHITUNG VIEW -->
+    <!-- SKRIP PENGHITUNG GLOBAL (API COUNTER) -->
     <script>
-        let views = localStorage.getItem('konadi_views_longsor') || 0;
-        views++;
-        localStorage.setItem('konadi_views_longsor', views);
-        document.getElementById('view-count').innerText = Number(views).toLocaleString();
+        fetch('https://api.counterapi.dev/v1/konadimedia/longsorsanehen/up')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('view-count').innerText = (data.count || 1).toLocaleString();
+            })
+            .catch(() => {
+                document.getElementById('view-count').innerText = "1";
+            });
     </script>
 </body>
 </html>
