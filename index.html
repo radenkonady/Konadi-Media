@@ -211,7 +211,7 @@
         .hero-slider {
             position: relative;
             width: 100%;
-            height: 360px; /* Ditinggikan sedikit agar ruang teks lebih leluasa */
+            height: 360px;
             overflow: hidden;
             border-radius: 8px;
             border: 1px solid var(--border-color);
@@ -221,27 +221,27 @@
 
         .slides-container {
             display: flex;
-            width: 100%;
+            width: max-content; /* DIPERBAIKI: Agar slide berbaris rapi berdampingan */
             height: 100%;
             transition: transform 0.6s ease-in-out;
         }
 
         .slide {
-            min-width: 100%;
+            flex: 0 0 100%; /* DIPERBAIKI: Memastikan setiap slide tepat 100% dari lebar layar */
+            width: 100%;
             height: 100%;
             display: flex;
             align-items: flex-end;
             background-size: cover;
             background-position: center;
             text-decoration: none;
-            flex-shrink: 0;
         }
 
         /* AREA KONTEN DI DALAM SLIDE */
         .slide-content-box {
             background: linear-gradient(to top, rgba(0,0,0,0.92) 25%, rgba(0,0,0,0.6) 75%, transparent);
             width: 100%;
-            padding: 25px 18px 32px 18px; /* Padding bawah ditambah agar teks tidak menabrak titik indikator */
+            padding: 25px 18px 32px 18px;
             box-sizing: border-box;
         }
 
@@ -301,16 +301,16 @@
                 margin-left: 5px;
             }
             .hero-slider {
-                height: 280px; /* Disesuaikan agar lebih proporsional di HP */
+                height: 280px;
             }
             .slide-content-box {
-                padding: 15px 15px 35px 15px; /* Mengamankan teks dari titik indikator bawah */
+                padding: 15px 15px 35px 15px;
             }
             .slide-title {
-                font-size: 14px; /* Ukuran ideal di HP */
+                font-size: 14px;
                 line-height: 1.4;
                 display: -webkit-box;
-                -webkit-line-clamp: 3; /* Membatasi maksimal 3 baris agar tinggi seragam dan rapi */
+                -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
@@ -437,7 +437,7 @@
                     </a>
 
                     <a href="berita/sejarah-kopi-gayo-perjalanan-panjang-warisan-tanah-tinggi-dari-dataran-aceh-ke-panggung-dunia.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 8px; transition: 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
-                        <img src="images/gemini_generated_image_atbj1ratbj1ratbj.jpg" alt="Sejarah Kopi Gayo" style="width: 90px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
+                        <img src="images/gemini_generated_image_atbj1ratbj1ratbj.jpg" alt="Sejarah Kopi Gayo" style="width: 90px; height: 60px; object-ref: cover; border-radius: 4px; flex-shrink: 0;">
                         <div style="display: flex; flex-direction: column; gap: 3px;">
                             <span style="color: var(--accent-color); font-weight: bold; font-size: 9px; text-transform: uppercase;">Sejarah</span>
                             <h2 style="color: var(--text-main); font-size: 13px; line-height: 1.2; font-weight: 600;">Sejarah Kopi Gayo: Perjalanan Panjang Warisan Tanah Tinggi</h2>
