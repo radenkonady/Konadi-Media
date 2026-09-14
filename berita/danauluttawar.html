@@ -159,7 +159,7 @@
             <span class="kategori">Legenda Gayo</span>
             <h1>Asal Usul Danau Lut Tawar dan Legenda Masyarakat Gayo</h1>
             <p style="color: var(--text-sub); font-size: 13px; margin-top: 5px; margin-bottom: 20px;">
-                Dipublikasikan oleh Konadi Media | 11 September 2026 | Dilihat <span id="view-count">0</span> kali
+                Dipublikasikan oleh Konadi Media | 11 September 2026 | Dilihat <span id="view-count">...</span> kali
             </p>
             
             <!-- Foto Utama Artikel -->
@@ -253,15 +253,20 @@
     </div>
 
     <!-- FOOTER -->
-    <footer style="background-color: var(--bg-card); color: var(--text-sub); padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--border-color); text-align: center; font-size: 13px;">
-        <p style="margin: 0;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
+    <footer style="background-color: var(--bg-card); color: var(--text-sub); padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--border-color); text-align: center; font-size: 13px; display: flex; justify-content: center; align-items: center;">
+        <p style="margin: 0; text-align: center; width: 100%;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
 
+    <!-- SKRIP PENGHITUNG GLOBAL (API COUNTER) -->
     <script>
-        let views = localStorage.getItem('konadi_views_danau') || 0;
-        views++;
-        localStorage.setItem('konadi_views_danau', views);
-        document.getElementById('view-count').innerText = Number(views).toLocaleString();
+        fetch('https://api.counterapi.dev/v1/konadimedia/danauluttawar/up')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('view-count').innerText = (data.count || 1).toLocaleString();
+            })
+            .catch(() => {
+                document.getElementById('view-count').innerText = "1";
+            });
     </script>
 </body>
 </html>
