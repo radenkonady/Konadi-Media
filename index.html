@@ -301,10 +301,18 @@
                 margin-left: 5px;
             }
             .hero-slider {
-                height: 340px;
+                height: 280px; /* Disesuaikan agar lebih proporsional di HP */
+            }
+            .slide-content-box {
+                padding: 15px 15px 35px 15px; /* Mengamankan teks dari titik indikator bawah */
             }
             .slide-title {
-                font-size: 15px; /* Menyesuaikan agar muat dengan sempurna di layar kecil */
+                font-size: 14px; /* Ukuran ideal di HP */
+                line-height: 1.4;
+                display: -webkit-box;
+                -webkit-line-clamp: 3; /* Membatasi maksimal 3 baris agar tinggi seragam dan rapi */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
         }
     </style>
