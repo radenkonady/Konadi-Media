@@ -4,29 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konadi Media - Merekam Jejak, Merawat Cerita</title>
-    
-    <!-- VERIFIKASI GOOGLE SEARCH CONSOLE -->
-    <meta name="google-site-verification" content="JP6R4wwyZzPhic3ljE1UJ8prDoh7FhpK4dsk-lMdBr0" />
-
-    <!-- META TAG SEO & SOSIAL MEDIA -->
-    <meta name="description" content="Konadi Media - Portal berita teraktual, sejarah, adat, budaya, dan pariwisata dataran tinggi Gayo, Aceh Tengah. Merekam Jejak, Merawat Cerita.">
-    <meta name="keywords" content="Konadi Media, Berita Gayo, Adat Gayo, Budaya Gayo, Kerawang Gayo, Aceh Tengah, Danau Lut Tawar, Kopi Gayo">
-    <meta name="author" content="Raden Konadi">
-    
-    <!-- Open Graph / Facebook / WhatsApp Preview -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://radenkonady.github.io/Konadi-Media/">
-    <meta property="og:title" content="Konadi Media - Merekam Jejak, Merawat Cerita">
-    <meta property="og:description" content="Portal informasi budaya, sejarah, dan berita aktual dataran tinggi Gayo.">
-    <meta property="og:image" content="logokonadimedia.PNG">
-
-    <!-- Twitter Card Preview -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://radenkonady.github.io/Konadi-Media/">
-    <meta property="twitter:title" content="Konadi Media - Merekam Jejak, Merawat Cerita">
-    <meta property="twitter:description" content="Portal informasi budaya, sejarah, dan berita aktual dataran tinggi Gayo.">
-    <meta property="twitter:image" content="logokonadimedia.PNG">
-
     <!-- FAVICON & LOGO DI ROOT FOLDER -->
     <link rel="icon" type="image/png" href="logokonadimedia.PNG">
     <!-- PUSTAKA IKON SOSIAL MEDIA (FONTAWESOME) -->
@@ -207,11 +184,11 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
-        /* PERBAIKAN SLIDER & RESPONSIF TEKS AGAR TIDAK KEPOTONG */
+        /* CSS KHUSUS SLIDER BERGESER KONSISTEN DARI KANAN */
         .hero-slider {
             position: relative;
             width: 100%;
-            height: 360px; /* Ditinggikan sedikit agar ruang teks lebih leluasa */
+            height: 340px;
             overflow: hidden;
             border-radius: 8px;
             border: 1px solid var(--border-color);
@@ -237,26 +214,10 @@
             flex-shrink: 0;
         }
 
-        /* AREA KONTEN DI DALAM SLIDE */
-        .slide-content-box {
-            background: linear-gradient(to top, rgba(0,0,0,0.92) 25%, rgba(0,0,0,0.6) 75%, transparent);
-            width: 100%;
-            padding: 25px 18px 32px 18px; /* Padding bawah ditambah agar teks tidak menabrak titik indikator */
-            box-sizing: border-box;
-        }
-
-        .slide-title {
-            color: #ffffff; 
-            font-size: 16px; 
-            margin-top: 6px; 
-            line-height: 1.35; 
-            font-weight: 700;
-        }
-
         /* INDIKATOR TITIK SLIDER */
         .slider-dots {
             position: absolute;
-            bottom: 10px;
+            bottom: 12px;
             right: 15px;
             z-index: 10;
             display: flex;
@@ -300,20 +261,6 @@
                 font-size: 11px;
                 margin-left: 5px;
             }
-            .hero-slider {
-                height: 280px; /* Disesuaikan agar lebih proporsional di HP */
-            }
-            .slide-content-box {
-                padding: 15px 15px 35px 15px; /* Mengamankan teks dari titik indikator bawah */
-            }
-            .slide-title {
-                font-size: 14px; /* Ukuran ideal di HP */
-                line-height: 1.4;
-                display: -webkit-box;
-                -webkit-line-clamp: 3; /* Membatasi maksimal 3 baris agar tinggi seragam dan rapi */
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-            }
         }
     </style>
 </head>
@@ -355,37 +302,37 @@
                 <div class="slides-container" id="slidesContainer">
                     <!-- Slide 1: Berita Terbaru (Longsor Sanehen) -->
                     <a href="berita/longsorsanehen.html" class="slide" style="background-image: url('images/longsorsanehen.jpeg');">
-                        <div class="slide-content-box">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
                             <span style="background: #dc2626; color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Terbaru &bull; Bencana Alam</span>
-                            <h2 class="slide-title">Hujan Deras, Longsor Hantam Rumah Warga di Sanehen Aceh Tengah</h2>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Hujan Deras, Longsor Hantam Rumah Warga di Sanehen Aceh Tengah</h2>
                         </div>
                     </a>
                     <!-- Slide 2: Kerawang Gayo -->
                     <a href="berita/kerawanggayo.html" class="slide" style="background-image: url('images/fotokerawanggayo.png');">
-                        <div class="slide-content-box">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
                             <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya & Tradisi</span>
-                            <h2 class="slide-title">Kerawang Gayo : Mahakarya Seni, Filosofi Luhur, dan Identitas Budaya</h2>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Kerawang Gayo : Mahakarya Seni, Filosofi Luhur, dan Identitas Budaya</h2>
                         </div>
                     </a>
                     <!-- Slide 3: Danau Lut Tawar -->
                     <a href="berita/danauluttawar.html" class="slide" style="background-image: url('images/danauluttawar.jpg');">
-                        <div class="slide-content-box">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
                             <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Pilihan Utama</span>
-                            <h2 class="slide-title">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
                         </div>
                     </a>
                     <!-- Slide 4: Putri Pukes -->
                     <a href="berita/putripukes.html" class="slide" style="background-image: url('images/putripukes.jpg');">
-                        <div class="slide-content-box">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
                             <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya Gayo</span>
-                            <h2 class="slide-title">Kisah Legenda Putri Pukes di Tanah Gayo</h2>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Kisah Legenda Putri Pukes di Tanah Gayo</h2>
                         </div>
                     </a>
                     <!-- DUPLIKAT SLIDE 1 DI AKHIR UNTUK TRANSISI MULUS DARI KANAN KE KIRI -->
                     <a href="berita/longsorsanehen.html" class="slide" style="background-image: url('images/longsorsanehen.jpeg');">
-                        <div class="slide-content-box">
+                        <div style="background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); width: 100%; padding: 20px; padding-right: 60px;">
                             <span style="background: #dc2626; color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Terbaru &bull; Bencana Alam</span>
-                            <h2 class="slide-title">Hujan Deras, Longsor Hantam Rumah Warga di Sanehen Aceh Tengah</h2>
+                            <h2 style="color: #ffffff; font-size: 16px; margin-top: 6px; line-height: 1.2;">Hujan Deras, Longsor Hantam Rumah Warga di Sanehen Aceh Tengah</h2>
                         </div>
                     </a>
                 </div>
