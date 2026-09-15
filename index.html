@@ -298,17 +298,40 @@
             font-size: 13px;
         }
 
-        @media screen and (max-width: 768px) {
-            nav { gap: 12px !important; padding: 10px 5px !important; }
-            nav a { font-size: 13px !important; }
+@media screen and (max-width: 768px) {
+            /* Membuat baris navigasi utama menyesuaikan layar HP */
+            nav.main-nav {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 12px !important;
+                padding: 12px 15px !important;
+            }
+            
+            nav.main-nav > div:first-child {
+                justify-content: center !important;
+                gap: 15px !important;
+            }
+
+            nav.main-nav > div:last-child {
+                justify-content: center !important;
+                width: 100% !important;
+            }
+
+            /* Lebarkan input pencarian agar pas di layar HP */
+            #searchInput {
+                width: 140px !important;
+            }
+            #searchInput:focus {
+                width: 180px !important;
+            }
+
             aside {
                 flex: 1 1 100% !important;
                 width: 100% !important;
             }
             .theme-toggle-btn {
-                padding: 4px 8px;
-                font-size: 11px;
-                margin-left: 5px;
+                padding: 5px 12px;
+                font-size: 12px;
             }
             .hero-slider {
                 height: 280px; 
