@@ -251,11 +251,11 @@
 <script>
     const utterancesScript = document.createElement('script');
     utterancesScript.src = 'https://utteranc.es/client.js';
-    utterancesScript.repo = 'radenkonady/Konadi-Media'; 
-    utterancesScript.issueTerm = 'pathname';
+    utterancesScript.setAttribute('repo', 'radenkonady/Konadi-Media');
+    utterancesScript.setAttribute('issue-term', 'pathname'); // INI YANG KURANG TADI
     
     const isDarkMode = document.documentElement.classList.contains('dark-mode');
-    utterancesScript.theme = isDarkMode ? 'github-dark' : 'github-light';
+    utterancesScript.setAttribute('theme', isDarkMode ? 'github-dark' : 'github-light');
     
     utterancesScript.crossOrigin = 'anonymous';
     utterancesScript.async = true;
