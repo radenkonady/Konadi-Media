@@ -205,6 +205,27 @@
                     <a href="https://t.me/share/url?url=https://radenkonady.github.io/Konadi-Media/berita/danauluttawar.html&text=Asal%20Usul%20Danau%20Lut%20Tawar" target="_blank" style="background: #0088cc; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold;">Telegram</a>
                 </div>
             </div>
+            <!-- KOTAK KOMENTAR UTTERANCES -->
+<section style="margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+    <h3 class="section-title">Komentar Pembaca</h3>
+    <div id="comments-container"></div>
+</section>
+
+<script>
+    const utterancesScript = document.createElement('script');
+    utterancesScript.src = 'https://utteranc.es/client.js';
+    utterancesScript.setAttribute('repo', 'radenkonady/Konadi-Media');
+    utterancesScript.setAttribute('issue-term', 'pathname');
+    
+    const isDarkMode = document.documentElement.classList.contains('dark-mode');
+    utterancesScript.setAttribute('theme', isDarkMode ? 'github-dark' : 'github-light');
+    
+    utterancesScript.crossOrigin = 'anonymous';
+    utterancesScript.async = true;
+    
+    document.getElementById('comments-container').appendChild(utterancesScript);
+</script>
+
         </main>
 
         <!-- KOLOM KANAN: SIDEBAR STICKY -->
