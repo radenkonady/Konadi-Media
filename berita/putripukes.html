@@ -158,23 +158,27 @@
             <span class="kategori">Legenda Gayo</span>
             <h1>Legenda Putri Pukes & Asal-Usul Danau Laut Tawar : Kutukan di Balik Air Mata Tanah Gayo</h1>
 <p style="color: var(--text-sub); font-size: 13px; margin-top: 5px; margin-bottom: 20px; text-align: left;">
-    Dipublikasikan oleh Konadi Media | 13 September 2026 &nbsp;|&nbsp; <span id="view-counter">Memuat pembaca...</span>
+    Dipublikasikan oleh Konadi Media | 12 September 2026 &nbsp;|&nbsp; <span id="view-counter">Memuat pembaca...</span>
 </p>
 
 <script>
   async function fetchViews() {
     try {
+      // Menggunakan pathname lengkap agar sesuai dengan data di Google Analytics
       const currentPath = window.location.pathname;
-      const response = await fetch(`https://konadi-analytics-bridge.radenkonady31.workers.dev/?path=${currentPath}`);
+      const response = await fetch(`https://konadi-analytics-bridge.radenkonady31.workers.dev/?path=${encodeURIComponent(currentPath)}`);
       const data = await response.json();
-      document.getElementById('view-counter').innerText = `${data.views} Pembaca`;
+      
+      // Memastikan nilai views ada, jika tidak maka diset 0
+      const totalViews = (data && typeof data.views !== 'undefined') ? data.views : 0;
+      document.getElementById('view-counter').innerText = `${totalViews} Pembaca`;
     } catch (e) {
-      document.getElementById('view-counter').innerText = '';
+      document.getElementById('view-counter').innerText = '0 Pembaca';
     }
   }
   fetchViews();
 </script>
-            
+
             <!-- Foto Utama Artikel -->
             <div style="margin-top: 20px;">
                 <img src="../images/putripukes.jpg" alt="Putri Pukes" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color);">

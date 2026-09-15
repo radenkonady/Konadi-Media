@@ -178,12 +178,16 @@
 <script>
   async function fetchViews() {
     try {
+      // Menggunakan pathname lengkap agar sesuai dengan data di Google Analytics
       const currentPath = window.location.pathname;
-      const response = await fetch(`https://konadi-analytics-bridge.radenkonady31.workers.dev/?path=${currentPath}`);
+      const response = await fetch(`https://konadi-analytics-bridge.radenkonady31.workers.dev/?path=${encodeURIComponent(currentPath)}`);
       const data = await response.json();
-      document.getElementById('view-counter').innerText = `${data.views} Pembaca`;
+      
+      // Memastikan nilai views ada, jika tidak maka diset 0
+      const totalViews = (data && typeof data.views !== 'undefined') ? data.views : 0;
+      document.getElementById('view-counter').innerText = `${totalViews} Pembaca`;
     } catch (e) {
-      document.getElementById('view-counter').innerText = '';
+      document.getElementById('view-counter').innerText = '0 Pembaca';
     }
   }
   fetchViews();
