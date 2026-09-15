@@ -158,8 +158,23 @@
         <main>
             <span class="kategori">Legenda Gayo</span>
             <h1>Asal Usul Danau Lut Tawar dan Legenda Masyarakat Gayo</h1>
-            <p style="color: var(--text-sub); font-size: 13px; margin-top: 5px; margin-bottom: 20px;">
-                Dipublikasikan oleh Konadi Media | 11 September 2026 </p>
+<p style="color: var(--text-sub); font-size: 13px; margin-top: 5px; margin-bottom: 20px; text-align: left;">
+    Dipublikasikan oleh Konadi Media | 13 September 2026 &nbsp;|&nbsp; <span id="view-counter">Memuat pembaca...</span>
+</p>
+
+<script>
+  async function fetchViews() {
+    try {
+      const currentPath = window.location.pathname;
+      const response = await fetch(`https://konadi-analytics-bridge.radenkonady31.workers.dev/?path=${currentPath}`);
+      const data = await response.json();
+      document.getElementById('view-counter').innerText = `${data.views} Pembaca`;
+    } catch (e) {
+      document.getElementById('view-counter').innerText = '';
+    }
+  }
+  fetchViews();
+</script>
             
             <!-- Foto Utama Artikel -->
             <div style="margin-top: 20px;">
