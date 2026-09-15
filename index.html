@@ -380,8 +380,7 @@
             <!-- KOTAK PENCARIAN DENGAN TOMBOL -->
             <div style="display: inline-flex; align-items: center; gap: 5px;">
                 <div style="position: relative; display: inline-flex; align-items: center;">
-                    <input type="text" id="searchInput" placeholder="Cari berita..." onkeyup="searchArticles()" style="background: var(--bg-body); color: var(--text-main); border: 1px solid var(--border-color); padding: 5px 10px 5px 28px; border-radius: 15px; font-size: 13px; outline: none; width: 140px; transition: width 0.3s;" onfocus="this.style.width='180px'" onblur="if(this.value=='')this.style.width='140px'">
-                    <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 10px; font-size: 11px; color: var(--text-sub);"></i>
+                <input type="text" id="searchInput" placeholder="Cari berita..." onkeydown="if(event.key === 'Enter') searchArticles()" style="...">                    <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 10px; font-size: 11px; color: var(--text-sub);"></i>
                 </div>
                 <button onclick="searchArticles()" style="background: var(--accent-color); color: #ffffff; border: none; padding: 5px 12px; border-radius: 15px; font-size: 12px; cursor: pointer; font-weight: 600; white-space: nowrap;">Cari</button>
             </div>
@@ -604,12 +603,12 @@
                 localStorage.setItem('konadi_theme', 'light');
             }
         }
-    // FUNGSI PENCARIAN ARTIKEL OTOMATIS
+// FUNGSI PENCARIAN ARTIKEL OTOMATIS
         function searchArticles() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
 
-            if (query.includes('kopi') || query.includes('gayo') && query.includes('sejarah')) {
+            if (query.includes('kopi') || (query.includes('gayo') && query.includes('sejarah'))) {
                 window.location.href = 'berita/sejarah-kopi-gayo-perjalanan-panjang-warisan-tanah-tinggi-dari-dataran-aceh-ke-panggung-dunia.html';
             } else if (query.includes('longsor') || query.includes('sanehen')) {
                 window.location.href = 'berita/longsorsanehen.html';
