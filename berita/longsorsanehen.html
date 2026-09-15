@@ -334,6 +334,52 @@
     <footer style="background-color: var(--bg-card); color: var(--text-sub); padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--border-color); text-align: center; font-size: 13px; display: flex; justify-content: center; align-items: center;">
         <p style="margin: 0; text-align: center; width: 100%;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
- 
+ <style>
+/* Styling Tombol Scroll-to-Top */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    transform: scale(1.1);
+}
+</style>
+<!-- Tombol Scroll-to-Top -->
+    <button id="scrollToTopBtn" title="Kembali ke atas">&#8679;</button>
+
+    <script>
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+
+        // Munculkan tombol jika halaman digulir ke bawah sejauh 300px
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+
+        // Fungsi saat tombol diklik, halaman meluncur mulus ke atas
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
