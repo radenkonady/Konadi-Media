@@ -356,16 +356,27 @@
             });
         });
     </script>
-    <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => {
-            const mainCounter = document.getElementById('view-counter').innerText;
+<script>
+    async function fetchPopularViews() {
+        try {
+            // Memanggil data analitik khusus file longsorsanehen.html dari worker
+            const response = await fetch(`https://konadi-analytics-bridge.radenkonady31.workers.dev/?path=/Konadi-Media/berita/longsorsanehen.html`);
+            const data = await response.json();
+            const totalViews = (data && typeof data.views !== 'undefined') ? data.views : 0;
+            
             const popElement = document.getElementById('populer-1');
-            if (popElement && mainCounter) {
-                popElement.innerText = `👁️ ${mainCounter}`;
+            if (popElement) {
+                popElement.innerText = `👁️ ${totalViews} Pembaca`;
             }
-        }, 1000);
-    });
+        } catch (e) {
+            const popElement = document.getElementById('populer-1');
+            if (popElement) {
+                popElement.innerText = `👁️ 0 Pembaca`;
+            }
+        }
+    }
+    
+    window.addEventListener('DOMContentLoaded', fetchPopularViews);
 </script>
 </body>
 </html>
