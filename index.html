@@ -375,12 +375,15 @@
             <a href="#kontak">Kontak</a>
         </div>
 
-        <!-- Bagian Kanan: Pencarian & Tombol Tema -->
+<!-- Bagian Kanan: Pencarian & Tombol Tema -->
         <div style="display: flex; align-items: center; gap: 10px;">
-            <!-- KOTAK PENCARIAN (LIVE SEARCH) -->
-            <div style="position: relative; display: inline-flex; align-items: center;">
-                <input type="text" id="searchInput" placeholder="Cari berita..." onkeyup="searchArticles()" style="background: var(--bg-body); color: var(--text-main); border: 1px solid var(--border-color); padding: 5px 10px 5px 28px; border-radius: 15px; font-size: 13px; outline: none; width: 140px; transition: width 0.3s;" onfocus="this.style.width='180px'" onblur="if(this.value=='')this.style.width='140px'">
-                <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 10px; font-size: 11px; color: var(--text-sub);"></i>
+            <!-- KOTAK PENCARIAN DENGAN TOMBOL -->
+            <div style="display: inline-flex; align-items: center; gap: 5px;">
+                <div style="position: relative; display: inline-flex; align-items: center;">
+                    <input type="text" id="searchInput" placeholder="Cari berita..." onkeyup="searchArticles()" style="background: var(--bg-body); color: var(--text-main); border: 1px solid var(--border-color); padding: 5px 10px 5px 28px; border-radius: 15px; font-size: 13px; outline: none; width: 140px; transition: width 0.3s;" onfocus="this.style.width='180px'" onblur="if(this.value=='')this.style.width='140px'">
+                    <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 10px; font-size: 11px; color: var(--text-sub);"></i>
+                </div>
+                <button onclick="searchArticles()" style="background: var(--accent-color); color: #ffffff; border: none; padding: 5px 12px; border-radius: 15px; font-size: 12px; cursor: pointer; font-weight: 600; white-space: nowrap;">Cari</button>
             </div>
 
             <!-- TOMBOL TEMA -->
