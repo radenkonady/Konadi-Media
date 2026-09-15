@@ -418,16 +418,25 @@
             });
         });
     </script>
-    <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => {
-            const mainCounter = document.getElementById('view-counter').innerText;
-            const popElement = document.getElementById('populer-1');
-            if (popElement && mainCounter) {
-                popElement.innerText = `👁️ ${mainCounter}`;
+<script>
+        // Skrip mandiri khusus untuk menarik views Berita Populer (Longsor Sanehen)
+        async function fetchPopularViews() {
+            try {
+                const workerUrl = `https://konadi-analytics-bridge.radenkonady31.workers.dev/?path=/berita/longsorsanehen.html`;
+                const response = await fetch(workerUrl);
+                const data = await response.json();
+                const totalViews = (data && typeof data.views !== 'undefined') ? data.views : 0;
+                
+                const popElement = document.getElementById('populer-1');
+                if (popElement) {
+                    popElement.innerText = `👁️ ${totalViews} Pembaca`;
+                }
+            } catch (e) {
+                console.error("Gagal memuat views populer:", e);
             }
-        }, 1000);
-    });
-</script>
+        }
+        
+        window.addEventListener('DOMContentLoaded', fetchPopularViews);
+    </script>
 </body>
 </html>
