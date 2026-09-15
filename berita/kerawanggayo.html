@@ -419,24 +419,26 @@
         });
     </script>
 <script>
-        // Skrip mandiri khusus untuk menarik views Berita Populer (Longsor Sanehen)
-        async function fetchPopularViews() {
-            try {
-                const workerUrl = `https://konadi-analytics-bridge.radenkonady31.workers.dev/?path=/berita/longsorsanehen.html`;
-                const response = await fetch(workerUrl);
-                const data = await response.json();
-                const totalViews = (data && typeof data.views !== 'undefined') ? data.views : 0;
-                
-                const popElement = document.getElementById('populer-1');
-                if (popElement) {
-                    popElement.innerText = `👁️ ${totalViews} Pembaca`;
-                }
-            } catch (e) {
-                console.error("Gagal memuat views populer:", e);
+    async function fetchPopularViews() {
+        try {
+            // Memanggil data analitik khusus file longsorsanehen.html dari worker
+            const response = await fetch(`https://konadi-analytics-bridge.radenkonady31.workers.dev/?path=/Konadi-Media/berita/longsorsanehen.html`);
+            const data = await response.json();
+            const totalViews = (data && typeof data.views !== 'undefined') ? data.views : 0;
+            
+            const popElement = document.getElementById('populer-1');
+            if (popElement) {
+                popElement.innerText = `👁️ ${totalViews} Pembaca`;
+            }
+        } catch (e) {
+            const popElement = document.getElementById('populer-1');
+            if (popElement) {
+                popElement.innerText = `👁️ 0 Pembaca`;
             }
         }
-        
-        window.addEventListener('DOMContentLoaded', fetchPopularViews);
-    </script>
+    }
+    
+    window.addEventListener('DOMContentLoaded', fetchPopularViews);
+</script>
 </body>
 </html>
