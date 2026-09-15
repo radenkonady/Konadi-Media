@@ -604,6 +604,25 @@
                 localStorage.setItem('konadi_theme', 'light');
             }
         }
+    // FUNGSI PENCARIAN ARTIKEL OTOMATIS
+        function searchArticles() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!query) return;
+
+            if (query.includes('kopi') || query.includes('gayo') && query.includes('sejarah')) {
+                window.location.href = 'berita/sejarah-kopi-gayo-perjalanan-panjang-warisan-tanah-tinggi-dari-dataran-aceh-ke-panggung-dunia.html';
+            } else if (query.includes('longsor') || query.includes('sanehen')) {
+                window.location.href = 'berita/longsorsanehen.html';
+            } else if (query.includes('kerawang')) {
+                window.location.href = 'berita/kerawanggayo.html';
+            } else if (query.includes('danau') || query.includes('lut tawar')) {
+                window.location.href = 'berita/danauluttawar.html';
+            } else if (query.includes('putri') || query.includes('pukes')) {
+                window.location.href = 'berita/putripukes.html';
+            } else {
+                alert('Artikel dengan kata kunci "' + query + '" tidak ditemukan.');
+            }
+        }
 
         window.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('konadi_theme');
