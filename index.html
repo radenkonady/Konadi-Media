@@ -299,52 +299,71 @@
         }
 
 @media screen and (max-width: 768px) {
-    /* 1. Jadikan kontainer navigasi utama 1 baris yang fleksibel */
+    /* Rapatkan kontainer navigasi utama di HP */
     nav.main-nav {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        justify-content: space-between !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
         gap: 8px !important;
-        padding: 8px 10px !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
+        padding: 10px 12px !important;
     }
 
-    /* Sembunyikan scrollbar navigasi utama */
-    nav.main-nav::-webkit-scrollbar {
-        display: none !important;
-    }
-
-    /* 2. Kelompokkan tombol kiri (Hamburger) */
+    /* Baris atas navigasi */
     nav.main-nav > div:first-child {
         display: flex !important;
         align-items: center !important;
-        flex-shrink: 0 !important;
+        justify-content: space-between !important;
+        width: 100% !important;
     }
 
-    /* 3. Atur menu teks agar berada dalam 1 baris menyamping dan bisa digeser halus */
+    /* GAYA IKON KACA PEMBESAR ALA FIFA (Menyatu dengan Background) */
+    #searchInput {
+        width: 32px !important;
+        min-width: 32px !important;
+        max-width: 32px !important;
+        height: 32px !important;
+        padding: 0 !important;
+        border: none !important;
+        background: transparent !important;
+        color: transparent !important;
+        text-indent: -9999px; /* Sembunyikan teks bawaan */
+        
+        /* Ikon kaca pembesar warna putih/terang yang menyatu bersih */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E") !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: 20px !important;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    /* KETIKA DIKLIK: Bar ketik muncul melebar, latar belakang kotak aktif, dan siap di-enter */
+    #searchInput.active-search,
+    #searchInput:focus {
+        width: 160px !important;
+        min-width: 160px !important;
+        padding: 6px 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        color: #ffffff !important;
+        text-indent: 0 !important;
+        background-image: none !important;
+        border-radius: 20px !important;
+        outline: none !important;
+    }
+
+    /* Rapatkan menu teks bawah */
     nav.main-nav > div:last-child {
         display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        gap: 12px !important;
         overflow-x: auto !important;
         white-space: nowrap !important;
-        flex-grow: 1 !important;
-        padding-left: 5px;
+        width: 100% !important;
+        gap: 12px !important;
+        padding-bottom: 4px !important;
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* Sembunyikan scrollbar menu teks */
     nav.main-nav > div:last-child::-webkit-scrollbar {
         display: none !important;
-    }
-
-    /* 4. Sesuaikan ukuran tombol pencarian dan dark mode agar pas sebaris */
-    #searchInput {
-        flex-shrink: 0 !important;
     }
 }
 
