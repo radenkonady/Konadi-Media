@@ -299,66 +299,62 @@
         }
 
 @media screen and (max-width: 768px) {
-    /* Mengatur kontainer navigasi utama agar fleksibel di HP */
+    /* Rapatkan kontainer navigasi utama di HP */
     nav.main-nav {
         flex-direction: column !important;
         align-items: stretch !important;
-        gap: 12px !important;
-        padding: 12px 15px !important;
-    }
-    
-    /* Baris atas (tombol hamburger, pencarian, dark mode) diatur renggang rapi */
-    nav.main-nav > div:first-child {
-        justify-content: space-between !important;
-        width: 100% !important;
-        gap: 10px !important;
+        gap: 8px !important;
+        padding: 10px 12px !important;
     }
 
-    /* 🔥 INI KUNCI UTAMA: Menu teks bawah dibuat bisa digeser halus (scroll horizontal) dan tidak terpotong */
+    /* Baris atas: Logo, Hamburger, Tombol Cari (Kaca Pembesar), dan Dark Mode */
+    nav.main-nav > div:first-child {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        gap: 8px !important;
+    }
+
+    /* UBAH KOTAK PENCARIAN JADI IKON KACA PEMBESAR SAJA DI HP */
+    #searchInput {
+        width: 38px !important;
+        min-width: 38px !important;
+        max-width: 38px !important;
+        height: 38px !important;
+        padding: 0 !important;
+        text-indent: -9999px; /* Menyembunyikan teks ketikan panjang agar wujudnya jadi tombol ikon */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23888' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E") !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: 18px !important;
+        border-radius: 50% !important;
+        cursor: pointer;
+    }
+
+    /* Saat diklik/fokus di HP, kotak pencarian otomatis melebar kembali agar mudah mengetik & di-enter */
+    #searchInput:focus {
+        width: 140px !important;
+        text-indent: 0 !important;
+        background-image: none !important;
+        border-radius: 8px !important;
+        padding: 0 10px !important;
+    }
+
+    /* Rapatkan menu teks bawah agar muat semua dan bisa digeser halus */
     nav.main-nav > div:last-child {
         display: flex !important;
         overflow-x: auto !important;
         white-space: nowrap !important;
         width: 100% !important;
-        gap: 18px !important;
-        padding-bottom: 6px !important;
+        gap: 12px !important;
+        padding-bottom: 4px !important;
         -webkit-overflow-scrolling: touch;
     }
 
-    /* Sembunyikan garis scrollbar bawaan HP agar terlihat bersih */
+    /* Sembunyikan scrollbar bawah */
     nav.main-nav > div:last-child::-webkit-scrollbar {
         display: none !important;
-    }
-
-    /* Lebarkan input pencarian agar pas di layar HP */
-    #searchInput {
-        width: 120px !important;
-    }
-    #searchInput:focus {
-        width: 150px !important;
-    }
-
-    aside {
-        flex: 1 1 100% !important;
-        width: 100% !important;
-    }
-    .theme-toggle-btn {
-        padding: 5px 10px;
-        font-size: 11px;
-    }
-    .hero-slider {
-        height: 280px; 
-    }
-    .slide-content-box {
-        padding: 15px 15px 35px 15px; 
-    }
-    .slide-title {
-        font-size: 14px; 
-        line-height: 1.4;
-        display: -webkit-box;
-        -webkit-line-clamp: 3; 
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 }
 
