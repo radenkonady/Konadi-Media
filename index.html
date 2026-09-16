@@ -415,9 +415,108 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        /* --- SIDEBAR / DRAWER DARI KIRI --- */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1100;
+        }
+
+        .sidebar-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: var(--bg-card);
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+            transition: left 0.3s ease;
+            z-index: 1200;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar-menu a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: 500;
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: color 0.2s;
+        }
+
+        .sidebar-menu a:hover {
+            color: var(--accent-color);
+        }
     </style>
 </head>
 <body>
+    <!-- Overlay & Sidebar dari Kiri -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileMenu()"></div>
+<aside class="sidebar" id="sidebarMenu">
+    <div class="sidebar-header">
+        <span class="sidebar-title">Menu Utama</span>
+        <button class="sidebar-close" onclick="toggleMobileMenu()">&times;</button>
+    </div>
+    <ul class="sidebar-menu">
+        <li><a href="#">Beranda Utama</a></li>
+        <li><a href="#">Nasional</a></li>
+        <li><a href="#">Teknologi & Sains</a></li>
+        <li><a href="#">Bisnis & Ekonomi</a></li>
+        <li><a href="#">Olahraga</a></li>
+        <li><a href="#">Lifestyle & Entertainment</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+    </ul>
+</aside>
 
     <!-- HEADER DENGAN ORNAMEN WARNA ASLI -->
     <header>
@@ -762,6 +861,14 @@
     <footer>
         <p>&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
-
+<script>
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
