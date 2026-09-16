@@ -307,41 +307,51 @@
         padding: 10px 12px !important;
     }
 
-    /* Baris atas: Logo, Hamburger, Tombol Cari (Kaca Pembesar), dan Dark Mode */
+    /* Baris atas navigasi */
     nav.main-nav > div:first-child {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
         width: 100% !important;
-        gap: 8px !important;
     }
 
-    /* UBAH KOTAK PENCARIAN JADI IKON KACA PEMBESAR SAJA DI HP */
+    /* GAYA IKON KACA PEMBESAR ALA FIFA (Menyatu dengan Background) */
     #searchInput {
-        width: 38px !important;
-        min-width: 38px !important;
-        max-width: 38px !important;
-        height: 38px !important;
+        width: 32px !important;
+        min-width: 32px !important;
+        max-width: 32px !important;
+        height: 32px !important;
         padding: 0 !important;
-        text-indent: -9999px; /* Menyembunyikan teks ketikan panjang agar wujudnya jadi tombol ikon */
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23888' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E") !important;
+        border: none !important;
+        background: transparent !important;
+        color: transparent !important;
+        text-indent: -9999px; /* Sembunyikan teks bawaan */
+        
+        /* Ikon kaca pembesar warna putih/terang yang menyatu bersih */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E") !important;
         background-repeat: no-repeat !important;
         background-position: center !important;
-        background-size: 18px !important;
-        border-radius: 50% !important;
+        background-size: 20px !important;
         cursor: pointer;
+        transition: all 0.3s ease;
     }
 
-    /* Saat diklik/fokus di HP, kotak pencarian otomatis melebar kembali agar mudah mengetik & di-enter */
+    /* KETIKA DIKLIK: Bar ketik muncul melebar, latar belakang kotak aktif, dan siap di-enter */
+    #searchInput.active-search,
     #searchInput:focus {
-        width: 140px !important;
+        width: 160px !important;
+        min-width: 160px !important;
+        padding: 6px 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        color: #ffffff !important;
         text-indent: 0 !important;
         background-image: none !important;
-        border-radius: 8px !important;
-        padding: 0 10px !important;
+        border-radius: 20px !important;
+        outline: none !important;
     }
 
-    /* Rapatkan menu teks bawah agar muat semua dan bisa digeser halus */
+    /* Rapatkan menu teks bawah */
     nav.main-nav > div:last-child {
         display: flex !important;
         overflow-x: auto !important;
@@ -352,7 +362,6 @@
         -webkit-overflow-scrolling: touch;
     }
 
-    /* Sembunyikan scrollbar bawah */
     nav.main-nav > div:last-child::-webkit-scrollbar {
         display: none !important;
     }
@@ -874,13 +883,34 @@
         <p>&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
 <script>
-        function toggleMobileMenu() {
-            const sidebar = document.getElementById('sidebarMenu');
-            const overlay = document.getElementById('sidebarOverlay');
-            
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-    </script>
+    // Fungsi untuk membuka/menutup sidebar mobile
+    function toggleMobileMenu() {
+        const sidebar = document.getElementById('sidebarMenu');
+        const overlay = document.getElementById('sidebarOverlay');
+        
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+
+    // Skrip interaktif untuk ikon pencarian ala FIFA di mobile
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                this.classList.add('active-search');
+                this.focus();
+                e.stopPropagation();
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && e.target !== searchInput) {
+                if (searchInput.value.trim() === '') {
+                    searchInput.classList.remove('active-search');
+                }
+            }
+        });
+    }
+</script>
 </body>
 </html>
