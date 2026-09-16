@@ -434,23 +434,25 @@
             opacity: 1;
         }
 
-        .sidebar {
+.sidebar {
             position: fixed;
             top: 0;
-            left: -280px;
+            left: -280px; /* KUNCI UTAMA: Geser ke kiri luar layar supaya tersembunyi */
             width: 280px;
             height: 100%;
             background-color: var(--bg-card);
-            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
-            transition: left 0.3s ease;
-            z-index: 1200;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+            transition: left 0.3s ease; /* Efek geser yang mulus */
+            z-index: 9999;
             display: flex;
             flex-direction: column;
-            border-right: 1px solid var(--border-color);
+            visibility: hidden; /* Tambahkan ini agar aman tidak bisa diklik saat tertutup */
         }
 
+        /* Saat tombol diklik (kelas active aktif), sidebar akan meluncur ke layar */
         .sidebar.active {
             left: 0;
+            visibility: visible;
         }
 
         .sidebar-header {
@@ -861,6 +863,14 @@
     <footer>
         <p>&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
-
+<script>
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
