@@ -299,55 +299,69 @@
         }
 
 @media screen and (max-width: 768px) {
-            /* Membuat baris navigasi utama menyesuaikan layar HP */
-            nav.main-nav {
-                flex-direction: column !important;
-                align-items: stretch !important;
-                gap: 12px !important;
-                padding: 12px 15px !important;
-            }
-            
-            nav.main-nav > div:first-child {
-                justify-content: center !important;
-                gap: 15px !important;
-            }
+    /* Mengatur kontainer navigasi utama agar fleksibel di HP */
+    nav.main-nav {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        padding: 12px 15px !important;
+    }
+    
+    /* Baris atas (tombol hamburger, pencarian, dark mode) diatur renggang rapi */
+    nav.main-nav > div:first-child {
+        justify-content: space-between !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
 
-            nav.main-nav > div:last-child {
-                justify-content: center !important;
-                width: 100% !important;
-            }
+    /* 🔥 INI KUNCI UTAMA: Menu teks bawah dibuat bisa digeser halus (scroll horizontal) dan tidak terpotong */
+    nav.main-nav > div:last-child {
+        display: flex !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        width: 100% !important;
+        gap: 18px !important;
+        padding-bottom: 6px !important;
+        -webkit-overflow-scrolling: touch;
+    }
 
-            /* Lebarkan input pencarian agar pas di layar HP */
-            #searchInput {
-                width: 140px !important;
-            }
-            #searchInput:focus {
-                width: 180px !important;
-            }
+    /* Sembunyikan garis scrollbar bawaan HP agar terlihat bersih */
+    nav.main-nav > div:last-child::-webkit-scrollbar {
+        display: none !important;
+    }
 
-            aside {
-                flex: 1 1 100% !important;
-                width: 100% !important;
-            }
-            .theme-toggle-btn {
-                padding: 5px 12px;
-                font-size: 12px;
-            }
-            .hero-slider {
-                height: 280px; 
-            }
-            .slide-content-box {
-                padding: 15px 15px 35px 15px; 
-            }
-            .slide-title {
-                font-size: 14px; 
-                line-height: 1.4;
-                display: -webkit-box;
-                -webkit-line-clamp: 3; 
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-            }
-        }
+    /* Lebarkan input pencarian agar pas di layar HP */
+    #searchInput {
+        width: 120px !important;
+    }
+    #searchInput:focus {
+        width: 150px !important;
+    }
+
+    aside {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+    }
+    .theme-toggle-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    .hero-slider {
+        height: 280px; 
+    }
+    .slide-content-box {
+        padding: 15px 15px 35px 15px; 
+    }
+    .slide-title {
+        font-size: 14px; 
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
 /* STYLING HAMBURGER CUSTOM - GARIS LEBIH RAPAT */
         .hamburger-btn {
             display: inline-flex !important;
