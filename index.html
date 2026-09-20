@@ -302,20 +302,18 @@
         }
 
         /* RESPONSIF MOBILE */
-        @media screen and (max-width: 768px) {
-            nav.main-nav {
+@media screen and (max-width: 768px) {
+            /* Membuat container layout utama merenggang penuh di HP */
+            .main-layout-container {
                 flex-direction: column !important;
-                align-items: stretch !important;
-                gap: 8px !important;
-                padding: 10px 12px !important;
             }
-
-            nav.main-nav > div:first-child {
-                display: flex !important;
-                align-items: center !important;
-                justify-content: space-between !important;
+            /* Membuat sidebar video memenuhi lebar layar HP */
+            .sidebar-video-col {
+                flex: 1 1 100% !important;
                 width: 100% !important;
+                position: static !important;
             }
+        }
 
             /* Menu teks muncul kembali dan bisa digeser horizontal di HP */
             .nav-menu-desktop {
