@@ -303,14 +303,27 @@
 
         /* RESPONSIF MOBILE */
 @media screen and (max-width: 768px) {
-            /* Membuat container layout utama merenggang penuh di HP */
-            .main-layout-container {
-                flex-direction: column !important;
-            }
-            /* Membuat sidebar video memenuhi lebar layar HP */
-            .sidebar-video-col {
-                flex: 1 1 100% !important;
+            /* PERBAIKAN 1: Pastikan baris atas nav tetap sejajar horizontal */
+            nav.main-nav > div:first-child {
+                flex-direction: row !important;
                 width: 100% !important;
+            }
+
+            /* PERBAIKAN 2: Mengatur layout utama agar benar-benar turun ke bawah secara vertikal */
+            .main-layout-container {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+                width: 100% !important;
+                padding: 0 10px !important; /* Beri jarak pinggir biar tidak menempel mentok */
+                box-sizing: border-box !important;
+            }
+
+            /* PERBAIKAN 3: Memaksa kolom sidebar video agar full 100% memenuhi lebar HP */
+            .sidebar-video-col {
+                flex: 0 0 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
                 position: static !important;
             }
         }
