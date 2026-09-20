@@ -84,48 +84,24 @@
             color: var(--text-main);
         }
 
-        /* HEADER DENGAN ORNAMEN WARNA ASLI (OPACITY 1) */
+        /* HEADER DENGAN TATA LETAK KIRI (LOGO) DAN KANAN (PENCARIAN & TEMA) */
         header {
             position: relative;
             background-color: var(--bg-card);
             border-bottom: 1px solid var(--border-color);
-            padding: 20px 15px;
-            overflow: hidden;
-        }
-
-        header::before,
-        header::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 140px;
-            height: 100%;
-            background-image: url("kerawang.png");
-            background-repeat: no-repeat;
-            background-size: 280px auto;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 1;
-        }
-
-        header::before {
-            left: 0;
-            background-position: left 0;
-        }
-
-        header::after {
-            right: 0;
-            background-position: right 0;
+            padding: 15px 20px;
         }
 
         .header-content {
             position: relative;
             z-index: 2;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            max-width: 100%;
-            margin: 0;
+            max-width: 1220px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo-area {
@@ -140,10 +116,17 @@
             object-fit: contain;
         }
 
+        /* HEADER UTILITIES (PENCARIAN & TEMA) */
+        .header-utils {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
         /* NAVBAR */
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
             gap: 25px;
@@ -173,16 +156,15 @@
             background: var(--bg-body);
             color: var(--text-main);
             border: 1px solid var(--border-color);
-            padding: 5px 10px;
-            border-radius: 15px;
+            padding: 6px 12px;
+            border-radius: 18px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-            margin-left: 10px;
         }
         .theme-toggle-btn:hover {
             border-color: var(--accent-color);
@@ -217,7 +199,7 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
-        /* ================= KODE UTAMA SLIDER YANG DIPERBAIKI (PRESISI) ================= */
+        /* SLIDER UTAMA */
         .hero-slider {
             position: relative;
             width: 100%;
@@ -231,13 +213,13 @@
 
         .slides-container {
             display: flex;
-            width: 500%; /* Total 5 slide (4 asli + 1 duplikat), jadi total lebar kontainer 500% */
+            width: 500%;
             height: 100%;
             transition: transform 0.6s ease-in-out;
         }
 
         .slide {
-            width: 20%; /* Masing-masing slide mendapat tepat 20% dari 500% (artinya selebar penuh layar induk) */
+            width: 20%;
             height: 100%;
             display: flex;
             align-items: flex-end;
@@ -247,7 +229,6 @@
             flex-shrink: 0;
         }
 
-        /* AREA KONTEN DI DALAM SLIDE */
         .slide-content-box {
             background: linear-gradient(to top, rgba(0,0,0,0.92) 25%, rgba(0,0,0,0.6) 75%, transparent);
             width: 100%;
@@ -263,7 +244,6 @@
             font-weight: 700;
         }
 
-        /* INDIKATOR TITIK SLIDER */
         .slider-dots {
             position: absolute;
             bottom: 10px;
@@ -298,104 +278,49 @@
             font-size: 13px;
         }
 
-@media screen and (max-width: 768px) {
-    /* Rapatkan kontainer navigasi utama di HP */
-    nav.main-nav {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 8px !important;
-        padding: 10px 12px !important;
-    }
+        @media screen and (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .header-utils {
+                width: 100%;
+                justify-content: space-between;
+            }
+            #searchInput {
+                width: 100% !important;
+            }
+            nav.main-nav {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 8px !important;
+                padding: 10px 12px !important;
+            }
+            .nav-menu-desktop {
+                display: none !important;
+            }
+        }
 
-    /* Sembunyikan menu desktop secara total di HP */
-    .nav-menu-desktop {
-        display: none !important;
-    }
-
-    /* Baris atas navigasi */
-    nav.main-nav > div:first-child {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-    }
-    /* ...lanjutan kode pencarian di bawahnya... */
-}
-
-    /* GAYA IKON KACA PEMBESAR ALA FIFA (Menyatu dengan Background) */
-    #searchInput {
-        width: 32px !important;
-        min-width: 32px !important;
-        max-width: 32px !important;
-        height: 32px !important;
-        padding: 0 !important;
-        border: none !important;
-        background: transparent !important;
-        color: transparent !important;
-        text-indent: -9999px; /* Sembunyikan teks bawaan */
-        
-        /* Ikon kaca pembesar warna putih/terang yang menyatu bersih */
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E") !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
-        background-size: 20px !important;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    /* KETIKA DIKLIK: Bar ketik muncul melebar, latar belakang kotak aktif, dan siap di-enter */
-    #searchInput.active-search,
-    #searchInput:focus {
-        width: 160px !important;
-        min-width: 160px !important;
-        padding: 6px 12px !important;
-        border: 1px solid rgba(255, 255, 255, 0.3) !important;
-        background: rgba(0, 0, 0, 0.6) !important;
-        color: #ffffff !important;
-        text-indent: 0 !important;
-        background-image: none !important;
-        border-radius: 20px !important;
-        outline: none !important;
-    }
-
-    /* Rapatkan menu teks bawah */
-    nav.main-nav > div:last-child {
-        display: flex !important;
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-        width: 100% !important;
-        gap: 12px !important;
-        padding-bottom: 4px !important;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    nav.main-nav > div:last-child::-webkit-scrollbar {
-        display: none !important;
-    }
-}
-
-/* STYLING HAMBURGER CUSTOM - GARIS LEBIH RAPAT */
         .hamburger-btn {
-            display: inline-flex !important;
-            flex-direction: column; /* Menyusun garis dari atas ke bawah */
-            gap: 2px; /* 🔥 UBAH ANGKA INI: Makin kecil angkanya (misal 3px atau 2px), garisnya makin rapat! */
+            display: none;
+            flex-direction: column;
+            gap: 2px;
             background: transparent;
             border: none;
             cursor: pointer;
             padding: 5px 8px;
         }
 
-        /* Desain garisnya */
         .hamburger-btn span {
             display: block;
-            width: 18px; /* Panjang garis */
-            height: 2px; /* Ketebalan garis */
+            width: 18px;
+            height: 2px;
             background-color: var(--nav-text);
-            border-radius: 2px; /* Ujung garis sedikit melengkung biar elegan */
+            border-radius: 2px;
             transition: all 0.3s ease;
         }
 
-        /* Efek saat disentuh/hover */
         .hamburger-btn:hover span {
             background-color: var(--accent-color);
         }
@@ -407,7 +332,7 @@
                 justify-content: center;
             }
         }
-        /* STYLING MENU DROPDOWN KATEGORI */
+
         .dropdown {
             position: relative;
             display: inline-block;
@@ -441,7 +366,7 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
-        /* --- SIDEBAR / DRAWER DARI KIRI --- */
+
         .sidebar-overlay {
             position: fixed;
             top: 0;
@@ -460,22 +385,21 @@
             opacity: 1;
         }
 
-.sidebar {
+        .sidebar {
             position: fixed;
             top: 0;
-            left: -280px; /* KUNCI UTAMA: Geser ke kiri luar layar supaya tersembunyi */
+            left: -280px;
             width: 280px;
             height: 100%;
             background-color: var(--bg-card);
             box-shadow: 4px 0 15px rgba(0,0,0,0.2);
-            transition: left 0.3s ease; /* Efek geser yang mulus */
+            transition: left 0.3s ease;
             z-index: 9999;
             display: flex;
             flex-direction: column;
-            visibility: hidden; /* Tambahkan ini agar aman tidak bisa diklik saat tertutup */
+            visibility: hidden;
         }
 
-        /* Saat tombol diklik (kelas active aktif), sidebar akan meluncur ke layar */
         .sidebar.active {
             left: 0;
             visibility: visible;
@@ -529,127 +453,110 @@
 </head>
 <body>
     <!-- Overlay & Sidebar dari Kiri -->
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileMenu()"></div>
-<aside class="sidebar" id="sidebarMenu">
-    <div class="sidebar-header">
-        <span class="sidebar-title">Menu Utama</span>
-        <button class="sidebar-close" onclick="toggleMobileMenu()">&times;</button>
-    </div>
-<ul class="sidebar-menu">
-    <li><a href="index.html">Beranda</a></li>
-    <li><a href="berita/trending.html">Trending News</a></li>
-    <li><a href="berita/gayo.html">Gayo</a></li>
-    <li><a href="berita/politik.html">Politik</a></li>
-    <li><a href="berita/pendidikan.html">Pendidikan</a></li>
-    <li><a href="berita/opini.html">Opini</a></li>
-    <li><a href="berita/wisata.html">Wisata</a></li>
-    <li><a href="tentang-kami.html">Tentang Kami</a></li>
-    <li><a href="kontak.html">Kontak</a></li>
-</ul>
-</aside>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMobileMenu()"></div>
+    <aside class="sidebar" id="sidebarMenu">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu Utama</span>
+            <button class="sidebar-close" onclick="toggleMobileMenu()">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="berita/trending.html">Trending News</a></li>
+            <li><a href="berita/gayo.html">Gayo</a></li>
+            <li><a href="berita/politik.html">Politik</a></li>
+            <li><a href="berita/pendidikan.html">Pendidikan</a></li>
+            <li><a href="berita/opini.html">Opini</a></li>
+            <li><a href="berita/wisata.html">Wisata</a></li>
+            <li><a href="tentang-kami.html">Tentang Kami</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </aside>
 
-    <!-- HEADER DENGAN ORNAMEN WARNA ASLI -->
+    <!-- HEADER: LOGO DI KIRI, PENCARIAN & TEMA DI KANAN ATAS -->
     <header>
         <div class="header-content">
             <div class="logo-area">
                 <img src="logokonadimedia.PNG" alt="Logo Konadi Media" class="logo-img">
-               <div class="logo-text">
+                <div class="logo-text">
                     <h1 style="font-size: 18px; margin: 0; font-weight: bold; line-height: 1.2; color: var(--text-main);">KONADI MEDIA</h1>
                     <p style="font-size: 11px; margin: 2px 0 0 0; color: var(--accent-color); font-weight: bold;">Merekam Jejak, Merawat Cerita.</p>
                 </div>
             </div>
+
+            <div class="header-utils">
+                <div style="position: relative; display: inline-flex; align-items: center;">
+                    <input type="text" id="searchInput" placeholder="Cari berita..." onkeydown="if(event.key === 'Enter') searchArticles()" style="background: var(--bg-body); color: var(--text-main); border: 1px solid var(--border-color); padding: 6px 32px 6px 12px; border-radius: 18px; font-size: 13px; outline: none; width: 180px; transition: all 0.3s;" onfocus="this.style.width='220px'; this.style.borderColor='var(--accent-color)';" onblur="if(this.value=='') { this.style.width='180px'; this.style.borderColor='var(--border-color)'; }">
+                    <i class="fa-solid fa-magnifying-glass" onclick="searchArticles()" style="position: absolute; right: 12px; font-size: 12px; color: var(--text-sub); cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-sub)'"></i>
+                </div>
+
+                <button id="themeToggle" class="theme-toggle-btn" onclick="toggleTheme()">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i> <span id="themeText">Dark</span>
+                </button>
+            </div>
         </div>
     </header>
 
-<!-- NAVBAR DENGAN HAMBURGER MENU ALA FIFA -->
-    <nav class="main-nav" style="display: flex; justify-content: space-between; align-items: center; max-width: 1220px; margin: 0 auto;">
-        
-        <!-- Bagian Kiri: Tombol Garis Tiga & Logo/Menu -->
-        <div style="display: flex; align-items: center; gap: 15px;">
-<!-- TOMBOL GARIS TIGA (CUSTOM CSS BISA DIRAPATKAN) -->
-            <button class="hamburger-btn" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <!-- NAVBAR -->
+    <nav class="main-nav" style="max-width: 1220px; margin: 0 auto;">
+        <button class="hamburger-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-<!-- Menu Navigasi Utama (Desktop) -->
-            <div class="nav-menu-desktop" style="display: flex; gap: 20px; align-items: center;">
-                <a href="index.html">Beranda</a>
-                <a href="berita/trending.html">Trending News</a>
-                
-                <!-- MENU DROPDOWN GAYO -->
-                <div class="dropdown">
-                    <a href="berita/gayo.html" style="display: flex; align-items: center; gap: 5px; color: var(--nav-text);">
-                        Gayo <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="berita/aceh-tengah.html">Aceh Tengah</a>
-                        <a href="berita/bener-meriah.html">Bener Meriah</a>
-                        <a href="berita/gayo-lues.html">Gayo Lues</a>
-                    </div>
+        <div class="nav-menu-desktop" style="display: flex; gap: 20px; align-items: center; width: 100%;">
+            <a href="index.html">Beranda</a>
+            <a href="berita/trending.html">Trending News</a>
+            
+            <div class="dropdown">
+                <a href="berita/gayo.html" style="display: flex; align-items: center; gap: 5px; color: var(--nav-text);">
+                    Gayo <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="berita/aceh-tengah.html">Aceh Tengah</a>
+                    <a href="berita/bener-meriah.html">Bener Meriah</a>
+                    <a href="berita/gayo-lues.html">Gayo Lues</a>
                 </div>
-
-                <a href="berita/politik.html">Politik</a>
-                <a href="berita/pendidikan.html">Pendidikan</a>
-                <a href="berita/opini.html">Opini</a>
-                <a href="berita/wisata.html">Wisata</a>
-            </div>
-        </div>
-
-        <!-- Bagian Kanan: Pencarian Elegan & Tema -->
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- KOTAK PENCARIAN -->
-            <div style="position: relative; display: inline-flex; align-items: center;">
-                <input type="text" id="searchInput" placeholder="Cari berita..." onkeydown="if(event.key === 'Enter') searchArticles()" style="background: var(--bg-body); color: var(--text-main); border: 1px solid var(--border-color); padding: 5px 32px 5px 12px; border-radius: 18px; font-size: 13px; outline: none; width: 130px; transition: all 0.3s;" onfocus="this.style.width='170px'; this.style.borderColor='var(--accent-color)';" onblur="if(this.value=='') { this.style.width='130px'; this.style.borderColor='var(--border-color)'; }">
-                <i class="fa-solid fa-magnifying-glass" onclick="searchArticles()" style="position: absolute; right: 11px; font-size: 11px; color: var(--text-sub); cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-sub)'"></i>
             </div>
 
-            <!-- TOMBOL TEMA -->
-            <button id="themeToggle" class="theme-toggle-btn" onclick="toggleTheme()" style="margin-left: 0;">
-                <i id="themeIcon" class="fa-solid fa-moon"></i> <span id="themeText">Dark</span>
-            </button>
+            <a href="berita/politik.html">Politik</a>
+            <a href="berita/pendidikan.html">Pendidikan</a>
+            <a href="berita/opini.html">Opini</a>
+            <a href="berita/wisata.html">Wisata</a>
         </div>
     </nav>
 
     <!-- LAYOUT UTAMA: 2 KOLOM -->
     <div class="section-container" style="display: flex; gap: 30px; max-width: 1200px; margin: 30px auto; flex-wrap: wrap; align-items: flex-start;">
         
-        <!-- ================= KOLOM KIRI ================= -->
         <main style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 20px;">
             
-            <!-- HERO SLIDER -->
             <div class="hero-slider">
                 <div class="slides-container" id="slidesContainer">
-                    <!-- Slide 1: Berita Terbaru (Longsor Sanehen) -->
                     <a href="berita/longsorsanehen.html" class="slide" style="background-image: url('images/longsorsanehen.jpeg');">
                         <div class="slide-content-box">
                             <span style="background: #dc2626; color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Terbaru &bull; Bencana Alam</span>
                             <h2 class="slide-title">Hujan Deras, Longsor Hantam Rumah Warga di Sanehen Aceh Tengah</h2>
                         </div>
                     </a>
-                    <!-- Slide 2: Kerawang Gayo -->
                     <a href="berita/kerawanggayo.html" class="slide" style="background-image: url('images/fotokerawanggayo.png');">
                         <div class="slide-content-box">
                             <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya & Tradisi</span>
                             <h2 class="slide-title">Kerawang Gayo : Mahakarya Seni, Filosofi Luhur, dan Identitas Budaya</h2>
                         </div>
                     </a>
-                    <!-- Slide 3: Danau Lut Tawar -->
                     <a href="berita/danauluttawar.html" class="slide" style="background-image: url('images/danauluttawar.jpg');">
                         <div class="slide-content-box">
                             <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Pilihan Utama</span>
                             <h2 class="slide-title">Danau Lut Tawar: Legenda dan Keindahan Dataran Tinggi Gayo</h2>
                         </div>
                     </a>
-                    <!-- Slide 4: Putri Pukes -->
                     <a href="berita/putripukes.html" class="slide" style="background-image: url('images/putripukes.jpg');">
                         <div class="slide-content-box">
                             <span style="background: var(--accent-color); color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Budaya Gayo</span>
                             <h2 class="slide-title">Kisah Legenda Putri Pukes di Tanah Gayo</h2>
                         </div>
                     </a>
-                    <!-- DUPLIKAT SLIDE 1 DI AKHIR UNTUK TRANSISI MULUS DARI KANAN KE KIRI -->
                     <a href="berita/longsorsanehen.html" class="slide" style="background-image: url('images/longsorsanehen.jpeg');">
                         <div class="slide-content-box">
                             <span style="background: #dc2626; color: #ffffff; padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 3px;">Terbaru &bull; Bencana Alam</span>
@@ -658,7 +565,6 @@
                     </a>
                 </div>
 
-                <!-- Indikator Titik Slider -->
                 <div class="slider-dots" id="sliderDots">
                     <span class="dot active" onclick="currentSlideIndex(0)"></span>
                     <span class="dot" onclick="currentSlideIndex(1)"></span>
@@ -667,7 +573,6 @@
                 </div>
             </div>
 
-            <!-- 1. KATEGORI: GAYO POPULER -->
             <section id="berita">
                 <h3 class="section-title">Gayo Populer</h3>
                 <a href="berita/longsorsanehen.html" class="card" style="text-decoration: none; display: flex; gap: 12px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; margin-bottom: 8px;">
@@ -690,7 +595,6 @@
                 </div>
             </section>
  
-           <!-- 2. KATEGORI: SEJARAH & ADAT -->
             <section>
                 <h3 class="section-title">Sejarah & Adat</h3>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -714,7 +618,6 @@
                 </div>
             </section>
 
-            <!-- 3. KATEGORI: BUDAYA & SENI -->
             <section>
                 <h3 class="section-title">Budaya & Seni</h3>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -731,23 +634,19 @@
 
         </main>
         
-        <!-- ================= KOLOM KANAN: SIDEBAR ================= -->
         <aside style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 15px; position: sticky; top: 85px;">
-            <!-- Video 1 -->
             <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
                 <p style="color: var(--text-main); font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid var(--accent-color); padding-bottom: 3px;">Ceramah Tengku Husaini Sasa</p>
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px;">
                     <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
                 </div>
             </div>
-            <!-- Video 2 -->
             <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
                 <p style="color: var(--text-main); font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid var(--accent-color); padding-bottom: 3px;">Ceramah Tengku Irwansyah</p>
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px;">
                     <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
                 </div>
             </div>
-            <!-- Video 3 -->
             <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
                 <p style="color: var(--text-main); font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid var(--accent-color); padding-bottom: 3px;">Samadiah & Doa - Tengku Syakirin</p>
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px;">
@@ -758,7 +657,6 @@
 
     </div>
 
-    <!-- Script Slider & Tema -->
     <script>
         let currentSlide = 0;
         const totalRealSlides = 4; 
@@ -823,7 +721,7 @@
                 localStorage.setItem('konadi_theme', 'light');
             }
         }
-// FUNGSI PENCARIAN ARTIKEL OTOMATIS
+
         function searchArticles() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
@@ -853,7 +751,6 @@
         });
     </script>
 
-    <!-- TENTANG KAMI -->
     <div class="section-container" id="tentang" style="margin-bottom: 40px;">
         <h3 class="section-title">Tentang Konadi Media</h3>
         <div class="info-box">
@@ -861,7 +758,6 @@
         </div>
     </div>
 
-    <!-- KONTAK & MEDIA SOSIAL -->
     <div class="section-container" id="kontak" style="margin-bottom: 48px;">
         <h3 class="section-title">Kontak & Media Sosial</h3>
         <div class="info-box" style="text-align: center;">
@@ -889,39 +785,18 @@
         </div>
     </div>
     
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
     </footer>
-<script>
-    // Fungsi untuk membuka/menutup sidebar mobile
-    function toggleMobileMenu() {
-        const sidebar = document.getElementById('sidebarMenu');
-        const overlay = document.getElementById('sidebarOverlay');
-        
-        sidebar.classList.toggle('active');
-        overlay.classList.toggle('active');
-    }
 
-    // Skrip interaktif untuk ikon pencarian ala FIFA di mobile
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                this.classList.add('active-search');
-                this.focus();
-                e.stopPropagation();
-            }
-        });
- 
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768 && e.target !== searchInput) {
-                if (searchInput.value.trim() === '') {
-                    searchInput.classList.remove('active-search');
-                }
-            }
-        });
-    }
-</script>
+    <script>
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
