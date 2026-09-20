@@ -3,23 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aceh Tengah - Konadi Media</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Sesuaikan jalur CSS jika di dalam folder berita -->
+    <title>Gayo Lues - Konadi Media</title>
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag.js?id=G-QN3JJVY6GK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QN3JJVY6GK');
+    </script>
+
+    <link rel="icon" type="image/png" href="../logokonadimedia.PNG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SKRIP OTOMATIS MENYESUAIKAN TEMA DARI HALAMAN UTAMA -->
+    <script>
+        if (localStorage.getItem('konadi_theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-main: #1f2937;
+            --text-sub: #6b7280;
+            --border-color: #e5e7eb;
+            --accent-color: #dc2626;
+            --nav-bg: #ffffff;
+            --nav-text: #4b5563;
+        }
+
+        html.dark-mode {
+            --bg-body: #071116;
+            --bg-card: #0e1721;
+            --text-main: #ffffff;
+            --text-sub: #94a3b8;
+            --border-color: #1f293d;
+            --accent-color: #d9a441;
+            --nav-bg: #071116;
+            --nav-text: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 30px auto; 
+            padding: 0 20px; 
+            display: flex; 
+            gap: 30px; 
+            flex-wrap: wrap; 
+            align-items: flex-start; 
+        }
+        
+        main { 
+            flex: 2; 
+            min-width: 300px; 
+            background: var(--bg-card); 
+            padding: 40px 30px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            text-align: center;
+        }
+        
+        aside { 
+            flex: 0 0 260px; 
+            background: var(--bg-card); 
+            padding: 20px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color); 
+            position: sticky; 
+            top: 85px; 
+            height: fit-content; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            text-align: left;
+        }
+
+        h1 { color: var(--text-main); font-size: 24px; line-height: 1.3; margin-bottom: 20px; text-align: center; }
+        
+        .kategori-badge { 
+            background: var(--bg-body); 
+            color: var(--accent-color); 
+            border: 1px solid var(--border-color);
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            font-size: 12px; 
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        p { line-height: 1.6; color: var(--text-sub); }
+
+        @media screen and (max-width: 768px) {
+            header { padding: 12px 15px !important; }
+            h1 { font-size: 20px !important; }
+            main { padding: 30px 20px !important; }
+            .container { padding: 0 10px !important; margin: 15px auto !important; }
+            aside { flex: 1 1 100% !important; width: 100% !important; position: static !important; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Bagian Header / Navbar ikut seperti index.html -->
-    
-    <main style="max-width: 1220px; margin: 30px auto; padding: 0 15px;">
-        <h1 style="border-left: 5px solid #d9534f; padding-left: 15px; margin-bottom: 20px;">Berita Aceh Tengah</h1>
-        <p>Kumpulan informasi, Kabar terbaru, dan peristiwa menarik seputar Kabupaten Aceh Tengah.</p>
-        
-        <!-- Daftar Berita / Artikel -->
-        <div class="articles-container" style="margin-top: 30px;">
-            <p>Belum ada artikel untuk kategori ini. Segera hadir!</p>
-        </div>
-    </main>
 
-    <!-- Footer -->
+    <!-- HEADER / NAVBAR -->
+    <header style="background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 999;">
+        <h2 style="margin: 0;"><a href="../index.html" style="color: var(--accent-color); text-decoration: none; font-size: 18px;">KONADI MEDIA</a></h2>
+        <nav>
+            <a href="../index.html" style="color: var(--nav-text); text-decoration: none; font-weight: 600; font-size: 14px;"><i class="fa-solid fa-arrow-left"></i> Beranda</a>
+        </nav>
+    </header>
+
+    <!-- LAYOUT UTAMA -->
+    <div class="container">
+        
+        <!-- KOLOM KIRI: KONTEN AKAN SEGERA HADIR -->
+        <main>
+            <span class="kategori-badge">Wilayah / Daerah</span>
+            <h1>Gayo Lues</h1>
+            <div style="padding: 40px 0;">
+                <i class="fa-solid fa-earth-asia" style="font-size: 48px; color: var(--accent-color); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--text-main); margin-bottom: 10px; font-size: 18px;">Akan Segera Hadir</h3>
+                <p style="max-width: 450px; margin: 0 auto; font-size: 14px;">Rubrik dan informasi berita seputar perkembangan wilayah Kabupaten Gayo Lues sedang disiapkan oleh tim redaksi Konadi Media. Nantikan segera!</p>
+            </div>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                
+                <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-bottom: 0; font-size: 14px; font-weight: bold; text-align: left;">Video Pilihan</h3>
+
+                <!-- Video 1 -->
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold; text-align: left;">Ceramah Tengku Husaini Sasa</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold; text-align: left;">Ceramah Tengku Irwansyah</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold; text-align: left;">Samadiah & Doa - Tengku Syakirin</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Kotak Navigasi Samping -->
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 5px;">
+                    <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-bottom: 10px; font-size: 14px; font-weight: bold; text-align: left;">Kategori Populer</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; text-align: left;">
+                        <li>
+                            <a href="trending.html" style="color: var(--text-sub); text-decoration: none; font-size: 13px; display: block; padding: 2px 0;">
+                                🔥 Trending News
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gayo-lues.html" style="color: var(--accent-color); text-decoration: none; font-size: 13px; display: block; padding: 2px 0; font-weight: bold;">
+                                ⛰️ Gayo Lues
+                            </a>
+                        </li>
+                        <li>
+                            <a href="aceh-tengah.html" style="color: var(--text-sub); text-decoration: none; font-size: 13px; display: block; padding: 2px 0;">
+                                📍 Aceh Tengah
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="background-color: var(--bg-card); color: var(--text-sub); padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--border-color); text-align: center; font-size: 13px; display: flex; justify-content: center; align-items: center;">
+        <p style="margin: 0; text-align: center; width: 100%;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
+    </footer>
+
+    <!-- Tombol Scroll-to-Top -->
+    <button id="scrollToTopBtn" title="Kembali ke atas" style="position: fixed; bottom: 25px; right: 25px; display: none; background-color: var(--accent-color); color: white; border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;">&#8679;</button>
+
+    <script>
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
