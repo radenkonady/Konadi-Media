@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Konadi Media</title>
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag.js?id=G-QN3JJVY6GK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QN3JJVY6GK');
+    </script>
+
+    <link rel="icon" type="image/png" href="logokonadimedia.PNG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SKRIP OTOMATIS MENYESUAIKAN TEMA -->
+    <script>
+        if (localStorage.getItem('konadi_theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-main: #1f2937;
+            --text-sub: #4b5563;
+            --border-color: #e5e7eb;
+            --accent-color: #dc2626;
+            --nav-bg: #ffffff;
+            --nav-text: #4b5563;
+        }
+
+        html.dark-mode {
+            --bg-body: #071116;
+            --bg-card: #0e1721;
+            --text-main: #ffffff;
+            --text-sub: #cbd5e1;
+            --border-color: #1f293d;
+            --accent-color: #d9a441;
+            --nav-bg: #071116;
+            --nav-text: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 30px auto; 
+            padding: 0 20px; 
+            display: flex; 
+            gap: 30px; 
+            flex-wrap: wrap; 
+            align-items: flex-start; 
+        }
+        
+        main { 
+            flex: 2; 
+            min-width: 300px; 
+            background: var(--bg-card); 
+            padding: 40px 30px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            text-align: left;
+        }
+        
+        aside { 
+            flex: 0 0 260px; 
+            background: var(--bg-card); 
+            padding: 20px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color); 
+            position: sticky; 
+            top: 85px; 
+            height: fit-content; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            text-align: left;
+        }
+
+        h1 { 
+            color: var(--text-main); 
+            font-size: 24px; 
+            margin-bottom: 20px; 
+            border-left: 4px solid var(--accent-color); 
+            padding-left: 10px; 
+        }
+        
+        p { 
+            line-height: 1.8; 
+            color: var(--text-sub); 
+            margin-bottom: 20px; 
+            font-size: 15px; 
+        }
+
+        .back-btn { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            color: var(--accent-color); 
+            text-decoration: none; 
+            font-weight: 600; 
+            margin-bottom: 20px; 
+            font-size: 14px;
+        }
+        .back-btn:hover { text-decoration: underline; }
+
+        @media screen and (max-width: 768px) {
+            main { padding: 25px 15px !important; }
+            .container { padding: 0 10px !important; margin: 15px auto !important; }
+            aside { flex: 1 1 100% !important; width: 100% !important; position: static !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- KOLOM KIRI: KONTEN UTAMA -->
+        <main>
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+            
+            <h1>Tentang Kami</h1>
+            <p><strong>Konadi Media</strong> adalah platform media digital independen yang berdedikasi untuk menyajikan informasi, berita aktual, serta menggali nilai-nilai kebudayaan, sejarah, dan sosial kemasyarakatan secara mendalam.</p>
+            <p>Dengan mengusung slogan <em>"Merekam Jejak, Merawat Cerita"</em>, kami berkomitmen untuk terus menghadirkan karya jurnalistik yang akurat, berimbang, serta bermanfaat bagi para pembaca di mana pun berada.</p>
+        </main>
+
+        <!-- KOLOM KANAN: SIDEBAR VIDEO -->
+        <aside>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <h3 style="color: var(--text-main); border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-bottom: 0; font-size: 14px; font-weight: bold;">Video Pilihan</h3>
+
+                <!-- Video 1 -->
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold;">Ceramah Tengku Husaini Sasa</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/d7asE1bgWLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold;">Ceramah Tengku Irwansyah</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/kmYL-o4mWPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div style="background: var(--bg-body); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="color: var(--text-main); font-size: 12px; margin-bottom: 6px; font-weight: bold;">Samadiah & Doa - Tengku Syakirin</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/mw3RlcC-_aI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 6px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+        <!-- FOOTER -->
+    <footer style="background-color: var(--bg-card); color: var(--text-sub); padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--border-color); text-align: center; font-size: 13px; display: flex; justify-content: center; align-items: center;">
+        <p style="margin: 0; text-align: center; width: 100%;">&copy; 2026 Konadi Media. Merekam Jejak, Merawat Cerita. Semua hak dilindungi.</p>
+    </footer>
+
+</body>
+</html>
