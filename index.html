@@ -84,48 +84,41 @@
             color: var(--text-main);
         }
 
-        /* HEADER DENGAN ORNAMEN WARNA ASLI (OPACITY 1) */
+        /* HEADER DENGAN ORNAMEN HANYA DI KANAN DAN JARAK AMAN */
         header {
             position: relative;
             background-color: var(--bg-card);
             border-bottom: 1px solid var(--border-color);
-            padding: 20px 15px;
+            padding: 15px 20px;
             overflow: hidden;
         }
 
-        header::before,
         header::after {
             content: "";
             position: absolute;
             top: 0;
+            right: 0;
             width: 140px;
             height: 100%;
             background-image: url("kerawang.png");
             background-repeat: no-repeat;
             background-size: 280px auto;
+            background-position: right 0;
             pointer-events: none;
             z-index: 1;
             opacity: 1;
-        }
-
-        header::before {
-            left: 0;
-            background-position: left 0;
-        }
-
-        header::after {
-            right: 0;
-            background-position: right 0;
         }
 
         .header-content {
             position: relative;
             z-index: 2;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            max-width: 100%;
-            margin: 0;
+            max-width: 1220px;
+            margin: 0 auto;
+            /* DI BERI JARAK KANAN AGAR TIDAK MENABRAK ORNAMEN KERAWANG */
+            padding-right: 50px; 
         }
 
         .logo-area {
@@ -222,7 +215,7 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
-        /* ================= KODE UTAMA SLIDER YANG DIPERBAIKI (PRESISI) ================= */
+        /* HERO SLIDER */
         .hero-slider {
             position: relative;
             width: 100%;
@@ -302,33 +295,32 @@
         }
 
         /* RESPONSIF MOBILE */
-@media screen and (max-width: 768px) {
-            /* PERBAIKAN 1: Pastikan baris atas nav tetap sejajar horizontal */
+        @media screen and (max-width: 768px) {
+            .header-content {
+                padding-right: 0 !important;
+            }
+
             nav.main-nav > div:first-child {
                 flex-direction: row !important;
                 width: 100% !important;
             }
 
-            /* PERBAIKAN 2: Mengatur layout utama agar benar-benar turun ke bawah secara vertikal */
             .main-layout-container {
                 display: flex !important;
                 flex-direction: column !important;
                 gap: 20px !important;
                 width: 100% !important;
-                padding: 0 10px !important; /* Beri jarak pinggir biar tidak menempel mentok */
+                padding: 0 10px !important;
                 box-sizing: border-box !important;
             }
 
-            /* PERBAIKAN 3: Memaksa kolom sidebar video agar full 100% memenuhi lebar HP */
             .sidebar-video-col {
                 flex: 0 0 100% !important;
                 width: 100% !important;
                 max-width: 100% !important;
                 position: static !important;
             }
-        }
 
-            /* Menu teks muncul kembali dan bisa digeser horizontal di HP */
             .nav-menu-desktop {
                 display: flex !important;
                 overflow-x: auto !important;
@@ -541,22 +533,32 @@
         </ul>
     </aside>
 
-    <!-- HEADER DENGAN ORNAMEN WARNA ASLI -->
+    <!-- HEADER DENGAN LOGO DI KIRI DAN PENCARIAN/TEMA DIGESER KE KIRI (AMAN DARI ORNAMEN) -->
     <header>
         <div class="header-content">
             <div class="logo-area">
                 <img src="logokonadimedia.PNG" alt="Logo Konadi Media" class="logo-img">
                 <div class="logo-text">
-                    <h1 style="font-size: 18px; margin: 0; font-weight: bold; line-height: 1.2; color: var(--text-main);">KONADI MEDIA</h1>
-                    <p style="font-size: 11px; margin: 2px 0 0 0; color: var(--accent-color); font-weight: bold;">Merekam Jejak, Merawat Cerita.</p>
+                    <h1 style="font-size: 14px; margin: 0; font-weight: bold; line-height: 1.2; color: var(--text-main);">KONADI MEDIA</h1>
+                    <p style="font-size: 8px; margin: 2px 0 0 0; color: var(--accent-color); font-weight: normal;">Merekam Jejak, Merawat Cerita.</p>
                 </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 12px; z-index: 3;">
+                <div style="position: relative; display: inline-flex; align-items: center;">
+                    <input type="text" id="searchInput" placeholder="Cari berita..." onkeydown="if(event.key === 'Enter') searchArticles()" style="background: var(--bg-body); color: var(--text-main); border: 1px solid var(--border-color); padding: 5px 32px 5px 12px; border-radius: 18px; font-size: 13px; outline: none; width: 130px; transition: all 0.3s;" onfocus="this.style.width='170px'; this.style.borderColor='var(--accent-color)';" onblur="if(this.value=='') { this.style.width='130px'; this.style.borderColor='var(--border-color)'; }">
+                    <i class="fa-solid fa-magnifying-glass" onclick="searchArticles()" style="position: absolute; right: 11px; font-size: 11px; color: var(--text-sub); cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-sub)'"></i>
+                </div>
+
+                <button id="themeToggle" class="theme-toggle-btn" onclick="toggleTheme()" style="margin-left: 0;">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i> <span id="themeText">Dark</span>
+                </button>
             </div>
         </div>
     </header>
 
     <!-- NAVBAR UTAMA -->
     <nav class="main-nav">
-        <!-- Bagian Kiri: Tombol Garis Tiga & Menu Navigasi -->
         <div style="display: flex; align-items: center; gap: 15px; width: 100%; overflow: hidden;">
             <button class="hamburger-btn" onclick="toggleMobileMenu()">
                 <span></span>
@@ -564,12 +566,12 @@
                 <span></span>
             </button>
 
-            <!-- Menu Navigasi (Tampil di Desktop & Bisa Digeser di HP) -->
+            <!-- Menu Navigasi -->
             <div class="nav-menu-desktop">
                 <a href="index.html">Beranda</a>
                 <a href="berita/trending.html">Trending News</a>
                 
-                <!-- MENU DROPDOWN GAYO (TERBAGI MENJADI 3 WILAYAH) -->
+                <!-- MENU DROPDOWN GAYO -->
                 <div class="dropdown">
                     <a href="berita/gayo.html" style="display: inline-flex; align-items: center; gap: 5px; color: var(--nav-text);">
                         Gayo <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
@@ -586,18 +588,6 @@
                 <a href="berita/opini.html">Opini</a>
                 <a href="berita/wisata.html">Wisata</a>
             </div>
-        </div>
-
-        <!-- Bagian Kanan: Pencarian & Tema -->
-        <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
-            <div style="position: relative; display: inline-flex; align-items: center;">
-                <input type="text" id="searchInput" placeholder="Cari berita..." onkeydown="if(event.key === 'Enter') searchArticles()" style="background: var(--bg-body); color: var(--text-main); border: 1px solid var(--border-color); padding: 5px 32px 5px 12px; border-radius: 18px; font-size: 13px; outline: none; width: 130px; transition: all 0.3s;" onfocus="this.style.width='170px'; this.style.borderColor='var(--accent-color)';" onblur="if(this.value=='') { this.style.width='130px'; this.style.borderColor='var(--border-color)'; }">
-                <i class="fa-solid fa-magnifying-glass" onclick="searchArticles()" style="position: absolute; right: 11px; font-size: 11px; color: var(--text-sub); cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-sub)'"></i>
-            </div>
-
-            <button id="themeToggle" class="theme-toggle-btn" onclick="toggleTheme()" style="margin-left: 0;">
-                <i id="themeIcon" class="fa-solid fa-moon"></i> <span id="themeText">Dark</span>
-            </button>
         </div>
     </nav>
 
@@ -714,7 +704,7 @@
         </main>
         
         <!-- ================= KOLOM KANAN: SIDEBAR ================= -->
-        <aside style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 15px; position: sticky; top: 85px;">
+        <aside class="sidebar-video-col" style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 15px; position: sticky; top: 85px;">
             <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
                 <p style="color: var(--text-main); font-size: 12px; font-weight: bold; margin-bottom: 6px; border-bottom: 2px solid var(--accent-color); padding-bottom: 3px;">Ceramah Tengku Husaini Sasa</p>
                 <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px;">
