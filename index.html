@@ -127,11 +127,25 @@
             gap: 12px;
         }
 
-        .logo-img {
-            height: 38px;
-            width: auto;
-            object-fit: contain;
-        }
+/* Styling otomatis untuk logo Konadi Media */
+.logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+/* Kondisi saat Light Mode (bukan dark-mode): logo dibuat gelap/hitam */
+html:not(.dark-mode) .logo-img, 
+body:not(.dark-mode) .logo-img {
+    filter: brightness(0.2); 
+}
+
+/* Kondisi saat Dark Mode: logo otomatis jadi putih */
+html.dark-mode .logo-img, 
+body.dark-mode .logo-img {
+    filter: brightness(0) invert(1); 
+}
 
         /* NAVBAR */
         nav {
